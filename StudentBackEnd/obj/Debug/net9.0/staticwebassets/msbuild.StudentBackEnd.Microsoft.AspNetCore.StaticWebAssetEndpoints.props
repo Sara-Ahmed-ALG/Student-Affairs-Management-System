@@ -1,0 +1,88 @@
+﻿<Project>
+  <ItemGroup>
+    <StaticWebAssetEndpoint Include="_content/StudentBackEnd/Materials/13d31d92-f06f-4336-8e1a-d2a2ecc063bd.pdf">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Materials\13d31d92-f06f-4336-8e1a-d2a2ecc063bd.pdf'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-R/cXolaHTCc0jVJYoE2jMVJDSEagefWqRdNUT/grwbE="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"446218"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u0022R/cXolaHTCc0jVJYoE2jMVJDSEagefWqRdNUT/grwbE=\u0022"},{"Name":"Last-Modified","Value":"Sun, 01 Jun 2025 14:01:57 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/StudentBackEnd/Materials/13d31d92-f06f-4336-8e1a-d2a2ecc063bd.rryd2hq9es.pdf">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Materials\13d31d92-f06f-4336-8e1a-d2a2ecc063bd.pdf'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"rryd2hq9es"},{"Name":"integrity","Value":"sha256-R/cXolaHTCc0jVJYoE2jMVJDSEagefWqRdNUT/grwbE="},{"Name":"label","Value":"_content/StudentBackEnd/Materials/13d31d92-f06f-4336-8e1a-d2a2ecc063bd.pdf"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"446218"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u0022R/cXolaHTCc0jVJYoE2jMVJDSEagefWqRdNUT/grwbE=\u0022"},{"Name":"Last-Modified","Value":"Sun, 01 Jun 2025 14:01:57 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/StudentBackEnd/Materials/3eb60a72-febb-43f2-9eb0-2683df871ce0.pdf">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Materials\3eb60a72-febb-43f2-9eb0-2683df871ce0.pdf'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-R/cXolaHTCc0jVJYoE2jMVJDSEagefWqRdNUT/grwbE="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"446218"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u0022R/cXolaHTCc0jVJYoE2jMVJDSEagefWqRdNUT/grwbE=\u0022"},{"Name":"Last-Modified","Value":"Sun, 01 Jun 2025 14:27:08 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/StudentBackEnd/Materials/3eb60a72-febb-43f2-9eb0-2683df871ce0.rryd2hq9es.pdf">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Materials\3eb60a72-febb-43f2-9eb0-2683df871ce0.pdf'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"rryd2hq9es"},{"Name":"integrity","Value":"sha256-R/cXolaHTCc0jVJYoE2jMVJDSEagefWqRdNUT/grwbE="},{"Name":"label","Value":"_content/StudentBackEnd/Materials/3eb60a72-febb-43f2-9eb0-2683df871ce0.pdf"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"446218"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u0022R/cXolaHTCc0jVJYoE2jMVJDSEagefWqRdNUT/grwbE=\u0022"},{"Name":"Last-Modified","Value":"Sun, 01 Jun 2025 14:27:08 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/StudentBackEnd/Materials/48403adf-0d7d-426d-bf73-847004bad6bc.pdf">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Materials\48403adf-0d7d-426d-bf73-847004bad6bc.pdf'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-R/cXolaHTCc0jVJYoE2jMVJDSEagefWqRdNUT/grwbE="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"446218"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u0022R/cXolaHTCc0jVJYoE2jMVJDSEagefWqRdNUT/grwbE=\u0022"},{"Name":"Last-Modified","Value":"Sun, 01 Jun 2025 13:34:52 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/StudentBackEnd/Materials/48403adf-0d7d-426d-bf73-847004bad6bc.rryd2hq9es.pdf">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Materials\48403adf-0d7d-426d-bf73-847004bad6bc.pdf'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"rryd2hq9es"},{"Name":"integrity","Value":"sha256-R/cXolaHTCc0jVJYoE2jMVJDSEagefWqRdNUT/grwbE="},{"Name":"label","Value":"_content/StudentBackEnd/Materials/48403adf-0d7d-426d-bf73-847004bad6bc.pdf"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"446218"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u0022R/cXolaHTCc0jVJYoE2jMVJDSEagefWqRdNUT/grwbE=\u0022"},{"Name":"Last-Modified","Value":"Sun, 01 Jun 2025 13:34:52 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/StudentBackEnd/Materials/7e546f0c-370f-4b7b-bdab-a1aa9378b4f7.pdf">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Materials\7e546f0c-370f-4b7b-bdab-a1aa9378b4f7.pdf'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-R/cXolaHTCc0jVJYoE2jMVJDSEagefWqRdNUT/grwbE="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"446218"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u0022R/cXolaHTCc0jVJYoE2jMVJDSEagefWqRdNUT/grwbE=\u0022"},{"Name":"Last-Modified","Value":"Sun, 01 Jun 2025 15:20:50 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/StudentBackEnd/Materials/7e546f0c-370f-4b7b-bdab-a1aa9378b4f7.rryd2hq9es.pdf">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Materials\7e546f0c-370f-4b7b-bdab-a1aa9378b4f7.pdf'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"rryd2hq9es"},{"Name":"integrity","Value":"sha256-R/cXolaHTCc0jVJYoE2jMVJDSEagefWqRdNUT/grwbE="},{"Name":"label","Value":"_content/StudentBackEnd/Materials/7e546f0c-370f-4b7b-bdab-a1aa9378b4f7.pdf"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"446218"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u0022R/cXolaHTCc0jVJYoE2jMVJDSEagefWqRdNUT/grwbE=\u0022"},{"Name":"Last-Modified","Value":"Sun, 01 Jun 2025 15:20:50 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/StudentBackEnd/Materials/ee83d59e-b9d5-46c9-a235-bdb39d444d5f.pdf">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Materials\ee83d59e-b9d5-46c9-a235-bdb39d444d5f.pdf'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-R/cXolaHTCc0jVJYoE2jMVJDSEagefWqRdNUT/grwbE="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"446218"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u0022R/cXolaHTCc0jVJYoE2jMVJDSEagefWqRdNUT/grwbE=\u0022"},{"Name":"Last-Modified","Value":"Sun, 01 Jun 2025 13:54:10 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/StudentBackEnd/Materials/ee83d59e-b9d5-46c9-a235-bdb39d444d5f.rryd2hq9es.pdf">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Materials\ee83d59e-b9d5-46c9-a235-bdb39d444d5f.pdf'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"rryd2hq9es"},{"Name":"integrity","Value":"sha256-R/cXolaHTCc0jVJYoE2jMVJDSEagefWqRdNUT/grwbE="},{"Name":"label","Value":"_content/StudentBackEnd/Materials/ee83d59e-b9d5-46c9-a235-bdb39d444d5f.pdf"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"446218"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u0022R/cXolaHTCc0jVJYoE2jMVJDSEagefWqRdNUT/grwbE=\u0022"},{"Name":"Last-Modified","Value":"Sun, 01 Jun 2025 13:54:10 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/StudentBackEnd/QRCodeImage/lecture_1962a6df-cf3f-4c1e-9f80-f5fa2b1e5a5b.gwekkx0tg6.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\QRCodeImage\lecture_1962a6df-cf3f-4c1e-9f80-f5fa2b1e5a5b.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"gwekkx0tg6"},{"Name":"integrity","Value":"sha256-cIAThHmnPY1oywvLvZp2ZeBGlw02yIDqdm5O4VoE99c="},{"Name":"label","Value":"_content/StudentBackEnd/QRCodeImage/lecture_1962a6df-cf3f-4c1e-9f80-f5fa2b1e5a5b.png"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"815"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022cIAThHmnPY1oywvLvZp2ZeBGlw02yIDqdm5O4VoE99c=\u0022"},{"Name":"Last-Modified","Value":"Mon, 02 Jun 2025 20:03:48 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/StudentBackEnd/QRCodeImage/lecture_1962a6df-cf3f-4c1e-9f80-f5fa2b1e5a5b.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\QRCodeImage\lecture_1962a6df-cf3f-4c1e-9f80-f5fa2b1e5a5b.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-cIAThHmnPY1oywvLvZp2ZeBGlw02yIDqdm5O4VoE99c="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"815"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022cIAThHmnPY1oywvLvZp2ZeBGlw02yIDqdm5O4VoE99c=\u0022"},{"Name":"Last-Modified","Value":"Mon, 02 Jun 2025 20:03:48 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/StudentBackEnd/QRCodeImage/lecture_e7fc68a2-9489-487c-9fbc-5be67c95cc50.1jqmwr1uja.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\QRCodeImage\lecture_e7fc68a2-9489-487c-9fbc-5be67c95cc50.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"1jqmwr1uja"},{"Name":"integrity","Value":"sha256-zSsJ3Do\u002BIh1DFOtLet/VZnQtaOHcyyHPXnCqZCQlJvo="},{"Name":"label","Value":"_content/StudentBackEnd/QRCodeImage/lecture_e7fc68a2-9489-487c-9fbc-5be67c95cc50.png"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"811"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022zSsJ3Do\u002BIh1DFOtLet/VZnQtaOHcyyHPXnCqZCQlJvo=\u0022"},{"Name":"Last-Modified","Value":"Tue, 03 Jun 2025 14:07:27 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/StudentBackEnd/QRCodeImage/lecture_e7fc68a2-9489-487c-9fbc-5be67c95cc50.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\QRCodeImage\lecture_e7fc68a2-9489-487c-9fbc-5be67c95cc50.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-zSsJ3Do\u002BIh1DFOtLet/VZnQtaOHcyyHPXnCqZCQlJvo="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"811"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022zSsJ3Do\u002BIh1DFOtLet/VZnQtaOHcyyHPXnCqZCQlJvo=\u0022"},{"Name":"Last-Modified","Value":"Tue, 03 Jun 2025 14:07:27 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+  </ItemGroup>
+</Project>

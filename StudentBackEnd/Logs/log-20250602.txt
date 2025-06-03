@@ -1,0 +1,1306 @@
+2025-06-02 00:35:52.222 +03:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-06-02 00:35:52.275 +03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-06-02 00:35:52.356 +03:00 [INF] Executed DbCommand (77ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-06-02 00:35:52.439 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-06-02 00:35:52.451 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-06-02 00:35:52.452 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-06-02 00:35:52.458 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-06-02 00:35:52.474 +03:00 [INF] Applying migration '20250601200528_tablelecturescheulee'.
+2025-06-02 00:35:52.521 +03:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [LectureSchedules] (
+    [Id] uniqueidentifier NOT NULL,
+    [CourseId] uniqueidentifier NOT NULL,
+    [LectureDate] datetime2 NOT NULL,
+    [StartTime] time NOT NULL,
+    [EndTime] time NOT NULL,
+    [Location] nvarchar(max) NOT NULL,
+    CONSTRAINT [PK_LectureSchedules] PRIMARY KEY ([Id])
+);
+2025-06-02 00:35:52.523 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20250601200528_tablelecturescheulee', N'9.0.5');
+2025-06-02 00:35:52.523 +03:00 [INF] Applying migration '20250601213132_FixdIdStudent'.
+2025-06-02 00:35:52.551 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Students] DROP CONSTRAINT [FK_Students_AspNetUsers_AppUserId1];
+2025-06-02 00:35:52.553 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DROP INDEX [IX_Students_AppUserId1] ON [Students];
+2025-06-02 00:35:52.576 +03:00 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @var sysname;
+SELECT @var = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[Students]') AND [c].[name] = N'AppUserId1');
+IF @var IS NOT NULL EXEC(N'ALTER TABLE [Students] DROP CONSTRAINT [' + @var + '];');
+ALTER TABLE [Students] DROP COLUMN [AppUserId1];
+2025-06-02 00:35:52.577 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20250601213132_FixdIdStudent', N'9.0.5');
+2025-06-02 00:35:52.586 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-06-02 00:36:35.082 +03:00 [INF] User profile is available. Using 'C:\Users\Target\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-02 00:36:36.781 +03:00 [INF] Executed DbCommand (123ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-02 00:36:36.876 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-02 00:36:36.883 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-02 00:36:36.907 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-06-02 00:36:37.252 +03:00 [WRN] The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert
+2025-06-02 00:36:37.376 +03:00 [INF] Now listening on: https://localhost:5001
+2025-06-02 00:36:37.377 +03:00 [INF] Now listening on: http://localhost:5000
+2025-06-02 00:36:37.470 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-02 00:36:37.472 +03:00 [INF] Hosting environment: Development
+2025-06-02 00:36:37.473 +03:00 [INF] Content root path: D:\AppsMypractice\StudentAffaire\StudentBackEnd\StudentBackEnd
+2025-06-02 00:36:38.044 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger - null null
+2025-06-02 00:36:38.313 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger - 301 0 null 288.2705ms
+2025-06-02 00:36:38.318 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.html - null null
+2025-06-02 00:36:38.390 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.html - 200 null text/html;charset=utf-8 72.7285ms
+2025-06-02 00:36:38.395 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui.css - null null
+2025-06-02 00:36:38.395 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui-bundle.js - null null
+2025-06-02 00:36:38.395 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.css - null null
+2025-06-02 00:36:38.439 +03:00 [INF] Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2025-06-02 00:36:38.440 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.css - 200 202 text/css 45.5213ms
+2025-06-02 00:36:38.488 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-06-02 00:36:38.491 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui-standalone-preset.js - null null
+2025-06-02 00:36:38.492 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui.css - 200 154949 text/css 96.7277ms
+2025-06-02 00:36:38.495 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.js - null null
+2025-06-02 00:36:38.560 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-06-02 00:36:38.561 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-06-02 00:36:38.564 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.js - 200 null application/javascript;charset=utf-8 68.625ms
+2025-06-02 00:36:38.564 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui-standalone-preset.js - 200 229223 text/javascript 73.4789ms
+2025-06-02 00:36:38.567 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui-bundle.js - 200 1466908 text/javascript 171.7758ms
+2025-06-02 00:36:38.569 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-02 00:36:38.572 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2025-06-02 00:36:38.582 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 13780 application/javascript; charset=utf-8 13.3588ms
+2025-06-02 00:36:38.654 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 81.9229ms
+2025-06-02 00:36:38.740 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - null null
+2025-06-02 00:36:38.755 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 15.1975ms
+2025-06-02 00:37:46.371 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/LectureSchedule - null null
+2025-06-02 00:37:48.098 +03:00 [INF] Executing endpoint 'StudentBackEnd.Controllers.LectureScheduleController.GetAll (StudentBackEnd)'
+2025-06-02 00:37:48.132 +03:00 [INF] Route matched with {action = "GetAll", controller = "LectureSchedule"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller StudentBackEnd.Controllers.LectureScheduleController (StudentBackEnd).
+2025-06-02 00:38:59.056 +03:00 [INF] Executed action StudentBackEnd.Controllers.LectureScheduleController.GetAll (StudentBackEnd) in 70913.3859ms
+2025-06-02 00:38:59.082 +03:00 [INF] Executed endpoint 'StudentBackEnd.Controllers.LectureScheduleController.GetAll (StudentBackEnd)'
+2025-06-02 00:38:59.086 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: An error was generated for warning 'Microsoft.EntityFrameworkCore.Query.InvalidIncludePathError': Unable to find navigation 'Course' specified in string based include path 'Course'. This exception can be suppressed or logged by passing event ID 'CoreEventId.InvalidIncludePathError' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.
+   at Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition`2.Log[TLoggerCategory](IDiagnosticsLogger`1 logger, TParam1 arg1, TParam2 arg2)
+   at Microsoft.EntityFrameworkCore.Diagnostics.CoreLoggerExtensions.InvalidIncludePathError(IDiagnosticsLogger`1 diagnostics, String navigationChain, String navigationName)
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.ProcessInclude(NavigationExpansionExpression source, Expression expression, Boolean thenInclude, Boolean setLoaded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.Expand(Expression query)
+   at Microsoft.EntityFrameworkCore.Query.QueryTranslationPreprocessor.Process(Expression query)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutorExpression[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutor[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Storage.Database.CompileQuery[TResult](Expression query, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.CompileQueryCore[TResult](IDatabase database, Expression query, IModel model, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass11_0`1.<ExecuteCore>b__0()
+   at Microsoft.EntityFrameworkCore.Query.Internal.CompiledQueryCache.GetOrAddQuery[TResult](Object cacheKey, Func`1 compiler)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteCore[TResult](Expression query, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteAsync[TResult](Expression query, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.ExecuteAsync[TResult](Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1.GetAsyncEnumerator(CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.ConfiguredCancelableAsyncEnumerable`1.GetAsyncEnumerator()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at BackEnd.EF.Repositories.GenericRepo`1.GetAllAsync(String includeProperties) in D:\AppsMypractice\StudentAffaire\StudentBackEnd\BackEnd.EF\Repositories\GenericRepo.cs:line 105
+   at Application.Services.ScheduleService.GetAllAsync() in D:\AppsMypractice\StudentAffaire\StudentBackEnd\Application\Services\ScheduleService.cs:line 53
+   at StudentBackEnd.Controllers.LectureScheduleController.GetAll() in D:\AppsMypractice\StudentAffaire\StudentBackEnd\StudentBackEnd\Controllers\LectureScheduleController.cs:line 28
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-06-02 00:38:59.187 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/LectureSchedule - 500 null text/plain; charset=utf-8 72815.8668ms
+2025-06-02 00:39:56.565 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.html - null null
+2025-06-02 00:39:56.583 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.html - 200 null text/html;charset=utf-8 17.5659ms
+2025-06-02 00:39:56.603 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2025-06-02 00:39:56.603 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-02 00:39:56.618 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 13780 application/javascript; charset=utf-8 15.8103ms
+2025-06-02 00:39:56.666 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 63.0248ms
+2025-06-02 00:39:56.850 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - null null
+2025-06-02 00:39:56.870 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/favicon-32x32.png - null null
+2025-06-02 00:39:56.874 +03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2025-06-02 00:39:56.876 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/favicon-32x32.png - 200 628 image/png 6.5321ms
+2025-06-02 00:39:56.884 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 34.7286ms
+2025-06-02 00:40:15.055 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/LectureSchedule - null null
+2025-06-02 00:40:15.060 +03:00 [INF] Executing endpoint 'StudentBackEnd.Controllers.LectureScheduleController.GetAll (StudentBackEnd)'
+2025-06-02 00:40:15.070 +03:00 [INF] Route matched with {action = "GetAll", controller = "LectureSchedule"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller StudentBackEnd.Controllers.LectureScheduleController (StudentBackEnd).
+2025-06-02 00:40:15.267 +03:00 [INF] Executed action StudentBackEnd.Controllers.LectureScheduleController.GetAll (StudentBackEnd) in 193.1577ms
+2025-06-02 00:40:15.270 +03:00 [INF] Executed endpoint 'StudentBackEnd.Controllers.LectureScheduleController.GetAll (StudentBackEnd)'
+2025-06-02 00:40:15.271 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: An error was generated for warning 'Microsoft.EntityFrameworkCore.Query.InvalidIncludePathError': Unable to find navigation 'Course' specified in string based include path 'Course'. This exception can be suppressed or logged by passing event ID 'CoreEventId.InvalidIncludePathError' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.
+   at Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition`2.Log[TLoggerCategory](IDiagnosticsLogger`1 logger, TParam1 arg1, TParam2 arg2)
+   at Microsoft.EntityFrameworkCore.Diagnostics.CoreLoggerExtensions.InvalidIncludePathError(IDiagnosticsLogger`1 diagnostics, String navigationChain, String navigationName)
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.ProcessInclude(NavigationExpansionExpression source, Expression expression, Boolean thenInclude, Boolean setLoaded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.Expand(Expression query)
+   at Microsoft.EntityFrameworkCore.Query.QueryTranslationPreprocessor.Process(Expression query)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutorExpression[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutor[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Storage.Database.CompileQuery[TResult](Expression query, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.CompileQueryCore[TResult](IDatabase database, Expression query, IModel model, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass11_0`1.<ExecuteCore>b__0()
+   at Microsoft.EntityFrameworkCore.Query.Internal.CompiledQueryCache.GetOrAddQuery[TResult](Object cacheKey, Func`1 compiler)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteCore[TResult](Expression query, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteAsync[TResult](Expression query, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.ExecuteAsync[TResult](Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1.GetAsyncEnumerator(CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.ConfiguredCancelableAsyncEnumerable`1.GetAsyncEnumerator()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at BackEnd.EF.Repositories.GenericRepo`1.GetAllAsync(String includeProperties) in D:\AppsMypractice\StudentAffaire\StudentBackEnd\BackEnd.EF\Repositories\GenericRepo.cs:line 105
+   at Application.Services.ScheduleService.GetAllAsync() in D:\AppsMypractice\StudentAffaire\StudentBackEnd\Application\Services\ScheduleService.cs:line 53
+   at StudentBackEnd.Controllers.LectureScheduleController.GetAll()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-06-02 00:40:15.300 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/LectureSchedule - 500 null text/plain; charset=utf-8 245.798ms
+2025-06-02 00:50:00.948 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.html - null null
+2025-06-02 00:50:00.966 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.html - 200 null text/html;charset=utf-8 17.8314ms
+2025-06-02 00:50:01.002 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2025-06-02 00:50:01.002 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-02 00:50:01.009 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 13780 application/javascript; charset=utf-8 7.1673ms
+2025-06-02 00:50:01.063 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 61.3131ms
+2025-06-02 00:50:01.331 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - null null
+2025-06-02 00:50:01.331 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/favicon-32x32.png - null null
+2025-06-02 00:50:01.340 +03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2025-06-02 00:50:01.343 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/favicon-32x32.png - 200 628 image/png 12.736ms
+2025-06-02 00:50:01.357 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 26.5474ms
+2025-06-02 00:50:12.742 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/LectureSchedule - null null
+2025-06-02 00:50:12.750 +03:00 [INF] Executing endpoint 'StudentBackEnd.Controllers.LectureScheduleController.GetAll (StudentBackEnd)'
+2025-06-02 00:50:12.760 +03:00 [INF] Route matched with {action = "GetAll", controller = "LectureSchedule"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller StudentBackEnd.Controllers.LectureScheduleController (StudentBackEnd).
+2025-06-02 00:50:12.935 +03:00 [INF] Executed action StudentBackEnd.Controllers.LectureScheduleController.GetAll (StudentBackEnd) in 169.9507ms
+2025-06-02 00:50:12.938 +03:00 [INF] Executed endpoint 'StudentBackEnd.Controllers.LectureScheduleController.GetAll (StudentBackEnd)'
+2025-06-02 00:50:12.939 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: An error was generated for warning 'Microsoft.EntityFrameworkCore.Query.InvalidIncludePathError': Unable to find navigation 'Courses' specified in string based include path 'Courses'. This exception can be suppressed or logged by passing event ID 'CoreEventId.InvalidIncludePathError' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.
+   at Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition`2.Log[TLoggerCategory](IDiagnosticsLogger`1 logger, TParam1 arg1, TParam2 arg2)
+   at Microsoft.EntityFrameworkCore.Diagnostics.CoreLoggerExtensions.InvalidIncludePathError(IDiagnosticsLogger`1 diagnostics, String navigationChain, String navigationName)
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.ProcessInclude(NavigationExpansionExpression source, Expression expression, Boolean thenInclude, Boolean setLoaded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.Expand(Expression query)
+   at Microsoft.EntityFrameworkCore.Query.QueryTranslationPreprocessor.Process(Expression query)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutorExpression[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutor[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Storage.Database.CompileQuery[TResult](Expression query, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.CompileQueryCore[TResult](IDatabase database, Expression query, IModel model, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass11_0`1.<ExecuteCore>b__0()
+   at Microsoft.EntityFrameworkCore.Query.Internal.CompiledQueryCache.GetOrAddQuery[TResult](Object cacheKey, Func`1 compiler)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteCore[TResult](Expression query, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteAsync[TResult](Expression query, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.ExecuteAsync[TResult](Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1.GetAsyncEnumerator(CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.ConfiguredCancelableAsyncEnumerable`1.GetAsyncEnumerator()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at BackEnd.EF.Repositories.GenericRepo`1.GetAllAsync(String includeProperties) in D:\AppsMypractice\StudentAffaire\StudentBackEnd\BackEnd.EF\Repositories\GenericRepo.cs:line 105
+   at Application.Services.ScheduleService.GetAllAsync()
+   at StudentBackEnd.Controllers.LectureScheduleController.GetAll()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-06-02 00:50:12.972 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/LectureSchedule - 500 null text/plain; charset=utf-8 230.3934ms
+2025-06-02 00:52:37.856 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.html - null null
+2025-06-02 00:52:37.879 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.html - 200 null text/html;charset=utf-8 23.0557ms
+2025-06-02 00:52:37.909 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2025-06-02 00:52:37.909 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-02 00:52:37.917 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 13780 application/javascript; charset=utf-8 7.2867ms
+2025-06-02 00:52:37.973 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 63.3265ms
+2025-06-02 00:52:38.088 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - null null
+2025-06-02 00:52:38.093 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/favicon-32x32.png - null null
+2025-06-02 00:52:38.097 +03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2025-06-02 00:52:38.099 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/favicon-32x32.png - 200 628 image/png 6.1421ms
+2025-06-02 00:52:38.103 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 15.7766ms
+2025-06-02 00:52:51.610 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/LectureSchedule - null null
+2025-06-02 00:52:51.614 +03:00 [INF] Executing endpoint 'StudentBackEnd.Controllers.LectureScheduleController.GetAll (StudentBackEnd)'
+2025-06-02 00:52:51.656 +03:00 [INF] Route matched with {action = "GetAll", controller = "LectureSchedule"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller StudentBackEnd.Controllers.LectureScheduleController (StudentBackEnd).
+2025-06-02 00:52:51.814 +03:00 [INF] Executed action StudentBackEnd.Controllers.LectureScheduleController.GetAll (StudentBackEnd) in 155.4292ms
+2025-06-02 00:52:51.817 +03:00 [INF] Executed endpoint 'StudentBackEnd.Controllers.LectureScheduleController.GetAll (StudentBackEnd)'
+2025-06-02 00:52:51.820 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: An error was generated for warning 'Microsoft.EntityFrameworkCore.Query.InvalidIncludePathError': Unable to find navigation 'CourseId' specified in string based include path 'CourseId'. This exception can be suppressed or logged by passing event ID 'CoreEventId.InvalidIncludePathError' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.
+   at Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition`2.Log[TLoggerCategory](IDiagnosticsLogger`1 logger, TParam1 arg1, TParam2 arg2)
+   at Microsoft.EntityFrameworkCore.Diagnostics.CoreLoggerExtensions.InvalidIncludePathError(IDiagnosticsLogger`1 diagnostics, String navigationChain, String navigationName)
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.ProcessInclude(NavigationExpansionExpression source, Expression expression, Boolean thenInclude, Boolean setLoaded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.VisitMethodCall(MethodCallExpression methodCallExpression)
+   at Microsoft.EntityFrameworkCore.Query.Internal.NavigationExpandingExpressionVisitor.Expand(Expression query)
+   at Microsoft.EntityFrameworkCore.Query.QueryTranslationPreprocessor.Process(Expression query)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutorExpression[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutor[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Storage.Database.CompileQuery[TResult](Expression query, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.CompileQueryCore[TResult](IDatabase database, Expression query, IModel model, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass11_0`1.<ExecuteCore>b__0()
+   at Microsoft.EntityFrameworkCore.Query.Internal.CompiledQueryCache.GetOrAddQuery[TResult](Object cacheKey, Func`1 compiler)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteCore[TResult](Expression query, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteAsync[TResult](Expression query, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.ExecuteAsync[TResult](Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1.GetAsyncEnumerator(CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.ConfiguredCancelableAsyncEnumerable`1.GetAsyncEnumerator()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at BackEnd.EF.Repositories.GenericRepo`1.GetAllAsync(String includeProperties) in D:\AppsMypractice\StudentAffaire\StudentBackEnd\BackEnd.EF\Repositories\GenericRepo.cs:line 105
+   at Application.Services.ScheduleService.GetAllAsync()
+   at StudentBackEnd.Controllers.LectureScheduleController.GetAll()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-06-02 00:52:51.848 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/LectureSchedule - 500 null text/plain; charset=utf-8 238.2773ms
+2025-06-02 01:02:22.536 +03:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-06-02 01:02:22.588 +03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-06-02 01:02:22.608 +03:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-06-02 01:02:22.690 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-06-02 01:02:22.698 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-06-02 01:02:22.699 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-06-02 01:02:22.703 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-06-02 01:02:22.714 +03:00 [INF] Applying migration '20250601220209_FixnavigationpropfCourse'.
+2025-06-02 01:02:22.741 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_LectureSchedules_CourseId] ON [LectureSchedules] ([CourseId]);
+2025-06-02 01:02:22.744 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [LectureSchedules] ADD CONSTRAINT [FK_LectureSchedules_Courses_CourseId] FOREIGN KEY ([CourseId]) REFERENCES [Courses] ([Id]) ON DELETE CASCADE;
+2025-06-02 01:02:22.745 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20250601220209_FixnavigationpropfCourse', N'9.0.5');
+2025-06-02 01:02:22.765 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-06-02 01:04:15.277 +03:00 [INF] User profile is available. Using 'C:\Users\Target\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-02 01:04:17.275 +03:00 [INF] Executed DbCommand (76ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-02 01:04:17.357 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-02 01:04:17.360 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-02 01:04:17.375 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-06-02 01:04:17.629 +03:00 [WRN] The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert
+2025-06-02 01:04:17.687 +03:00 [INF] Now listening on: https://localhost:5001
+2025-06-02 01:04:17.689 +03:00 [INF] Now listening on: http://localhost:5000
+2025-06-02 01:04:17.798 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-02 01:04:17.800 +03:00 [INF] Hosting environment: Development
+2025-06-02 01:04:17.801 +03:00 [INF] Content root path: D:\AppsMypractice\StudentAffaire\StudentBackEnd\StudentBackEnd
+2025-06-02 01:04:18.058 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger - null null
+2025-06-02 01:04:18.189 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger - 301 0 null 141.3431ms
+2025-06-02 01:04:18.197 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.html - null null
+2025-06-02 01:04:18.260 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.html - 200 null text/html;charset=utf-8 62.9944ms
+2025-06-02 01:04:18.268 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui-bundle.js - null null
+2025-06-02 01:04:18.268 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui.css - null null
+2025-06-02 01:04:18.268 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.css - null null
+2025-06-02 01:04:18.268 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-02 01:04:18.268 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui-standalone-preset.js - null null
+2025-06-02 01:04:18.268 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.js - null null
+2025-06-02 01:04:18.341 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2025-06-02 01:04:18.362 +03:00 [INF] Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2025-06-02 01:04:18.365 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.js - 200 null application/javascript;charset=utf-8 97.108ms
+2025-06-02 01:04:18.369 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.css - 200 202 text/css 101.2222ms
+2025-06-02 01:04:18.404 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 13780 application/javascript; charset=utf-8 136.0966ms
+2025-06-02 01:04:18.482 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-06-02 01:04:18.482 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-06-02 01:04:18.495 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-06-02 01:04:18.497 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui.css - 200 154949 text/css 228.8108ms
+2025-06-02 01:04:18.497 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui-standalone-preset.js - 200 229223 text/javascript 229.3519ms
+2025-06-02 01:04:18.501 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui-bundle.js - 200 1466908 text/javascript 233.6463ms
+2025-06-02 01:04:18.513 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 172.5014ms
+2025-06-02 01:04:18.642 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - null null
+2025-06-02 01:04:18.663 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 20.2295ms
+2025-06-02 01:04:40.610 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/LectureSchedule - null null
+2025-06-02 01:04:42.262 +03:00 [INF] Executing endpoint 'StudentBackEnd.Controllers.LectureScheduleController.GetAll (StudentBackEnd)'
+2025-06-02 01:04:42.295 +03:00 [INF] Route matched with {action = "GetAll", controller = "LectureSchedule"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller StudentBackEnd.Controllers.LectureScheduleController (StudentBackEnd).
+2025-06-02 01:04:42.691 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[CourseId], [l].[EndTime], [l].[LectureDate], [l].[Location], [l].[StartTime], [c].[Id], [c].[Description], [c].[ProfessorId], [c].[Title]
+FROM [LectureSchedules] AS [l]
+INNER JOIN [Courses] AS [c] ON [l].[CourseId] = [c].[Id]
+2025-06-02 01:04:42.734 +03:00 [INF] Executing OkObjectResult, writing value of type 'Application.ResponseService`1[[System.Collections.Generic.List`1[[BackEnd.Core.DTOs.LectureScheduleDto.GetSchedule, BackEnd.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-06-02 01:04:42.767 +03:00 [INF] Executed action StudentBackEnd.Controllers.LectureScheduleController.GetAll (StudentBackEnd) in 461.126ms
+2025-06-02 01:04:42.771 +03:00 [INF] Executed endpoint 'StudentBackEnd.Controllers.LectureScheduleController.GetAll (StudentBackEnd)'
+2025-06-02 01:04:42.783 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/LectureSchedule - 200 null application/json; charset=utf-8 2173.6943ms
+2025-06-02 01:07:07.559 +03:00 [INF] Request starting HTTP/2 POST https://localhost:5001/api/LectureSchedule - application/json 171
+2025-06-02 01:07:07.622 +03:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2025-06-02 01:07:07.637 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-06-02 01:07:07.639 +03:00 [INF] Request finished HTTP/2 POST https://localhost:5001/api/LectureSchedule - 401 0 null 79.952ms
+2025-06-02 01:08:52.219 +03:00 [INF] Request starting HTTP/2 POST https://localhost:5001/api/Account/login - application/json 59
+2025-06-02 01:08:52.226 +03:00 [INF] Executing endpoint 'StudentBackEnd.Controllers.AccountController.Login (StudentBackEnd)'
+2025-06-02 01:08:52.283 +03:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(BackEnd.Core.DTOs.UserDTO.LoginDto) on controller StudentBackEnd.Controllers.AccountController (StudentBackEnd).
+2025-06-02 01:08:52.367 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-06-02 01:08:52.510 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[BackEnd.Core.Models.UserTokens, BackEnd.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-02 01:08:52.529 +03:00 [INF] Executed action StudentBackEnd.Controllers.AccountController.Login (StudentBackEnd) in 238.978ms
+2025-06-02 01:08:52.574 +03:00 [INF] Executed endpoint 'StudentBackEnd.Controllers.AccountController.Login (StudentBackEnd)'
+2025-06-02 01:08:52.578 +03:00 [INF] Request finished HTTP/2 POST https://localhost:5001/api/Account/login - 200 null application/json; charset=utf-8 358.5703ms
+2025-06-02 01:09:27.066 +03:00 [INF] Request starting HTTP/2 POST https://localhost:5001/api/LectureSchedule - application/json 171
+2025-06-02 01:09:27.145 +03:00 [INF] Executing endpoint 'StudentBackEnd.Controllers.LectureScheduleController.Create (StudentBackEnd)'
+2025-06-02 01:09:27.151 +03:00 [INF] Route matched with {action = "Create", controller = "LectureSchedule"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(BackEnd.Core.DTOs.LectureScheduleDto.CreateScheduleDto) on controller StudentBackEnd.Controllers.LectureScheduleController (StudentBackEnd).
+2025-06-02 01:12:29.375 +03:00 [INF] Executed action StudentBackEnd.Controllers.LectureScheduleController.Create (StudentBackEnd) in 182218.4939ms
+2025-06-02 01:12:29.379 +03:00 [INF] Executed endpoint 'StudentBackEnd.Controllers.LectureScheduleController.Create (StudentBackEnd)'
+2025-06-02 01:12:29.383 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+CreateScheduleDto -> LectureSchedule
+BackEnd.Core.DTOs.LectureScheduleDto.CreateScheduleDto -> BackEnd.Core.Domain.LectureSchedule
+   at lambda_method233(Closure, Object, LectureSchedule, ResolutionContext)
+   at Application.Services.ScheduleService.CreateAsync(CreateScheduleDto dto) in D:\AppsMypractice\StudentAffaire\StudentBackEnd\Application\Services\ScheduleService.cs:line 31
+   at StudentBackEnd.Controllers.LectureScheduleController.Create(CreateScheduleDto dto) in D:\AppsMypractice\StudentAffaire\StudentBackEnd\StudentBackEnd\Controllers\LectureScheduleController.cs:line 41
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-06-02 01:12:29.519 +03:00 [INF] Request finished HTTP/2 POST https://localhost:5001/api/LectureSchedule - 500 null text/plain; charset=utf-8 182453.603ms
+2025-06-02 01:12:30.397 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.html - null null
+2025-06-02 01:12:30.460 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.html - 200 null text/html;charset=utf-8 63.8651ms
+2025-06-02 01:12:30.496 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-02 01:12:30.496 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.css - null null
+2025-06-02 01:12:30.599 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 13780 application/javascript; charset=utf-8 103.4894ms
+2025-06-02 01:12:30.496 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui.css - null null
+2025-06-02 01:12:30.558 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2025-06-02 01:12:30.612 +03:00 [INF] Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2025-06-02 01:12:30.625 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-06-02 01:12:30.640 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.css - 200 202 text/css 143.9866ms
+2025-06-02 01:12:30.649 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui.css - 200 154949 text/css 152.6983ms
+2025-06-02 01:12:30.667 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 109.6854ms
+2025-06-02 01:12:30.989 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - null null
+2025-06-02 01:12:31.069 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/favicon-32x32.png - null null
+2025-06-02 01:12:31.072 +03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2025-06-02 01:12:31.073 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 84.7509ms
+2025-06-02 01:12:31.075 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/favicon-32x32.png - 200 628 image/png 6.1238ms
+2025-06-02 01:12:55.644 +03:00 [INF] Request starting HTTP/2 POST https://localhost:5001/api/Account/login - application/json 59
+2025-06-02 01:12:55.683 +03:00 [INF] Executing endpoint 'StudentBackEnd.Controllers.AccountController.Login (StudentBackEnd)'
+2025-06-02 01:12:55.691 +03:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(BackEnd.Core.DTOs.UserDTO.LoginDto) on controller StudentBackEnd.Controllers.AccountController (StudentBackEnd).
+2025-06-02 01:12:55.707 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-06-02 01:12:55.716 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[BackEnd.Core.Models.UserTokens, BackEnd.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-02 01:12:55.723 +03:00 [INF] Executed action StudentBackEnd.Controllers.AccountController.Login (StudentBackEnd) in 26.9177ms
+2025-06-02 01:12:55.725 +03:00 [INF] Executed endpoint 'StudentBackEnd.Controllers.AccountController.Login (StudentBackEnd)'
+2025-06-02 01:12:55.728 +03:00 [INF] Request finished HTTP/2 POST https://localhost:5001/api/Account/login - 200 null application/json; charset=utf-8 85.4335ms
+2025-06-02 01:14:46.517 +03:00 [INF] Request starting HTTP/2 POST https://localhost:5001/api/LectureSchedule - application/json 176
+2025-06-02 01:14:46.538 +03:00 [INF] Executing endpoint 'StudentBackEnd.Controllers.LectureScheduleController.Create (StudentBackEnd)'
+2025-06-02 01:14:46.551 +03:00 [INF] Route matched with {action = "Create", controller = "LectureSchedule"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(BackEnd.Core.DTOs.LectureScheduleDto.CreateScheduleDto) on controller StudentBackEnd.Controllers.LectureScheduleController (StudentBackEnd).
+2025-06-02 01:16:06.770 +03:00 [INF] User profile is available. Using 'C:\Users\Target\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-02 01:16:08.833 +03:00 [INF] Executed DbCommand (86ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-02 01:16:08.910 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-02 01:16:08.913 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-02 01:16:08.927 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-06-02 01:16:09.205 +03:00 [WRN] The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert
+2025-06-02 01:16:09.262 +03:00 [INF] Now listening on: https://localhost:5001
+2025-06-02 01:16:09.263 +03:00 [INF] Now listening on: http://localhost:5000
+2025-06-02 01:16:09.339 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-02 01:16:09.342 +03:00 [INF] Hosting environment: Development
+2025-06-02 01:16:09.342 +03:00 [INF] Content root path: D:\AppsMypractice\StudentAffaire\StudentBackEnd\StudentBackEnd
+2025-06-02 01:16:09.780 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger - null null
+2025-06-02 01:16:09.919 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger - 301 0 null 145.7916ms
+2025-06-02 01:16:09.927 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.html - null null
+2025-06-02 01:16:09.982 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.html - 200 null text/html;charset=utf-8 54.8536ms
+2025-06-02 01:16:09.986 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui.css - null null
+2025-06-02 01:16:10.052 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.js - null null
+2025-06-02 01:16:09.986 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui-bundle.js - null null
+2025-06-02 01:16:10.092 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.js - 200 null application/javascript;charset=utf-8 39.4756ms
+2025-06-02 01:16:09.986 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.css - null null
+2025-06-02 01:16:10.052 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui-standalone-preset.js - null null
+2025-06-02 01:16:10.053 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-02 01:16:10.086 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2025-06-02 01:16:10.132 +03:00 [INF] Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2025-06-02 01:16:10.143 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.css - 200 202 text/css 157.1028ms
+2025-06-02 01:16:10.147 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 13780 application/javascript; charset=utf-8 93.8201ms
+2025-06-02 01:16:10.147 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-06-02 01:16:10.147 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-06-02 01:16:10.164 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-06-02 01:16:10.169 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui-standalone-preset.js - 200 229223 text/javascript 180.7898ms
+2025-06-02 01:16:10.169 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui.css - 200 154949 text/css 182.9975ms
+2025-06-02 01:16:10.172 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui-bundle.js - 200 1466908 text/javascript 185.9319ms
+2025-06-02 01:16:10.189 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 102.7298ms
+2025-06-02 01:16:10.316 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - null null
+2025-06-02 01:16:10.334 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 17.2416ms
+2025-06-02 01:17:12.890 +03:00 [INF] User profile is available. Using 'C:\Users\Target\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-02 01:17:14.743 +03:00 [INF] Executed DbCommand (50ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-02 01:17:14.860 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-02 01:17:14.866 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-02 01:17:14.887 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-06-02 01:17:15.262 +03:00 [WRN] The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert
+2025-06-02 01:17:15.380 +03:00 [INF] Now listening on: https://localhost:5001
+2025-06-02 01:17:15.381 +03:00 [INF] Now listening on: http://localhost:5000
+2025-06-02 01:17:15.536 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-02 01:17:15.538 +03:00 [INF] Hosting environment: Development
+2025-06-02 01:17:15.541 +03:00 [INF] Content root path: D:\AppsMypractice\StudentAffaire\StudentBackEnd\StudentBackEnd
+2025-06-02 01:17:15.773 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger - null null
+2025-06-02 01:17:15.928 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger - 301 0 null 168.8591ms
+2025-06-02 01:17:15.936 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.html - null null
+2025-06-02 01:17:16.027 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.html - 200 null text/html;charset=utf-8 91.5091ms
+2025-06-02 01:17:16.034 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui.css - null null
+2025-06-02 01:17:16.034 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui-bundle.js - null null
+2025-06-02 01:17:16.034 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.css - null null
+2025-06-02 01:17:16.055 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui-standalone-preset.js - null null
+2025-06-02 01:17:16.068 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.js - null null
+2025-06-02 01:17:16.098 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-02 01:17:16.098 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2025-06-02 01:17:16.127 +03:00 [INF] Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2025-06-02 01:17:16.173 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.css - 200 202 text/css 139.1123ms
+2025-06-02 01:17:16.125 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.js - 200 null application/javascript;charset=utf-8 57.4003ms
+2025-06-02 01:17:16.184 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-06-02 01:17:16.177 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 13780 application/javascript; charset=utf-8 79.1626ms
+2025-06-02 01:17:16.184 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-06-02 01:17:16.220 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-06-02 01:17:16.220 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui.css - 200 154949 text/css 185.768ms
+2025-06-02 01:17:16.229 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui-standalone-preset.js - 200 229223 text/javascript 174.0162ms
+2025-06-02 01:17:16.232 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui-bundle.js - 200 1466908 text/javascript 197.6537ms
+2025-06-02 01:17:16.256 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 158.4259ms
+2025-06-02 01:17:16.445 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - null null
+2025-06-02 01:17:16.469 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 24.6842ms
+2025-06-02 01:18:37.151 +03:00 [INF] Request starting HTTP/2 POST https://localhost:5001/api/LectureSchedule - application/json 176
+2025-06-02 01:18:38.848 +03:00 [INF] Executing endpoint 'StudentBackEnd.Controllers.LectureScheduleController.Create (StudentBackEnd)'
+2025-06-02 01:18:38.893 +03:00 [INF] Route matched with {action = "Create", controller = "LectureSchedule"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(BackEnd.Core.DTOs.LectureScheduleDto.CreateScheduleDto) on controller StudentBackEnd.Controllers.LectureScheduleController (StudentBackEnd).
+2025-06-02 01:18:39.478 +03:00 [INF] Executed DbCommand (27ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (DbType = Time), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (DbType = Time)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [LectureSchedules] ([Id], [CourseId], [EndTime], [LectureDate], [Location], [StartTime])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2025-06-02 01:18:39.497 +03:00 [INF] Executing OkObjectResult, writing value of type 'Application.ResponseService`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-06-02 01:18:39.509 +03:00 [INF] Executed action StudentBackEnd.Controllers.LectureScheduleController.Create (StudentBackEnd) in 606.5935ms
+2025-06-02 01:18:39.512 +03:00 [INF] Executed endpoint 'StudentBackEnd.Controllers.LectureScheduleController.Create (StudentBackEnd)'
+2025-06-02 01:18:39.519 +03:00 [INF] Request finished HTTP/2 POST https://localhost:5001/api/LectureSchedule - 200 null application/json; charset=utf-8 2368.8816ms
+2025-06-02 12:50:35.429 +03:00 [INF] User profile is available. Using 'C:\Users\Target\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-02 12:50:37.798 +03:00 [INF] Executed DbCommand (113ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-02 12:50:37.886 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-02 12:50:37.891 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-02 12:50:37.910 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-06-02 12:50:38.358 +03:00 [WRN] The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert
+2025-06-02 12:50:38.478 +03:00 [INF] Now listening on: https://localhost:5001
+2025-06-02 12:50:38.479 +03:00 [INF] Now listening on: http://localhost:5000
+2025-06-02 12:50:38.613 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-02 12:50:38.615 +03:00 [INF] Hosting environment: Development
+2025-06-02 12:50:38.616 +03:00 [INF] Content root path: D:\AppsMypractice\StudentAffaire\StudentBackEnd\StudentBackEnd
+2025-06-02 12:50:39.032 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger - null null
+2025-06-02 12:50:39.217 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger - 301 0 null 201.771ms
+2025-06-02 12:50:39.224 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.html - null null
+2025-06-02 12:50:39.283 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.html - 200 null text/html;charset=utf-8 58.4648ms
+2025-06-02 12:50:39.289 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui.css - null null
+2025-06-02 12:50:39.289 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.css - null null
+2025-06-02 12:50:39.289 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui-standalone-preset.js - null null
+2025-06-02 12:50:39.291 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.js - null null
+2025-06-02 12:50:39.289 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui-bundle.js - null null
+2025-06-02 12:50:39.379 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.js - 200 null application/javascript;charset=utf-8 89.3896ms
+2025-06-02 12:50:39.299 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-02 12:50:39.370 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2025-06-02 12:50:39.392 +03:00 [INF] Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2025-06-02 12:50:39.396 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.css - 200 202 text/css 106.3642ms
+2025-06-02 12:50:39.410 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 13780 application/javascript; charset=utf-8 112.6047ms
+2025-06-02 12:50:39.415 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-06-02 12:50:39.415 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-06-02 12:50:39.421 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui-standalone-preset.js - 200 229223 text/javascript 131.7729ms
+2025-06-02 12:50:39.421 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui.css - 200 154949 text/css 131.9721ms
+2025-06-02 12:50:39.460 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-06-02 12:50:39.462 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui-bundle.js - 200 1466908 text/javascript 172.3397ms
+2025-06-02 12:50:39.589 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 218.4955ms
+2025-06-02 12:50:39.645 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - null null
+2025-06-02 12:50:39.666 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 20.6652ms
+2025-06-02 12:51:30.551 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/LectureSchedule - null null
+2025-06-02 12:51:31.604 +03:00 [INF] Executing endpoint 'StudentBackEnd.Controllers.LectureScheduleController.GetAll (StudentBackEnd)'
+2025-06-02 12:51:31.622 +03:00 [INF] Route matched with {action = "GetAll", controller = "LectureSchedule"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller StudentBackEnd.Controllers.LectureScheduleController (StudentBackEnd).
+2025-06-02 12:51:31.861 +03:00 [INF] Executed DbCommand (38ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[CourseId], [l].[EndTime], [l].[LectureDate], [l].[Location], [l].[StartTime], [c].[Id], [c].[Description], [c].[ProfessorId], [c].[Title]
+FROM [LectureSchedules] AS [l]
+INNER JOIN [Courses] AS [c] ON [l].[CourseId] = [c].[Id]
+2025-06-02 13:01:22.949 +03:00 [INF] User profile is available. Using 'C:\Users\Target\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-02 13:01:24.715 +03:00 [INF] Executed DbCommand (46ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-02 13:01:24.839 +03:00 [INF] Executed DbCommand (11ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-02 13:01:24.844 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-02 13:01:24.863 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-06-02 13:01:25.210 +03:00 [WRN] The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert
+2025-06-02 13:01:25.292 +03:00 [INF] Now listening on: https://localhost:5001
+2025-06-02 13:01:25.293 +03:00 [INF] Now listening on: http://localhost:5000
+2025-06-02 13:01:25.458 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-02 13:01:25.460 +03:00 [INF] Hosting environment: Development
+2025-06-02 13:01:25.461 +03:00 [INF] Content root path: D:\AppsMypractice\StudentAffaire\StudentBackEnd\StudentBackEnd
+2025-06-02 13:01:25.701 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger - null null
+2025-06-02 13:01:25.846 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger - 301 0 null 153.8297ms
+2025-06-02 13:01:25.851 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.html - null null
+2025-06-02 13:01:25.904 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.html - 200 null text/html;charset=utf-8 52.6409ms
+2025-06-02 13:01:25.910 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.css - null null
+2025-06-02 13:01:25.910 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui.css - null null
+2025-06-02 13:01:25.910 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui-bundle.js - null null
+2025-06-02 13:01:25.911 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-02 13:01:25.911 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui-standalone-preset.js - null null
+2025-06-02 13:01:25.911 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.js - null null
+2025-06-02 13:01:25.922 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2025-06-02 13:01:25.974 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.js - 200 null application/javascript;charset=utf-8 63.3802ms
+2025-06-02 13:01:25.977 +03:00 [INF] Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2025-06-02 13:01:25.980 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.css - 200 202 text/css 69.0355ms
+2025-06-02 13:01:25.990 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 13780 application/javascript; charset=utf-8 79.1836ms
+2025-06-02 13:01:25.992 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-06-02 13:01:25.992 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-06-02 13:01:25.999 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui-standalone-preset.js - 200 229223 text/javascript 88.6012ms
+2025-06-02 13:01:25.999 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui.css - 200 154949 text/css 88.7409ms
+2025-06-02 13:01:26.003 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-06-02 13:01:26.010 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui-bundle.js - 200 1466908 text/javascript 99.0228ms
+2025-06-02 13:01:26.026 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 103.8194ms
+2025-06-02 13:01:26.162 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - null null
+2025-06-02 13:01:26.178 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 16.2101ms
+2025-06-02 13:01:36.962 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/LectureSchedule - null null
+2025-06-02 13:01:37.168 +03:00 [INF] Executing endpoint 'StudentBackEnd.Controllers.LectureScheduleController.GetAll (StudentBackEnd)'
+2025-06-02 13:01:37.200 +03:00 [INF] Route matched with {action = "GetAll", controller = "LectureSchedule"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller StudentBackEnd.Controllers.LectureScheduleController (StudentBackEnd).
+2025-06-02 13:01:37.599 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[CourseId], [l].[EndTime], [l].[LectureDate], [l].[Location], [l].[StartTime], [c].[Id], [c].[Description], [c].[ProfessorId], [c].[Title]
+FROM [LectureSchedules] AS [l]
+INNER JOIN [Courses] AS [c] ON [l].[CourseId] = [c].[Id]
+2025-06-02 13:01:37.744 +03:00 [INF] Executing OkObjectResult, writing value of type 'Application.ResponseService`1[[System.Collections.Generic.List`1[[BackEnd.Core.DTOs.LectureScheduleDto.GetSchedule, BackEnd.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-06-02 13:01:37.782 +03:00 [INF] Executed action StudentBackEnd.Controllers.LectureScheduleController.GetAll (StudentBackEnd) in 573.2591ms
+2025-06-02 13:01:37.786 +03:00 [INF] Executed endpoint 'StudentBackEnd.Controllers.LectureScheduleController.GetAll (StudentBackEnd)'
+2025-06-02 13:01:37.796 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/LectureSchedule - 200 null application/json; charset=utf-8 834.3157ms
+2025-06-02 13:03:39.408 +03:00 [INF] Request starting HTTP/2 PUT https://localhost:5001/api/LectureSchedule - application/json 227
+2025-06-02 13:03:39.416 +03:00 [INF] Executing endpoint 'StudentBackEnd.Controllers.LectureScheduleController.Update (StudentBackEnd)'
+2025-06-02 13:03:39.431 +03:00 [INF] Route matched with {action = "Update", controller = "LectureSchedule"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(BackEnd.Core.DTOs.LectureScheduleDto.UpdateScheduleDto) on controller StudentBackEnd.Controllers.LectureScheduleController (StudentBackEnd).
+2025-06-02 13:03:39.576 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[CourseId], [l].[EndTime], [l].[LectureDate], [l].[Location], [l].[StartTime]
+FROM [LectureSchedules] AS [l]
+WHERE [l].[Id] = @__p_0
+2025-06-02 13:04:08.148 +03:00 [INF] Executed action StudentBackEnd.Controllers.LectureScheduleController.Update (StudentBackEnd) in 28710.8463ms
+2025-06-02 13:04:08.153 +03:00 [INF] Executed endpoint 'StudentBackEnd.Controllers.LectureScheduleController.Update (StudentBackEnd)'
+2025-06-02 13:04:08.159 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+UpdateScheduleDto -> LectureSchedule
+BackEnd.Core.DTOs.LectureScheduleDto.UpdateScheduleDto -> BackEnd.Core.Domain.LectureSchedule
+   at lambda_method308(Closure, UpdateScheduleDto, LectureSchedule, ResolutionContext)
+   at Application.Services.ScheduleService.UpdateAsync(UpdateScheduleDto dto) in D:\AppsMypractice\StudentAffaire\StudentBackEnd\Application\Services\ScheduleService.cs:line 72
+   at StudentBackEnd.Controllers.LectureScheduleController.Update(UpdateScheduleDto dto) in D:\AppsMypractice\StudentAffaire\StudentBackEnd\StudentBackEnd\Controllers\LectureScheduleController.cs:line 50
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-06-02 13:04:08.231 +03:00 [INF] Request finished HTTP/2 PUT https://localhost:5001/api/LectureSchedule - 500 null text/plain; charset=utf-8 28827.3557ms
+2025-06-02 13:05:14.841 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.html - null null
+2025-06-02 13:05:14.851 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.html - 200 null text/html;charset=utf-8 10.9203ms
+2025-06-02 13:05:14.867 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2025-06-02 13:05:14.868 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-02 13:05:14.936 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 13780 application/javascript; charset=utf-8 68.3599ms
+2025-06-02 13:05:14.948 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 80.446ms
+2025-06-02 13:05:15.119 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - null null
+2025-06-02 13:05:15.135 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/favicon-32x32.png - null null
+2025-06-02 13:05:15.140 +03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2025-06-02 13:05:15.144 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/favicon-32x32.png - 200 628 image/png 9.5021ms
+2025-06-02 13:05:15.156 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 37.1716ms
+2025-06-02 13:06:52.322 +03:00 [INF] Request starting HTTP/2 PUT https://localhost:5001/api/LectureSchedule - application/json 228
+2025-06-02 13:06:52.336 +03:00 [INF] Executing endpoint 'StudentBackEnd.Controllers.LectureScheduleController.Update (StudentBackEnd)'
+2025-06-02 13:06:52.343 +03:00 [INF] Route matched with {action = "Update", controller = "LectureSchedule"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(BackEnd.Core.DTOs.LectureScheduleDto.UpdateScheduleDto) on controller StudentBackEnd.Controllers.LectureScheduleController (StudentBackEnd).
+2025-06-02 13:06:52.371 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[CourseId], [l].[EndTime], [l].[LectureDate], [l].[Location], [l].[StartTime]
+FROM [LectureSchedules] AS [l]
+WHERE [l].[Id] = @__p_0
+2025-06-02 13:08:05.712 +03:00 [INF] User profile is available. Using 'C:\Users\Target\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-02 13:08:07.514 +03:00 [INF] Executed DbCommand (79ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-02 13:08:07.592 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-02 13:08:07.595 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-02 13:08:07.609 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-06-02 13:08:07.861 +03:00 [WRN] The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert
+2025-06-02 13:08:07.971 +03:00 [INF] Now listening on: https://localhost:5001
+2025-06-02 13:08:07.972 +03:00 [INF] Now listening on: http://localhost:5000
+2025-06-02 13:08:08.048 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-02 13:08:08.050 +03:00 [INF] Hosting environment: Development
+2025-06-02 13:08:08.051 +03:00 [INF] Content root path: D:\AppsMypractice\StudentAffaire\StudentBackEnd\StudentBackEnd
+2025-06-02 13:08:08.380 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger - null null
+2025-06-02 13:08:08.507 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger - 301 0 null 138.1082ms
+2025-06-02 13:08:08.514 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.html - null null
+2025-06-02 13:08:08.565 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.html - 200 null text/html;charset=utf-8 51.3461ms
+2025-06-02 13:08:08.572 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui.css - null null
+2025-06-02 13:08:08.572 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.css - null null
+2025-06-02 13:08:08.572 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui-standalone-preset.js - null null
+2025-06-02 13:08:08.606 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.js - null null
+2025-06-02 13:08:08.572 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui-bundle.js - null null
+2025-06-02 13:08:08.659 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.js - 200 null application/javascript;charset=utf-8 52.6336ms
+2025-06-02 13:08:08.607 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-02 13:08:08.614 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2025-06-02 13:08:08.669 +03:00 [INF] Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2025-06-02 13:08:08.674 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.css - 200 202 text/css 101.6217ms
+2025-06-02 13:08:08.685 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 13780 application/javascript; charset=utf-8 78.9159ms
+2025-06-02 13:08:08.693 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-06-02 13:08:08.693 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-06-02 13:08:08.701 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui.css - 200 154949 text/css 128.6929ms
+2025-06-02 13:08:08.701 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui-standalone-preset.js - 200 229223 text/javascript 128.3927ms
+2025-06-02 13:08:08.704 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-06-02 13:08:08.710 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui-bundle.js - 200 1466908 text/javascript 137.69ms
+2025-06-02 13:08:08.721 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 109.4599ms
+2025-06-02 13:08:08.851 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - null null
+2025-06-02 13:08:08.870 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 19.5344ms
+2025-06-02 13:09:44.630 +03:00 [INF] Request starting HTTP/2 PUT https://localhost:5001/api/LectureSchedule - application/json 227
+2025-06-02 13:09:46.244 +03:00 [INF] Executing endpoint 'StudentBackEnd.Controllers.LectureScheduleController.Update (StudentBackEnd)'
+2025-06-02 13:09:46.293 +03:00 [INF] Route matched with {action = "Update", controller = "LectureSchedule"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(BackEnd.Core.DTOs.LectureScheduleDto.UpdateScheduleDto) on controller StudentBackEnd.Controllers.LectureScheduleController (StudentBackEnd).
+2025-06-02 13:09:46.716 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[CourseId], [l].[EndTime], [l].[LectureDate], [l].[Location], [l].[StartTime]
+FROM [LectureSchedules] AS [l]
+WHERE [l].[Id] = @__p_0
+2025-06-02 13:09:46.941 +03:00 [INF] Executed DbCommand (49ms) [Parameters=[@p5='?' (DbType = Guid), @p0='?' (DbType = Guid), @p1='?' (DbType = Time), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (DbType = Time)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [LectureSchedules] SET [CourseId] = @p0, [EndTime] = @p1, [LectureDate] = @p2, [Location] = @p3, [StartTime] = @p4
+OUTPUT 1
+WHERE [Id] = @p5;
+2025-06-02 13:09:46.963 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2025-06-02 13:09:46.973 +03:00 [INF] Executed action StudentBackEnd.Controllers.LectureScheduleController.Update (StudentBackEnd) in 671.3389ms
+2025-06-02 13:09:46.977 +03:00 [INF] Executed endpoint 'StudentBackEnd.Controllers.LectureScheduleController.Update (StudentBackEnd)'
+2025-06-02 13:09:46.984 +03:00 [INF] Request finished HTTP/2 PUT https://localhost:5001/api/LectureSchedule - 200 null text/plain; charset=utf-8 2389.768ms
+2025-06-02 13:10:20.972 +03:00 [INF] Request starting HTTP/2 DELETE https://localhost:5001/api/LectureSchedule/14489957-105b-41e3-a039-f483d377c73b - null null
+2025-06-02 13:10:21.014 +03:00 [INF] Executing endpoint 'StudentBackEnd.Controllers.LectureScheduleController.Delete (StudentBackEnd)'
+2025-06-02 13:10:21.029 +03:00 [INF] Route matched with {action = "Delete", controller = "LectureSchedule"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(System.Guid) on controller StudentBackEnd.Controllers.LectureScheduleController (StudentBackEnd).
+2025-06-02 13:10:21.062 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[CourseId], [l].[EndTime], [l].[LectureDate], [l].[Location], [l].[StartTime]
+FROM [LectureSchedules] AS [l]
+WHERE [l].[Id] = @__p_0
+2025-06-02 13:10:21.110 +03:00 [INF] Executed DbCommand (31ms) [Parameters=[@p0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [LectureSchedules]
+OUTPUT 1
+WHERE [Id] = @p0;
+2025-06-02 13:10:21.119 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2025-06-02 13:10:21.121 +03:00 [INF] Executed action StudentBackEnd.Controllers.LectureScheduleController.Delete (StudentBackEnd) in 87.5314ms
+2025-06-02 13:10:21.123 +03:00 [INF] Executed endpoint 'StudentBackEnd.Controllers.LectureScheduleController.Delete (StudentBackEnd)'
+2025-06-02 13:10:21.125 +03:00 [INF] Request finished HTTP/2 DELETE https://localhost:5001/api/LectureSchedule/14489957-105b-41e3-a039-f483d377c73b - 200 null text/plain; charset=utf-8 153.46ms
+2025-06-02 22:37:32.549 +03:00 [INF] User profile is available. Using 'C:\Users\Target\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-02 22:44:57.553 +03:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-06-02 22:44:57.609 +03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-06-02 22:44:57.640 +03:00 [INF] Executed DbCommand (25ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-06-02 22:44:57.722 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-06-02 22:44:57.735 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-06-02 22:44:57.736 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-06-02 22:44:57.742 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-06-02 22:44:57.755 +03:00 [INF] Applying migration '20250602194438_fixprobid'.
+2025-06-02 22:44:57.820 +03:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [LectureSchedules] ADD [DayOfWeek] nvarchar(max) NOT NULL DEFAULT N'';
+2025-06-02 22:44:57.829 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Lectures] (
+    [Id] uniqueidentifier NOT NULL,
+    [StartTime] datetime2 NOT NULL,
+    [EndTime] datetime2 NOT NULL,
+    [QrCodeImgPath] nvarchar(max) NULL,
+    [ScheduleLectureId] uniqueidentifier NOT NULL,
+    CONSTRAINT [PK_Lectures] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Lectures_LectureSchedules_ScheduleLectureId] FOREIGN KEY ([ScheduleLectureId]) REFERENCES [LectureSchedules] ([Id]) ON DELETE CASCADE
+);
+2025-06-02 22:44:57.831 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Lectures_ScheduleLectureId] ON [Lectures] ([ScheduleLectureId]);
+2025-06-02 22:44:57.834 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20250602194438_fixprobid', N'9.0.5');
+2025-06-02 22:44:57.839 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-06-02 22:45:13.975 +03:00 [INF] User profile is available. Using 'C:\Users\Target\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-02 22:45:15.824 +03:00 [INF] Executed DbCommand (104ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-02 22:45:15.926 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-02 22:45:15.931 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-02 22:45:15.954 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-06-02 22:45:16.456 +03:00 [WRN] The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert
+2025-06-02 22:45:16.539 +03:00 [INF] Now listening on: https://localhost:5001
+2025-06-02 22:45:16.541 +03:00 [INF] Now listening on: http://localhost:5000
+2025-06-02 22:45:16.668 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-02 22:45:16.670 +03:00 [INF] Hosting environment: Development
+2025-06-02 22:45:16.672 +03:00 [INF] Content root path: D:\AppsMypractice\StudentAffaire\StudentBackEnd\StudentBackEnd
+2025-06-02 22:45:17.336 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger - null null
+2025-06-02 22:45:17.571 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger - 301 0 null 250.4031ms
+2025-06-02 22:45:17.577 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.html - null null
+2025-06-02 22:45:17.654 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.html - 200 null text/html;charset=utf-8 76.761ms
+2025-06-02 22:45:17.660 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.css - null null
+2025-06-02 22:45:17.660 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui.css - null null
+2025-06-02 22:45:17.660 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui-bundle.js - null null
+2025-06-02 22:45:17.684 +03:00 [INF] Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2025-06-02 22:45:17.686 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.css - 200 202 text/css 25.6869ms
+2025-06-02 22:45:17.704 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui-standalone-preset.js - null null
+2025-06-02 22:45:17.710 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-06-02 22:45:17.713 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-06-02 22:45:17.716 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui-standalone-preset.js - 200 229223 text/javascript 12.6981ms
+2025-06-02 22:45:17.716 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui.css - 200 154949 text/css 56.4773ms
+2025-06-02 22:45:17.721 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.js - null null
+2025-06-02 22:45:17.723 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-06-02 22:45:17.731 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-02 22:45:17.732 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.js - 200 null application/javascript;charset=utf-8 10.8855ms
+2025-06-02 22:45:17.732 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui-bundle.js - 200 1466908 text/javascript 72.3479ms
+2025-06-02 22:45:17.735 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2025-06-02 22:45:17.773 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 13780 application/javascript; charset=utf-8 42.509ms
+2025-06-02 22:45:17.842 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 107.0178ms
+2025-06-02 22:45:17.963 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - null null
+2025-06-02 22:45:17.987 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 24.3377ms
+2025-06-02 22:47:46.167 +03:00 [INF] Request starting HTTP/2 POST https://localhost:5001/api/Lecture - application/json 202
+2025-06-02 22:47:47.918 +03:00 [INF] Executing endpoint 'StudentBackEnd.Controllers.LectureController.CreateLecture (StudentBackEnd)'
+2025-06-02 22:47:47.982 +03:00 [INF] Route matched with {action = "CreateLecture", controller = "Lecture"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateLecture(BackEnd.Core.DTOs.Lecture.CreateLecture) on controller StudentBackEnd.Controllers.LectureController (StudentBackEnd).
+2025-06-02 22:47:47.996 +03:00 [INF] Executed action StudentBackEnd.Controllers.LectureController.CreateLecture (StudentBackEnd) in 5.6132ms
+2025-06-02 22:47:48.002 +03:00 [INF] Executed endpoint 'StudentBackEnd.Controllers.LectureController.CreateLecture (StudentBackEnd)'
+2025-06-02 22:47:48.006 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'Application.contract.ILectureService' while attempting to activate 'StudentBackEnd.Controllers.LectureController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method191(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-06-02 22:47:48.033 +03:00 [INF] Request finished HTTP/2 POST https://localhost:5001/api/Lecture - 500 null text/plain; charset=utf-8 1866.9012ms
+2025-06-02 22:49:55.138 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.html - null null
+2025-06-02 22:49:55.150 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.html - 200 null text/html;charset=utf-8 11.4682ms
+2025-06-02 22:49:55.180 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-02 22:49:55.180 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2025-06-02 22:49:55.184 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 13780 application/javascript; charset=utf-8 4.4297ms
+2025-06-02 22:49:55.207 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 27.1968ms
+2025-06-02 22:49:55.448 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - null null
+2025-06-02 22:49:55.455 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/favicon-32x32.png - null null
+2025-06-02 22:49:55.458 +03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2025-06-02 22:49:55.460 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/favicon-32x32.png - 200 628 image/png 4.7738ms
+2025-06-02 22:49:55.466 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 18.4909ms
+2025-06-02 22:50:31.368 +03:00 [INF] User profile is available. Using 'C:\Users\Target\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-02 22:50:33.381 +03:00 [INF] Executed DbCommand (78ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-02 22:50:33.451 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-02 22:50:33.454 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-02 22:50:33.468 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-06-02 22:50:33.745 +03:00 [WRN] The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert
+2025-06-02 22:50:33.796 +03:00 [INF] Now listening on: https://localhost:5001
+2025-06-02 22:50:33.797 +03:00 [INF] Now listening on: http://localhost:5000
+2025-06-02 22:50:33.893 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-02 22:50:33.895 +03:00 [INF] Hosting environment: Development
+2025-06-02 22:50:33.896 +03:00 [INF] Content root path: D:\AppsMypractice\StudentAffaire\StudentBackEnd\StudentBackEnd
+2025-06-02 22:50:34.218 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger - null null
+2025-06-02 22:50:34.311 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger - 301 0 null 101.0156ms
+2025-06-02 22:50:34.318 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.html - null null
+2025-06-02 22:50:34.372 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.html - 200 null text/html;charset=utf-8 54.1467ms
+2025-06-02 22:50:34.378 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui.css - null null
+2025-06-02 22:50:34.378 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui-bundle.js - null null
+2025-06-02 22:50:34.378 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.js - null null
+2025-06-02 22:50:34.378 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.css - null null
+2025-06-02 22:50:34.488 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.js - 200 null application/javascript;charset=utf-8 110.1ms
+2025-06-02 22:50:34.379 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui-standalone-preset.js - null null
+2025-06-02 22:50:34.415 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-02 22:50:34.481 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2025-06-02 22:50:34.503 +03:00 [INF] Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2025-06-02 22:50:34.504 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.css - 200 202 text/css 126.0724ms
+2025-06-02 22:50:34.518 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 13780 application/javascript; charset=utf-8 133.352ms
+2025-06-02 22:50:34.525 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-06-02 22:50:34.525 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-06-02 22:50:34.532 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui.css - 200 154949 text/css 154.1621ms
+2025-06-02 22:50:34.533 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui-standalone-preset.js - 200 229223 text/javascript 154.309ms
+2025-06-02 22:50:34.541 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-06-02 22:50:34.543 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui-bundle.js - 200 1466908 text/javascript 165.4229ms
+2025-06-02 22:50:34.555 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 100.9247ms
+2025-06-02 22:50:34.700 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - null null
+2025-06-02 22:50:34.723 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 22.3999ms
+2025-06-02 22:51:35.916 +03:00 [INF] Request starting HTTP/2 POST https://localhost:5001/api/Lecture - application/json 203
+2025-06-02 22:51:37.698 +03:00 [INF] Executing endpoint 'StudentBackEnd.Controllers.LectureController.CreateLecture (StudentBackEnd)'
+2025-06-02 22:51:37.745 +03:00 [INF] Route matched with {action = "CreateLecture", controller = "Lecture"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateLecture(BackEnd.Core.DTOs.Lecture.CreateLecture) on controller StudentBackEnd.Controllers.LectureController (StudentBackEnd).
+2025-06-02 22:51:38.742 +03:00 [ERR] Failed executing DbCommand (44ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (DbType = Guid), @p4='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Lectures] ([Id], [EndTime], [QrCodeImgPath], [ScheduleLectureId], [StartTime])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2025-06-02 22:51:38.767 +03:00 [ERR] An exception occurred in the database while saving changes for context type 'BackEnd.EF.StudentDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Lectures_LectureSchedules_ScheduleLectureId". The conflict occurred in database "StudentDB", table "dbo.LectureSchedules", column 'Id'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:6406968f-6faf-42d6-b802-b91c79387bbf
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(StateManager stateManager, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.<>c.<SaveChanges>b__112_0(DbContext _, ValueTuple`2 t)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Lectures_LectureSchedules_ScheduleLectureId". The conflict occurred in database "StudentDB", table "dbo.LectureSchedules", column 'Id'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:6406968f-6faf-42d6-b802-b91c79387bbf
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(StateManager stateManager, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.<>c.<SaveChanges>b__112_0(DbContext _, ValueTuple`2 t)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+2025-06-02 22:53:38.257 +03:00 [INF] Executed action StudentBackEnd.Controllers.LectureController.CreateLecture (StudentBackEnd) in 120535.3034ms
+2025-06-02 22:53:38.261 +03:00 [INF] Executed endpoint 'StudentBackEnd.Controllers.LectureController.CreateLecture (StudentBackEnd)'
+2025-06-02 22:53:38.264 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Lectures_LectureSchedules_ScheduleLectureId". The conflict occurred in database "StudentDB", table "dbo.LectureSchedules", column 'Id'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:6406968f-6faf-42d6-b802-b91c79387bbf
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(StateManager stateManager, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.<>c.<SaveChanges>b__112_0(DbContext _, ValueTuple`2 t)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges()
+   at BackEnd.EF.Repositories.UniteOfWork.save() in D:\AppsMypractice\StudentAffaire\StudentBackEnd\BackEnd.EF\Repositories\UniteOfWork.cs:line 41
+   at Application.Services.LectureService.CreateLectureAsync(CreateLecture dto) in D:\AppsMypractice\StudentAffaire\StudentBackEnd\Application\Services\LectureService.cs:line 36
+   at StudentBackEnd.Controllers.LectureController.CreateLecture(CreateLecture dto) in D:\AppsMypractice\StudentAffaire\StudentBackEnd\StudentBackEnd\Controllers\LectureController.cs:line 27
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-06-02 22:53:38.364 +03:00 [INF] Request finished HTTP/2 POST https://localhost:5001/api/Lecture - 500 null text/plain; charset=utf-8 122481.9968ms
+2025-06-02 22:55:25.807 +03:00 [INF] Request starting HTTP/2 POST https://localhost:5001/api/LectureSchedule - application/json 188
+2025-06-02 22:55:25.874 +03:00 [INF] Executing endpoint 'StudentBackEnd.Controllers.LectureScheduleController.Create (StudentBackEnd)'
+2025-06-02 22:55:25.883 +03:00 [INF] Route matched with {action = "Create", controller = "LectureSchedule"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(BackEnd.Core.DTOs.LectureScheduleDto.CreateScheduleDto) on controller StudentBackEnd.Controllers.LectureScheduleController (StudentBackEnd).
+2025-06-02 22:55:34.514 +03:00 [INF] Executed action StudentBackEnd.Controllers.LectureScheduleController.Create (StudentBackEnd) in 8630.0982ms
+2025-06-02 22:55:34.518 +03:00 [INF] Executed endpoint 'StudentBackEnd.Controllers.LectureScheduleController.Create (StudentBackEnd)'
+2025-06-02 22:55:34.521 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+CreateScheduleDto -> LectureSchedule
+BackEnd.Core.DTOs.LectureScheduleDto.CreateScheduleDto -> BackEnd.Core.Domain.LectureSchedule
+   at lambda_method260(Closure, Object, LectureSchedule, ResolutionContext)
+   at Application.Services.ScheduleService.CreateAsync(CreateScheduleDto dto) in D:\AppsMypractice\StudentAffaire\StudentBackEnd\Application\Services\ScheduleService.cs:line 31
+   at StudentBackEnd.Controllers.LectureScheduleController.Create(CreateScheduleDto dto) in D:\AppsMypractice\StudentAffaire\StudentBackEnd\StudentBackEnd\Controllers\LectureScheduleController.cs:line 41
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-06-02 22:55:34.546 +03:00 [INF] Request finished HTTP/2 POST https://localhost:5001/api/LectureSchedule - 500 null text/plain; charset=utf-8 8740.5732ms
+2025-06-02 22:58:23.917 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.html - null null
+2025-06-02 22:58:23.928 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.html - 200 null text/html;charset=utf-8 11.0305ms
+2025-06-02 22:58:23.942 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui.css - null null
+2025-06-02 22:58:23.942 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.css - null null
+2025-06-02 22:58:23.942 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-02 22:58:24.009 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-06-02 22:58:24.010 +03:00 [INF] Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2025-06-02 22:58:24.013 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 13780 application/javascript; charset=utf-8 70.6778ms
+2025-06-02 22:58:24.016 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2025-06-02 22:58:24.016 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.css - 200 202 text/css 73.6679ms
+2025-06-02 22:58:24.014 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui.css - 200 154949 text/css 72.0227ms
+2025-06-02 22:58:24.041 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 24.9461ms
+2025-06-02 22:58:24.273 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - null null
+2025-06-02 22:58:24.282 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/favicon-32x32.png - null null
+2025-06-02 22:58:24.285 +03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2025-06-02 22:58:24.287 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/favicon-32x32.png - 200 628 image/png 4.6891ms
+2025-06-02 22:58:24.293 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 19.6061ms
+2025-06-02 22:58:53.089 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/LectureSchedule - null null
+2025-06-02 22:58:53.104 +03:00 [INF] Executing endpoint 'StudentBackEnd.Controllers.LectureScheduleController.GetAll (StudentBackEnd)'
+2025-06-02 22:58:53.112 +03:00 [INF] Route matched with {action = "GetAll", controller = "LectureSchedule"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller StudentBackEnd.Controllers.LectureScheduleController (StudentBackEnd).
+2025-06-02 22:58:53.309 +03:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[CourseId], [l].[DayOfWeek], [l].[EndTime], [l].[LectureDate], [l].[Location], [l].[StartTime], [c].[Id], [c].[Description], [c].[ProfessorId], [c].[Title]
+FROM [LectureSchedules] AS [l]
+INNER JOIN [Courses] AS [c] ON [l].[CourseId] = [c].[Id]
+2025-06-02 22:58:53.349 +03:00 [INF] Executing OkObjectResult, writing value of type 'Application.ResponseService`1[[System.Collections.Generic.List`1[[BackEnd.Core.DTOs.LectureScheduleDto.GetSchedule, BackEnd.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-06-02 22:58:53.365 +03:00 [INF] Executed action StudentBackEnd.Controllers.LectureScheduleController.GetAll (StudentBackEnd) in 249.4812ms
+2025-06-02 22:58:53.370 +03:00 [INF] Executed endpoint 'StudentBackEnd.Controllers.LectureScheduleController.GetAll (StudentBackEnd)'
+2025-06-02 22:58:53.373 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/LectureSchedule - 200 null application/json; charset=utf-8 284.7601ms
+2025-06-02 22:59:56.574 +03:00 [INF] Request starting HTTP/2 POST https://localhost:5001/api/LectureSchedule - application/json 201
+2025-06-02 22:59:56.589 +03:00 [INF] Executing endpoint 'StudentBackEnd.Controllers.LectureScheduleController.Create (StudentBackEnd)'
+2025-06-02 22:59:56.602 +03:00 [INF] Route matched with {action = "Create", controller = "LectureSchedule"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(BackEnd.Core.DTOs.LectureScheduleDto.CreateScheduleDto) on controller StudentBackEnd.Controllers.LectureScheduleController (StudentBackEnd).
+2025-06-02 23:00:38.141 +03:00 [INF] Executed action StudentBackEnd.Controllers.LectureScheduleController.Create (StudentBackEnd) in 41542.551ms
+2025-06-02 23:00:38.149 +03:00 [INF] Executed endpoint 'StudentBackEnd.Controllers.LectureScheduleController.Create (StudentBackEnd)'
+2025-06-02 23:00:38.154 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+CreateScheduleDto -> LectureSchedule
+BackEnd.Core.DTOs.LectureScheduleDto.CreateScheduleDto -> BackEnd.Core.Domain.LectureSchedule
+   at lambda_method260(Closure, Object, LectureSchedule, ResolutionContext)
+   at Application.Services.ScheduleService.CreateAsync(CreateScheduleDto dto) in D:\AppsMypractice\StudentAffaire\StudentBackEnd\Application\Services\ScheduleService.cs:line 31
+   at StudentBackEnd.Controllers.LectureScheduleController.Create(CreateScheduleDto dto) in D:\AppsMypractice\StudentAffaire\StudentBackEnd\StudentBackEnd\Controllers\LectureScheduleController.cs:line 41
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-06-02 23:00:38.176 +03:00 [INF] Request finished HTTP/2 POST https://localhost:5001/api/LectureSchedule - 500 null text/plain; charset=utf-8 41610.8712ms
+2025-06-02 23:01:24.068 +03:00 [INF] User profile is available. Using 'C:\Users\Target\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-02 23:01:26.108 +03:00 [INF] Executed DbCommand (78ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-02 23:01:26.175 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-02 23:01:26.178 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-02 23:01:26.193 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-06-02 23:01:26.466 +03:00 [WRN] The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert
+2025-06-02 23:01:26.538 +03:00 [INF] Now listening on: https://localhost:5001
+2025-06-02 23:01:26.539 +03:00 [INF] Now listening on: http://localhost:5000
+2025-06-02 23:01:26.631 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-02 23:01:26.634 +03:00 [INF] Hosting environment: Development
+2025-06-02 23:01:26.635 +03:00 [INF] Content root path: D:\AppsMypractice\StudentAffaire\StudentBackEnd\StudentBackEnd
+2025-06-02 23:01:27.053 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger - null null
+2025-06-02 23:01:27.202 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger - 301 0 null 157.653ms
+2025-06-02 23:01:27.208 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.html - null null
+2025-06-02 23:01:27.263 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.html - 200 null text/html;charset=utf-8 55.2205ms
+2025-06-02 23:01:27.271 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.css - null null
+2025-06-02 23:01:27.271 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui.css - null null
+2025-06-02 23:01:27.272 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui-bundle.js - null null
+2025-06-02 23:01:27.271 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui-standalone-preset.js - null null
+2025-06-02 23:01:27.277 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.js - null null
+2025-06-02 23:01:27.282 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-02 23:01:27.325 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.js - 200 null application/javascript;charset=utf-8 48.1604ms
+2025-06-02 23:01:27.315 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2025-06-02 23:01:27.374 +03:00 [INF] Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2025-06-02 23:01:27.375 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.css - 200 202 text/css 104.0797ms
+2025-06-02 23:01:27.389 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 13780 application/javascript; charset=utf-8 106.4632ms
+2025-06-02 23:01:27.393 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-06-02 23:01:27.393 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-06-02 23:01:27.396 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui-standalone-preset.js - 200 229223 text/javascript 124.5797ms
+2025-06-02 23:01:27.396 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui.css - 200 154949 text/css 124.8075ms
+2025-06-02 23:01:27.405 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-06-02 23:01:27.407 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui-bundle.js - 200 1466908 text/javascript 135.4116ms
+2025-06-02 23:01:27.423 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 108.4207ms
+2025-06-02 23:01:27.585 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - null null
+2025-06-02 23:01:27.605 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 20.5411ms
+2025-06-02 23:02:31.422 +03:00 [INF] Request starting HTTP/2 POST https://localhost:5001/api/LectureSchedule - application/json 201
+2025-06-02 23:02:33.003 +03:00 [INF] Executing endpoint 'StudentBackEnd.Controllers.LectureScheduleController.Create (StudentBackEnd)'
+2025-06-02 23:02:33.051 +03:00 [INF] Route matched with {action = "Create", controller = "LectureSchedule"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(BackEnd.Core.DTOs.LectureScheduleDto.CreateScheduleDto) on controller StudentBackEnd.Controllers.LectureScheduleController (StudentBackEnd).
+2025-06-02 23:02:33.539 +03:00 [INF] Executed DbCommand (38ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (Size = 4000), @p3='?' (DbType = Time), @p4='?' (DbType = DateTime2), @p5='?' (Size = 4000), @p6='?' (DbType = Time)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [LectureSchedules] ([Id], [CourseId], [DayOfWeek], [EndTime], [LectureDate], [Location], [StartTime])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+2025-06-02 23:02:33.557 +03:00 [INF] Executing OkObjectResult, writing value of type 'Application.ResponseService`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-06-02 23:02:33.567 +03:00 [INF] Executed action StudentBackEnd.Controllers.LectureScheduleController.Create (StudentBackEnd) in 508.3877ms
+2025-06-02 23:02:33.570 +03:00 [INF] Executed endpoint 'StudentBackEnd.Controllers.LectureScheduleController.Create (StudentBackEnd)'
+2025-06-02 23:02:33.578 +03:00 [INF] Request finished HTTP/2 POST https://localhost:5001/api/LectureSchedule - 200 null application/json; charset=utf-8 2156.2068ms
+2025-06-02 23:03:47.865 +03:00 [INF] Request starting HTTP/2 POST https://localhost:5001/api/Lecture - application/json 203
+2025-06-02 23:03:47.876 +03:00 [INF] Executing endpoint 'StudentBackEnd.Controllers.LectureController.CreateLecture (StudentBackEnd)'
+2025-06-02 23:03:47.883 +03:00 [INF] Route matched with {action = "CreateLecture", controller = "Lecture"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateLecture(BackEnd.Core.DTOs.Lecture.CreateLecture) on controller StudentBackEnd.Controllers.LectureController (StudentBackEnd).
+2025-06-02 23:03:48.337 +03:00 [INF] Executed DbCommand (17ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (DbType = Guid), @p4='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Lectures] ([Id], [EndTime], [QrCodeImgPath], [ScheduleLectureId], [StartTime])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2025-06-02 23:03:48.504 +03:00 [INF] Executed DbCommand (36ms) [Parameters=[@p4='?' (DbType = Guid), @p0='?' (DbType = DateTime2), @p1='?' (Size = 4000), @p2='?' (DbType = Guid), @p3='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Lectures] SET [EndTime] = @p0, [QrCodeImgPath] = @p1, [ScheduleLectureId] = @p2, [StartTime] = @p3
+OUTPUT 1
+WHERE [Id] = @p4;
+2025-06-02 23:03:48.511 +03:00 [INF] Executing OkObjectResult, writing value of type 'BackEnd.Core.Domain.Lecture'.
+2025-06-02 23:03:48.533 +03:00 [INF] Executed action StudentBackEnd.Controllers.LectureController.CreateLecture (StudentBackEnd) in 646.9836ms
+2025-06-02 23:03:48.535 +03:00 [INF] Executed endpoint 'StudentBackEnd.Controllers.LectureController.CreateLecture (StudentBackEnd)'
+2025-06-02 23:03:48.536 +03:00 [INF] Request finished HTTP/2 POST https://localhost:5001/api/Lecture - 200 null application/json; charset=utf-8 671.9894ms

@@ -1,0 +1,17 @@
+D:\AppsMypractice\StudentAffaire\StudentBackEnd\BackEnd.EF\bin\Debug\net9.0\BackEnd.EF.deps.json
+D:\AppsMypractice\StudentAffaire\StudentBackEnd\BackEnd.EF\bin\Debug\net9.0\BackEnd.EF.runtimeconfig.json
+D:\AppsMypractice\StudentAffaire\StudentBackEnd\BackEnd.EF\bin\Debug\net9.0\BackEnd.EF.dll
+D:\AppsMypractice\StudentAffaire\StudentBackEnd\BackEnd.EF\bin\Debug\net9.0\BackEnd.EF.pdb
+D:\AppsMypractice\StudentAffaire\StudentBackEnd\BackEnd.EF\bin\Debug\net9.0\BackEnd.Core.dll
+D:\AppsMypractice\StudentAffaire\StudentBackEnd\BackEnd.EF\bin\Debug\net9.0\BackEnd.Core.pdb
+D:\AppsMypractice\StudentAffaire\StudentBackEnd\BackEnd.EF\obj\Debug\net9.0\BackEnd.EF.csproj.AssemblyReference.cache
+D:\AppsMypractice\StudentAffaire\StudentBackEnd\BackEnd.EF\obj\Debug\net9.0\BackEnd.EF.GeneratedMSBuildEditorConfig.editorconfig
+D:\AppsMypractice\StudentAffaire\StudentBackEnd\BackEnd.EF\obj\Debug\net9.0\BackEnd.EF.AssemblyInfoInputs.cache
+D:\AppsMypractice\StudentAffaire\StudentBackEnd\BackEnd.EF\obj\Debug\net9.0\BackEnd.EF.AssemblyInfo.cs
+D:\AppsMypractice\StudentAffaire\StudentBackEnd\BackEnd.EF\obj\Debug\net9.0\BackEnd.EF.csproj.CoreCompileInputs.cache
+D:\AppsMypractice\StudentAffaire\StudentBackEnd\BackEnd.EF\obj\Debug\net9.0\BackEnd.EF.csproj.Up2Date
+D:\AppsMypractice\StudentAffaire\StudentBackEnd\BackEnd.EF\obj\Debug\net9.0\BackEnd.EF.dll
+D:\AppsMypractice\StudentAffaire\StudentBackEnd\BackEnd.EF\obj\Debug\net9.0\refint\BackEnd.EF.dll
+D:\AppsMypractice\StudentAffaire\StudentBackEnd\BackEnd.EF\obj\Debug\net9.0\BackEnd.EF.pdb
+D:\AppsMypractice\StudentAffaire\StudentBackEnd\BackEnd.EF\obj\Debug\net9.0\BackEnd.EF.genruntimeconfig.cache
+D:\AppsMypractice\StudentAffaire\StudentBackEnd\BackEnd.EF\obj\Debug\net9.0\ref\BackEnd.EF.dll

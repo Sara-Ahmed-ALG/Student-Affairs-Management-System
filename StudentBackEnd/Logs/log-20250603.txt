@@ -1,0 +1,880 @@
+2025-06-03 14:43:06.367 +03:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-06-03 14:43:06.426 +03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-06-03 14:43:06.446 +03:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-06-03 14:43:06.525 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-06-03 14:43:06.534 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-06-03 14:43:06.535 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-06-03 14:43:06.540 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-06-03 14:43:06.556 +03:00 [INF] Applying migration '20250603114247_attandacechange'.
+2025-06-03 14:43:06.607 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Lectures] ADD [DayOfWeek] nvarchar(max) NOT NULL DEFAULT N'';
+2025-06-03 14:43:06.616 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Attendances] (
+    [Id] uniqueidentifier NOT NULL,
+    [StudentId] nvarchar(450) NOT NULL,
+    [LectureId] uniqueidentifier NOT NULL,
+    [AttendanceTime] datetime2 NOT NULL,
+    CONSTRAINT [PK_Attendances] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Attendances_AspNetUsers_StudentId] FOREIGN KEY ([StudentId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_Attendances_Lectures_LectureId] FOREIGN KEY ([LectureId]) REFERENCES [Lectures] ([Id]) ON DELETE CASCADE
+);
+2025-06-03 14:43:06.618 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Attendances_LectureId] ON [Attendances] ([LectureId]);
+2025-06-03 14:43:06.621 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_Attendances_StudentId_LectureId] ON [Attendances] ([StudentId], [LectureId]);
+2025-06-03 14:43:06.622 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20250603114247_attandacechange', N'9.0.5');
+2025-06-03 14:43:06.625 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-06-03 16:54:53.240 +03:00 [INF] User profile is available. Using 'C:\Users\Target\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-03 16:54:56.121 +03:00 [INF] Executed DbCommand (128ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-03 16:54:56.251 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-03 16:54:56.255 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-03 16:54:56.277 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-06-03 16:54:56.718 +03:00 [WRN] The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert
+2025-06-03 16:54:56.787 +03:00 [INF] Now listening on: https://localhost:5001
+2025-06-03 16:54:56.788 +03:00 [INF] Now listening on: http://localhost:5000
+2025-06-03 16:54:56.881 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-03 16:54:56.882 +03:00 [INF] Hosting environment: Development
+2025-06-03 16:54:56.883 +03:00 [INF] Content root path: D:\AppsMypractice\StudentAffaire\StudentBackEnd\StudentBackEnd
+2025-06-03 16:54:57.497 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger - null null
+2025-06-03 16:54:57.696 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger - 301 0 null 208.2319ms
+2025-06-03 16:54:57.703 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.html - null null
+2025-06-03 16:54:57.771 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.html - 200 null text/html;charset=utf-8 68.4138ms
+2025-06-03 16:54:57.777 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.css - null null
+2025-06-03 16:54:57.777 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.js - null null
+2025-06-03 16:54:57.777 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui.css - null null
+2025-06-03 16:54:57.815 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.js - 200 null application/javascript;charset=utf-8 37.8914ms
+2025-06-03 16:54:57.778 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui-standalone-preset.js - null null
+2025-06-03 16:54:57.777 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui-bundle.js - null null
+2025-06-03 16:54:57.810 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-03 16:54:57.838 +03:00 [INF] Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2025-06-03 16:54:57.839 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.css - 200 202 text/css 62.5604ms
+2025-06-03 16:54:57.852 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 13780 application/javascript; charset=utf-8 42.8311ms
+2025-06-03 16:54:57.853 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-06-03 16:54:57.855 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-06-03 16:54:57.863 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui.css - 200 154949 text/css 85.9516ms
+2025-06-03 16:54:57.864 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui-standalone-preset.js - 200 229223 text/javascript 86.0608ms
+2025-06-03 16:54:57.869 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2025-06-03 16:54:57.874 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-06-03 16:54:57.881 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui-bundle.js - 200 1466908 text/javascript 103.9952ms
+2025-06-03 16:54:57.947 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 78.125ms
+2025-06-03 16:54:58.061 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - null null
+2025-06-03 16:54:58.077 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 16.1715ms
+2025-06-03 16:56:07.686 +03:00 [INF] Request starting HTTP/2 POST https://localhost:5001/api/Attendance - application/json 57
+2025-06-03 16:56:09.337 +03:00 [INF] Executing endpoint 'StudentBackEnd.Controllers.AttendanceController.MarkAttendance (StudentBackEnd)'
+2025-06-03 16:56:09.401 +03:00 [INF] Route matched with {action = "MarkAttendance", controller = "Attendance"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] MarkAttendance(BackEnd.Core.DTOs.Attendance.MarkAttendanceDto) on controller StudentBackEnd.Controllers.AttendanceController (StudentBackEnd).
+2025-06-03 16:56:09.727 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2025-06-03 16:56:09.735 +03:00 [INF] Executed action StudentBackEnd.Controllers.AttendanceController.MarkAttendance (StudentBackEnd) in 327.0624ms
+2025-06-03 16:56:09.738 +03:00 [INF] Executed endpoint 'StudentBackEnd.Controllers.AttendanceController.MarkAttendance (StudentBackEnd)'
+2025-06-03 16:56:09.744 +03:00 [INF] Request finished HTTP/2 POST https://localhost:5001/api/Attendance - 400 null text/plain; charset=utf-8 2058.2283ms
+2025-06-03 16:57:32.533 +03:00 [INF] Request starting HTTP/2 POST https://localhost:5001/api/Account/login - application/json 59
+2025-06-03 16:57:32.549 +03:00 [INF] Executing endpoint 'StudentBackEnd.Controllers.AccountController.Login (StudentBackEnd)'
+2025-06-03 16:57:32.559 +03:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(BackEnd.Core.DTOs.UserDTO.LoginDto) on controller StudentBackEnd.Controllers.AccountController (StudentBackEnd).
+2025-06-03 16:57:32.632 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-06-03 16:57:32.763 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[BackEnd.Core.Models.UserTokens, BackEnd.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-03 16:57:32.811 +03:00 [INF] Executed action StudentBackEnd.Controllers.AccountController.Login (StudentBackEnd) in 249.1533ms
+2025-06-03 16:57:32.815 +03:00 [INF] Executed endpoint 'StudentBackEnd.Controllers.AccountController.Login (StudentBackEnd)'
+2025-06-03 16:57:32.821 +03:00 [INF] Request finished HTTP/2 POST https://localhost:5001/api/Account/login - 200 null application/json; charset=utf-8 288.6568ms
+2025-06-03 16:57:58.424 +03:00 [INF] Request starting HTTP/2 POST https://localhost:5001/api/Attendance - application/json 57
+2025-06-03 16:57:58.543 +03:00 [INF] Executing endpoint 'StudentBackEnd.Controllers.AttendanceController.MarkAttendance (StudentBackEnd)'
+2025-06-03 16:57:58.546 +03:00 [INF] Route matched with {action = "MarkAttendance", controller = "Attendance"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] MarkAttendance(BackEnd.Core.DTOs.Attendance.MarkAttendanceDto) on controller StudentBackEnd.Controllers.AttendanceController (StudentBackEnd).
+2025-06-03 16:57:58.626 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2025-06-03 16:57:58.629 +03:00 [INF] Executed action StudentBackEnd.Controllers.AttendanceController.MarkAttendance (StudentBackEnd) in 77.7124ms
+2025-06-03 16:57:58.632 +03:00 [INF] Executed endpoint 'StudentBackEnd.Controllers.AttendanceController.MarkAttendance (StudentBackEnd)'
+2025-06-03 16:57:58.640 +03:00 [INF] Request finished HTTP/2 POST https://localhost:5001/api/Attendance - 400 null text/plain; charset=utf-8 219.5561ms
+2025-06-03 16:57:58.675 +03:00 [ERR] Failed executing DbCommand (53ms) [Parameters=[@__studentId_0='?' (Size = 450), @__lectureId_1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Attendances] AS [a]
+        WHERE [a].[StudentId] = @__studentId_0 AND [a].[LectureId] = @__lectureId_1) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-03 16:57:58.712 +03:00 [ERR] An exception occurred while iterating over the results of a query for context type 'BackEnd.EF.StudentDbContext'.
+System.InvalidOperationException: Invalid operation. The connection is closed.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+System.InvalidOperationException: Invalid operation. The connection is closed.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2025-06-03 17:00:16.252 +03:00 [INF] Request starting HTTP/2 POST https://localhost:5001/api/Lecture - application/json 203
+2025-06-03 17:00:16.265 +03:00 [INF] Executing endpoint 'StudentBackEnd.Controllers.LectureController.CreateLecture (StudentBackEnd)'
+2025-06-03 17:00:16.276 +03:00 [INF] Route matched with {action = "CreateLecture", controller = "Lecture"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateLecture(BackEnd.Core.DTOs.Lecture.CreateLecture) on controller StudentBackEnd.Controllers.LectureController (StudentBackEnd).
+2025-06-03 17:00:17.102 +03:00 [ERR] Failed executing DbCommand (33ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (DbType = Guid), @p5='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Lectures] ([Id], [DayOfWeek], [EndTime], [QrCodeImgPath], [ScheduleLectureId], [StartTime])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2025-06-03 17:00:17.117 +03:00 [ERR] An exception occurred in the database while saving changes for context type 'BackEnd.EF.StudentDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'DayOfWeek', table 'StudentDB.dbo.Lectures'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:b1332329-8151-4a75-9799-8d0767a91452
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(StateManager stateManager, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.<>c.<SaveChanges>b__112_0(DbContext _, ValueTuple`2 t)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'DayOfWeek', table 'StudentDB.dbo.Lectures'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:b1332329-8151-4a75-9799-8d0767a91452
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(StateManager stateManager, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.<>c.<SaveChanges>b__112_0(DbContext _, ValueTuple`2 t)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+2025-06-03 17:00:50.228 +03:00 [INF] Executed action StudentBackEnd.Controllers.LectureController.CreateLecture (StudentBackEnd) in 33948.2717ms
+2025-06-03 17:00:50.232 +03:00 [INF] Executed endpoint 'StudentBackEnd.Controllers.LectureController.CreateLecture (StudentBackEnd)'
+2025-06-03 17:00:50.235 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'DayOfWeek', table 'StudentDB.dbo.Lectures'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:b1332329-8151-4a75-9799-8d0767a91452
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(StateManager stateManager, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.<>c.<SaveChanges>b__112_0(DbContext _, ValueTuple`2 t)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges()
+   at BackEnd.EF.Repositories.UniteOfWork.save() in D:\AppsMypractice\StudentAffaire\StudentBackEnd\BackEnd.EF\Repositories\UniteOfWork.cs:line 45
+   at Application.Services.LectureService.CreateLectureAsync(CreateLecture dto) in D:\AppsMypractice\StudentAffaire\StudentBackEnd\Application\Services\LectureService.cs:line 36
+   at StudentBackEnd.Controllers.LectureController.CreateLecture(CreateLecture dto) in D:\AppsMypractice\StudentAffaire\StudentBackEnd\StudentBackEnd\Controllers\LectureController.cs:line 27
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-06-03 17:00:50.344 +03:00 [INF] Request finished HTTP/2 POST https://localhost:5001/api/Lecture - 500 null text/plain; charset=utf-8 34092.7845ms
+2025-06-03 17:01:25.304 +03:00 [INF] User profile is available. Using 'C:\Users\Target\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-03 17:01:26.823 +03:00 [INF] Executed DbCommand (40ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-03 17:01:26.890 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-03 17:01:26.893 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-03 17:01:26.908 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-06-03 17:01:27.159 +03:00 [WRN] The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert
+2025-06-03 17:01:27.207 +03:00 [INF] Now listening on: https://localhost:5001
+2025-06-03 17:01:27.209 +03:00 [INF] Now listening on: http://localhost:5000
+2025-06-03 17:01:27.379 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-03 17:01:27.381 +03:00 [INF] Hosting environment: Development
+2025-06-03 17:01:27.382 +03:00 [INF] Content root path: D:\AppsMypractice\StudentAffaire\StudentBackEnd\StudentBackEnd
+2025-06-03 17:01:28.000 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger - null null
+2025-06-03 17:01:28.128 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger - 301 0 null 148.4656ms
+2025-06-03 17:01:28.135 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.html - null null
+2025-06-03 17:01:28.192 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.html - 200 null text/html;charset=utf-8 57.1716ms
+2025-06-03 17:01:28.199 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui-bundle.js - null null
+2025-06-03 17:01:28.199 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui.css - null null
+2025-06-03 17:01:28.208 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-03 17:01:28.199 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.css - null null
+2025-06-03 17:01:28.199 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui-standalone-preset.js - null null
+2025-06-03 17:01:28.208 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.js - null null
+2025-06-03 17:01:28.279 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2025-06-03 17:01:28.333 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.js - 200 null application/javascript;charset=utf-8 89.0798ms
+2025-06-03 17:01:28.381 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 13780 application/javascript; charset=utf-8 173.7365ms
+2025-06-03 17:01:28.385 +03:00 [INF] Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2025-06-03 17:01:28.395 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.css - 200 202 text/css 195.4977ms
+2025-06-03 17:01:28.418 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-06-03 17:01:28.418 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-06-03 17:01:28.423 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui-standalone-preset.js - 200 229223 text/javascript 224.1847ms
+2025-06-03 17:01:28.425 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui.css - 200 154949 text/css 226.363ms
+2025-06-03 17:01:28.442 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-06-03 17:01:28.445 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui-bundle.js - 200 1466908 text/javascript 246.3004ms
+2025-06-03 17:01:28.467 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 217.7847ms
+2025-06-03 17:01:28.596 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - null null
+2025-06-03 17:01:28.620 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 24.3529ms
+2025-06-03 17:02:02.503 +03:00 [INF] Request starting HTTP/2 POST https://localhost:5001/api/Lecture - application/json 203
+2025-06-03 17:02:02.678 +03:00 [INF] Executing endpoint 'StudentBackEnd.Controllers.LectureController.CreateLecture (StudentBackEnd)'
+2025-06-03 17:02:02.725 +03:00 [INF] Route matched with {action = "CreateLecture", controller = "Lecture"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateLecture(BackEnd.Core.DTOs.Lecture.CreateLecture) on controller StudentBackEnd.Controllers.LectureController (StudentBackEnd).
+2025-06-03 17:02:03.344 +03:00 [ERR] Failed executing DbCommand (35ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (DbType = Guid), @p4='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Lectures] ([Id], [EndTime], [QrCodeImgPath], [ScheduleLectureId], [StartTime])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2025-06-03 17:02:03.376 +03:00 [ERR] An exception occurred in the database while saving changes for context type 'BackEnd.EF.StudentDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Lectures_LectureSchedules_ScheduleLectureId". The conflict occurred in database "StudentDB", table "dbo.LectureSchedules", column 'Id'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:0d0d1a6d-ca56-4a57-bbdc-157ad7455e6f
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(StateManager stateManager, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.<>c.<SaveChanges>b__112_0(DbContext _, ValueTuple`2 t)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Lectures_LectureSchedules_ScheduleLectureId". The conflict occurred in database "StudentDB", table "dbo.LectureSchedules", column 'Id'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:0d0d1a6d-ca56-4a57-bbdc-157ad7455e6f
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(StateManager stateManager, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.<>c.<SaveChanges>b__112_0(DbContext _, ValueTuple`2 t)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+2025-06-03 17:02:52.809 +03:00 [INF] Executed action StudentBackEnd.Controllers.LectureController.CreateLecture (StudentBackEnd) in 50075.8688ms
+2025-06-03 17:02:52.815 +03:00 [INF] Executed endpoint 'StudentBackEnd.Controllers.LectureController.CreateLecture (StudentBackEnd)'
+2025-06-03 17:02:52.818 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Lectures_LectureSchedules_ScheduleLectureId". The conflict occurred in database "StudentDB", table "dbo.LectureSchedules", column 'Id'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:0d0d1a6d-ca56-4a57-bbdc-157ad7455e6f
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(StateManager stateManager, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.<>c.<SaveChanges>b__112_0(DbContext _, ValueTuple`2 t)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges()
+   at BackEnd.EF.Repositories.UniteOfWork.save() in D:\AppsMypractice\StudentAffaire\StudentBackEnd\BackEnd.EF\Repositories\UniteOfWork.cs:line 45
+   at Application.Services.LectureService.CreateLectureAsync(CreateLecture dto) in D:\AppsMypractice\StudentAffaire\StudentBackEnd\Application\Services\LectureService.cs:line 36
+   at StudentBackEnd.Controllers.LectureController.CreateLecture(CreateLecture dto) in D:\AppsMypractice\StudentAffaire\StudentBackEnd\StudentBackEnd\Controllers\LectureController.cs:line 27
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-06-03 17:02:52.919 +03:00 [INF] Request finished HTTP/2 POST https://localhost:5001/api/Lecture - 500 null text/plain; charset=utf-8 50416.6578ms
+2025-06-03 17:05:45.760 +03:00 [INF] Request starting HTTP/2 POST https://localhost:5001/api/LectureSchedule - application/json 194
+2025-06-03 17:05:45.803 +03:00 [INF] Executing endpoint 'StudentBackEnd.Controllers.LectureScheduleController.Create (StudentBackEnd)'
+2025-06-03 17:05:45.814 +03:00 [INF] Route matched with {action = "Create", controller = "LectureSchedule"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(BackEnd.Core.DTOs.LectureScheduleDto.CreateScheduleDto) on controller StudentBackEnd.Controllers.LectureScheduleController (StudentBackEnd).
+2025-06-03 17:05:45.995 +03:00 [INF] Executed DbCommand (51ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (Size = 4000), @p3='?' (DbType = Time), @p4='?' (DbType = DateTime2), @p5='?' (Size = 4000), @p6='?' (DbType = Time)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [LectureSchedules] ([Id], [CourseId], [DayOfWeek], [EndTime], [LectureDate], [Location], [StartTime])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+2025-06-03 17:05:46.019 +03:00 [INF] Executing OkObjectResult, writing value of type 'Application.ResponseService`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-06-03 17:05:46.031 +03:00 [INF] Executed action StudentBackEnd.Controllers.LectureScheduleController.Create (StudentBackEnd) in 213.049ms
+2025-06-03 17:05:46.033 +03:00 [INF] Executed endpoint 'StudentBackEnd.Controllers.LectureScheduleController.Create (StudentBackEnd)'
+2025-06-03 17:05:46.036 +03:00 [INF] Request finished HTTP/2 POST https://localhost:5001/api/LectureSchedule - 200 null application/json; charset=utf-8 276.5982ms
+2025-06-03 17:07:27.344 +03:00 [INF] Request starting HTTP/2 POST https://localhost:5001/api/Lecture - application/json 203
+2025-06-03 17:07:27.408 +03:00 [INF] Executing endpoint 'StudentBackEnd.Controllers.LectureController.CreateLecture (StudentBackEnd)'
+2025-06-03 17:07:27.410 +03:00 [INF] Route matched with {action = "CreateLecture", controller = "Lecture"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateLecture(BackEnd.Core.DTOs.Lecture.CreateLecture) on controller StudentBackEnd.Controllers.LectureController (StudentBackEnd).
+2025-06-03 17:07:27.462 +03:00 [INF] Executed DbCommand (42ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (DbType = Guid), @p4='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Lectures] ([Id], [EndTime], [QrCodeImgPath], [ScheduleLectureId], [StartTime])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2025-06-03 17:07:27.687 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@p4='?' (DbType = Guid), @p0='?' (DbType = DateTime2), @p1='?' (Size = 4000), @p2='?' (DbType = Guid), @p3='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Lectures] SET [EndTime] = @p0, [QrCodeImgPath] = @p1, [ScheduleLectureId] = @p2, [StartTime] = @p3
+OUTPUT 1
+WHERE [Id] = @p4;
+2025-06-03 17:07:27.697 +03:00 [INF] Executing OkObjectResult, writing value of type 'BackEnd.Core.Domain.Lecture'.
+2025-06-03 17:07:27.736 +03:00 [INF] Executed action StudentBackEnd.Controllers.LectureController.CreateLecture (StudentBackEnd) in 323.0702ms
+2025-06-03 17:07:27.739 +03:00 [INF] Executed endpoint 'StudentBackEnd.Controllers.LectureController.CreateLecture (StudentBackEnd)'
+2025-06-03 17:07:27.742 +03:00 [INF] Request finished HTTP/2 POST https://localhost:5001/api/Lecture - 200 null application/json; charset=utf-8 398.1481ms
+2025-06-03 17:08:46.980 +03:00 [INF] Request starting HTTP/2 POST https://localhost:5001/api/Attendance - application/json 57
+2025-06-03 17:08:46.992 +03:00 [INF] Executing endpoint 'StudentBackEnd.Controllers.AttendanceController.MarkAttendance (StudentBackEnd)'
+2025-06-03 17:08:47.001 +03:00 [INF] Route matched with {action = "MarkAttendance", controller = "Attendance"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] MarkAttendance(BackEnd.Core.DTOs.Attendance.MarkAttendanceDto) on controller StudentBackEnd.Controllers.AttendanceController (StudentBackEnd).
+2025-06-03 17:08:47.015 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2025-06-03 17:08:47.017 +03:00 [INF] Executed action StudentBackEnd.Controllers.AttendanceController.MarkAttendance (StudentBackEnd) in 13.1696ms
+2025-06-03 17:08:47.019 +03:00 [INF] Executed endpoint 'StudentBackEnd.Controllers.AttendanceController.MarkAttendance (StudentBackEnd)'
+2025-06-03 17:08:47.021 +03:00 [INF] Request finished HTTP/2 POST https://localhost:5001/api/Attendance - 400 null text/plain; charset=utf-8 41.8336ms
+2025-06-03 17:09:21.108 +03:00 [INF] Request starting HTTP/2 POST https://localhost:5001/api/Account/login - application/json 59
+2025-06-03 17:09:21.117 +03:00 [INF] Executing endpoint 'StudentBackEnd.Controllers.AccountController.Login (StudentBackEnd)'
+2025-06-03 17:09:21.126 +03:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(BackEnd.Core.DTOs.UserDTO.LoginDto) on controller StudentBackEnd.Controllers.AccountController (StudentBackEnd).
+2025-06-03 17:09:21.146 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-06-03 17:09:21.210 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[BackEnd.Core.Models.UserTokens, BackEnd.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-03 17:09:21.220 +03:00 [INF] Executed action StudentBackEnd.Controllers.AccountController.Login (StudentBackEnd) in 89.124ms
+2025-06-03 17:09:21.223 +03:00 [INF] Executed endpoint 'StudentBackEnd.Controllers.AccountController.Login (StudentBackEnd)'
+2025-06-03 17:09:21.227 +03:00 [INF] Request finished HTTP/2 POST https://localhost:5001/api/Account/login - 200 null application/json; charset=utf-8 152.777ms
+2025-06-03 17:09:46.521 +03:00 [INF] Request starting HTTP/2 POST https://localhost:5001/api/Attendance - application/json 57
+2025-06-03 17:09:46.619 +03:00 [INF] Executing endpoint 'StudentBackEnd.Controllers.AttendanceController.MarkAttendance (StudentBackEnd)'
+2025-06-03 17:09:46.621 +03:00 [INF] Route matched with {action = "MarkAttendance", controller = "Attendance"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] MarkAttendance(BackEnd.Core.DTOs.Attendance.MarkAttendanceDto) on controller StudentBackEnd.Controllers.AttendanceController (StudentBackEnd).
+2025-06-03 17:09:46.690 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__studentId_0='?' (Size = 450), @__lectureId_1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Attendances] AS [a]
+        WHERE [a].[StudentId] = @__studentId_0 AND [a].[LectureId] = @__lectureId_1) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-03 17:09:46.694 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2025-06-03 17:09:46.696 +03:00 [INF] Executed action StudentBackEnd.Controllers.AttendanceController.MarkAttendance (StudentBackEnd) in 72.0138ms
+2025-06-03 17:09:46.756 +03:00 [INF] Executed endpoint 'StudentBackEnd.Controllers.AttendanceController.MarkAttendance (StudentBackEnd)'
+2025-06-03 17:09:46.759 +03:00 [INF] Request finished HTTP/2 POST https://localhost:5001/api/Attendance - 400 null text/plain; charset=utf-8 237.9778ms
+2025-06-03 17:12:37.243 +03:00 [INF] Request starting HTTP/2 POST https://localhost:5001/api/Attendance - application/json 57
+2025-06-03 17:12:37.258 +03:00 [INF] Executing endpoint 'StudentBackEnd.Controllers.AttendanceController.MarkAttendance (StudentBackEnd)'
+2025-06-03 17:12:37.260 +03:00 [INF] Route matched with {action = "MarkAttendance", controller = "Attendance"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] MarkAttendance(BackEnd.Core.DTOs.Attendance.MarkAttendanceDto) on controller StudentBackEnd.Controllers.AttendanceController (StudentBackEnd).
+2025-06-03 17:12:37.282 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2025-06-03 17:12:37.285 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__studentId_0='?' (Size = 450), @__lectureId_1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Attendances] AS [a]
+        WHERE [a].[StudentId] = @__studentId_0 AND [a].[LectureId] = @__lectureId_1) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-03 17:12:37.285 +03:00 [INF] Executed action StudentBackEnd.Controllers.AttendanceController.MarkAttendance (StudentBackEnd) in 21.9951ms
+2025-06-03 17:12:37.331 +03:00 [INF] Executed endpoint 'StudentBackEnd.Controllers.AttendanceController.MarkAttendance (StudentBackEnd)'
+2025-06-03 17:12:37.333 +03:00 [INF] Request finished HTTP/2 POST https://localhost:5001/api/Attendance - 400 null text/plain; charset=utf-8 90.9203ms
+2025-06-03 19:07:35.240 +03:00 [INF] User profile is available. Using 'C:\Users\Target\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-03 19:07:36.987 +03:00 [INF] Executed DbCommand (48ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-03 19:07:37.082 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-03 19:07:37.087 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-03 19:07:37.109 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-06-03 19:07:37.480 +03:00 [WRN] The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert
+2025-06-03 19:07:37.607 +03:00 [INF] Now listening on: https://localhost:5001
+2025-06-03 19:07:37.609 +03:00 [INF] Now listening on: http://localhost:5000
+2025-06-03 19:07:37.716 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-03 19:07:37.718 +03:00 [INF] Hosting environment: Development
+2025-06-03 19:07:37.720 +03:00 [INF] Content root path: D:\AppsMypractice\StudentAffaire\StudentBackEnd\StudentBackEnd
+2025-06-03 19:07:38.253 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger - null null
+2025-06-03 19:07:38.434 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger - 301 0 null 189.8692ms
+2025-06-03 19:07:38.440 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.html - null null
+2025-06-03 19:07:38.523 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.html - 200 null text/html;charset=utf-8 82.825ms
+2025-06-03 19:07:38.528 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.css - null null
+2025-06-03 19:07:38.528 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui.css - null null
+2025-06-03 19:07:38.547 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui-standalone-preset.js - null null
+2025-06-03 19:07:38.528 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui-bundle.js - null null
+2025-06-03 19:07:38.599 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.js - null null
+2025-06-03 19:07:38.600 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-03 19:07:38.632 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2025-06-03 19:07:38.654 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.js - 200 null application/javascript;charset=utf-8 85.0115ms
+2025-06-03 19:07:38.657 +03:00 [INF] Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2025-06-03 19:07:38.703 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.css - 200 202 text/css 174.8135ms
+2025-06-03 19:07:38.704 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 13780 application/javascript; charset=utf-8 103.3974ms
+2025-06-03 19:07:38.712 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-06-03 19:07:38.712 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-06-03 19:07:38.717 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui-standalone-preset.js - 200 229223 text/javascript 188.7284ms
+2025-06-03 19:07:38.717 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui.css - 200 154949 text/css 189.5365ms
+2025-06-03 19:07:38.720 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-06-03 19:07:38.728 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui-bundle.js - 200 1466908 text/javascript 200.3507ms
+2025-06-03 19:07:38.743 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 135.3834ms
+2025-06-03 19:07:38.934 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - null null
+2025-06-03 19:07:38.963 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 29.2451ms
+2025-06-03 19:08:39.700 +03:00 [INF] Request starting HTTP/2 POST https://localhost:5001/api/Attendance - application/json 57
+2025-06-03 19:08:39.924 +03:00 [INF] Executing endpoint 'StudentBackEnd.Controllers.AttendanceController.MarkAttendance (StudentBackEnd)'
+2025-06-03 19:08:39.972 +03:00 [INF] Route matched with {action = "MarkAttendance", controller = "Attendance"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] MarkAttendance(BackEnd.Core.DTOs.Attendance.MarkAttendanceDto) on controller StudentBackEnd.Controllers.AttendanceController (StudentBackEnd).
+2025-06-03 19:08:40.372 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CAST(0 AS bit)
+2025-06-03 19:08:40.649 +03:00 [ERR] Failed executing DbCommand (40ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (DbType = Guid), @p3='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Attendances] ([Id], [AttendanceTime], [LectureId], [StudentId])
+VALUES (@p0, @p1, @p2, @p3);
+2025-06-03 19:08:40.679 +03:00 [ERR] An exception occurred in the database while saving changes for context type 'BackEnd.EF.StudentDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'StudentId', table 'StudentDB.dbo.Attendances'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:fb25640a-5974-47bd-a242-e1bc2f56750a
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(StateManager stateManager, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.<>c.<SaveChanges>b__112_0(DbContext _, ValueTuple`2 t)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'StudentId', table 'StudentDB.dbo.Attendances'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:fb25640a-5974-47bd-a242-e1bc2f56750a
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(StateManager stateManager, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.<>c.<SaveChanges>b__112_0(DbContext _, ValueTuple`2 t)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+2025-06-03 19:08:50.803 +03:00 [INF] Executed action StudentBackEnd.Controllers.AttendanceController.MarkAttendance (StudentBackEnd) in 10819.8897ms
+2025-06-03 19:08:50.808 +03:00 [INF] Executed endpoint 'StudentBackEnd.Controllers.AttendanceController.MarkAttendance (StudentBackEnd)'
+2025-06-03 19:08:50.814 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'StudentId', table 'StudentDB.dbo.Attendances'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:fb25640a-5974-47bd-a242-e1bc2f56750a
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(StateManager stateManager, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.<>c.<SaveChanges>b__112_0(DbContext _, ValueTuple`2 t)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges()
+   at BackEnd.EF.Repositories.UniteOfWork.save() in D:\AppsMypractice\StudentAffaire\StudentBackEnd\BackEnd.EF\Repositories\UniteOfWork.cs:line 45
+   at Application.Services.AttendanceService.MarkAttendanceAsync(String studentId, Guid lectureId) in D:\AppsMypractice\StudentAffaire\StudentBackEnd\Application\Services\AttendanceService.cs:line 41
+   at StudentBackEnd.Controllers.AttendanceController.MarkAttendance(MarkAttendanceDto dto) in D:\AppsMypractice\StudentAffaire\StudentBackEnd\StudentBackEnd\Controllers\AttendanceController.cs:line 32
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-06-03 19:08:50.937 +03:00 [INF] Request finished HTTP/2 POST https://localhost:5001/api/Attendance - 500 null text/plain; charset=utf-8 11236.9813ms
+2025-06-03 19:09:25.223 +03:00 [INF] Request starting HTTP/2 POST https://localhost:5001/api/Account/login - application/json 58
+2025-06-03 19:09:25.241 +03:00 [INF] Executing endpoint 'StudentBackEnd.Controllers.AccountController.Login (StudentBackEnd)'
+2025-06-03 19:09:25.257 +03:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(BackEnd.Core.DTOs.UserDTO.LoginDto) on controller StudentBackEnd.Controllers.AccountController (StudentBackEnd).
+2025-06-03 19:09:25.296 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-06-03 19:09:25.362 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[BackEnd.Core.Models.UserTokens, BackEnd.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-03 19:09:25.391 +03:00 [INF] Executed action StudentBackEnd.Controllers.AccountController.Login (StudentBackEnd) in 131.0904ms
+2025-06-03 19:09:25.394 +03:00 [INF] Executed endpoint 'StudentBackEnd.Controllers.AccountController.Login (StudentBackEnd)'
+2025-06-03 19:09:25.395 +03:00 [INF] Request finished HTTP/2 POST https://localhost:5001/api/Account/login - 200 null application/json; charset=utf-8 172.5861ms
+2025-06-03 19:09:49.648 +03:00 [INF] Request starting HTTP/2 POST https://localhost:5001/api/Attendance - application/json 57
+2025-06-03 19:09:49.770 +03:00 [INF] Executing endpoint 'StudentBackEnd.Controllers.AttendanceController.MarkAttendance (StudentBackEnd)'
+2025-06-03 19:09:49.772 +03:00 [INF] Route matched with {action = "MarkAttendance", controller = "Attendance"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] MarkAttendance(BackEnd.Core.DTOs.Attendance.MarkAttendanceDto) on controller StudentBackEnd.Controllers.AttendanceController (StudentBackEnd).
+2025-06-03 19:09:49.807 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__studentId_0='?' (Size = 450), @__lectureId_1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Attendances] AS [a]
+        WHERE [a].[StudentId] = @__studentId_0 AND [a].[LectureId] = @__lectureId_1) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-03 19:09:49.864 +03:00 [INF] Executed DbCommand (45ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (DbType = Guid), @p3='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Attendances] ([Id], [AttendanceTime], [LectureId], [StudentId])
+VALUES (@p0, @p1, @p2, @p3);
+2025-06-03 19:09:49.878 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2025-06-03 19:09:49.882 +03:00 [INF] Executed action StudentBackEnd.Controllers.AttendanceController.MarkAttendance (StudentBackEnd) in 106.1775ms
+2025-06-03 19:09:49.884 +03:00 [INF] Executed endpoint 'StudentBackEnd.Controllers.AttendanceController.MarkAttendance (StudentBackEnd)'
+2025-06-03 19:09:49.885 +03:00 [INF] Request finished HTTP/2 POST https://localhost:5001/api/Attendance - 200 null text/plain; charset=utf-8 236.9078ms
+2025-06-03 20:36:43.135 +03:00 [INF] User profile is available. Using 'C:\Users\Target\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-03 20:36:44.294 +03:00 [INF] Executed DbCommand (55ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-03 20:36:44.353 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-03 20:36:44.357 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-03 20:36:44.370 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-06-03 20:36:44.622 +03:00 [WRN] The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert
+2025-06-03 20:36:44.674 +03:00 [INF] Now listening on: https://localhost:5001
+2025-06-03 20:36:44.675 +03:00 [INF] Now listening on: http://localhost:5000
+2025-06-03 20:36:44.747 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-03 20:36:44.748 +03:00 [INF] Hosting environment: Development
+2025-06-03 20:36:44.749 +03:00 [INF] Content root path: D:\AppsMypractice\StudentAffaire\StudentBackEnd\StudentBackEnd
+2025-06-03 20:36:45.330 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger - null null
+2025-06-03 20:36:45.470 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger - 301 0 null 156.1682ms
+2025-06-03 20:36:45.476 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.html - null null
+2025-06-03 20:36:45.535 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.html - 200 null text/html;charset=utf-8 59.0116ms
+2025-06-03 20:36:45.542 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.css - null null
+2025-06-03 20:36:45.542 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui.css - null null
+2025-06-03 20:36:45.543 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui-bundle.js - null null
+2025-06-03 20:36:45.543 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui-standalone-preset.js - null null
+2025-06-03 20:36:45.556 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.js - null null
+2025-06-03 20:36:45.601 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-03 20:36:45.603 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2025-06-03 20:36:45.652 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.js - 200 null application/javascript;charset=utf-8 108.0199ms
+2025-06-03 20:36:45.655 +03:00 [INF] Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2025-06-03 20:36:45.660 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.css - 200 202 text/css 117.7595ms
+2025-06-03 20:36:45.666 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 13780 application/javascript; charset=utf-8 66.1556ms
+2025-06-03 20:36:45.668 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-06-03 20:36:45.668 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-06-03 20:36:45.675 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui.css - 200 154949 text/css 132.7239ms
+2025-06-03 20:36:45.675 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui-standalone-preset.js - 200 229223 text/javascript 132.4673ms
+2025-06-03 20:36:45.684 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-06-03 20:36:45.688 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui-bundle.js - 200 1466908 text/javascript 145.299ms
+2025-06-03 20:36:45.697 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 93.6913ms
+2025-06-03 20:36:45.837 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - null null
+2025-06-03 20:36:45.864 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 26.8385ms
+2025-06-03 20:40:07.979 +03:00 [INF] User profile is available. Using 'C:\Users\Target\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-03 20:40:09.796 +03:00 [INF] Executed DbCommand (91ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-03 20:40:09.870 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-03 20:40:09.874 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-03 20:40:09.895 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-06-03 20:40:10.169 +03:00 [WRN] The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert
+2025-06-03 20:40:10.218 +03:00 [INF] Now listening on: https://localhost:5001
+2025-06-03 20:40:10.220 +03:00 [INF] Now listening on: http://localhost:5000
+2025-06-03 20:40:10.316 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-03 20:40:10.318 +03:00 [INF] Hosting environment: Development
+2025-06-03 20:40:10.319 +03:00 [INF] Content root path: D:\AppsMypractice\StudentAffaire\StudentBackEnd\StudentBackEnd
+2025-06-03 20:40:11.116 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger - null null
+2025-06-03 20:40:11.336 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger - 301 0 null 231.1116ms
+2025-06-03 20:40:11.345 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.html - null null
+2025-06-03 20:40:11.420 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.html - 200 null text/html;charset=utf-8 75.2671ms
+2025-06-03 20:40:11.426 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.css - null null
+2025-06-03 20:40:11.426 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui.css - null null
+2025-06-03 20:40:11.469 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.js - null null
+2025-06-03 20:40:11.426 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui-standalone-preset.js - null null
+2025-06-03 20:40:11.522 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.js - 200 null application/javascript;charset=utf-8 56.7991ms
+2025-06-03 20:40:11.426 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui-bundle.js - null null
+2025-06-03 20:40:11.473 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-03 20:40:11.512 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2025-06-03 20:40:11.555 +03:00 [INF] Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2025-06-03 20:40:11.558 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.css - 200 202 text/css 131.6051ms
+2025-06-03 20:40:11.574 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 13780 application/javascript; charset=utf-8 104.1139ms
+2025-06-03 20:40:11.579 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-06-03 20:40:11.579 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-06-03 20:40:11.585 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui.css - 200 154949 text/css 158.9875ms
+2025-06-03 20:40:11.586 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui-standalone-preset.js - 200 229223 text/javascript 158.8552ms
+2025-06-03 20:40:11.601 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-06-03 20:40:11.604 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui-bundle.js - 200 1466908 text/javascript 177.6102ms
+2025-06-03 20:40:11.618 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 105.8889ms
+2025-06-03 20:40:11.805 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - null null
+2025-06-03 20:40:11.828 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 23.7598ms
+2025-06-03 20:47:06.104 +03:00 [INF] User profile is available. Using 'C:\Users\Target\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-03 20:47:07.878 +03:00 [INF] Executed DbCommand (47ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-03 20:47:07.976 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-03 20:47:07.980 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-03 20:47:08.001 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-06-03 20:47:08.349 +03:00 [WRN] The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert
+2025-06-03 20:47:08.471 +03:00 [INF] Now listening on: https://localhost:5001
+2025-06-03 20:47:08.473 +03:00 [INF] Now listening on: http://localhost:5000
+2025-06-03 20:47:08.588 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-03 20:47:08.591 +03:00 [INF] Hosting environment: Development
+2025-06-03 20:47:08.592 +03:00 [INF] Content root path: D:\AppsMypractice\StudentAffaire\StudentBackEnd\StudentBackEnd
+2025-06-03 20:47:08.911 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger - null null
+2025-06-03 20:47:09.086 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger - 301 0 null 185.0583ms
+2025-06-03 20:47:09.093 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.html - null null
+2025-06-03 20:47:09.176 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.html - 200 null text/html;charset=utf-8 83.2195ms
+2025-06-03 20:47:09.182 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui.css - null null
+2025-06-03 20:47:09.182 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui-bundle.js - null null
+2025-06-03 20:47:09.182 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.css - null null
+2025-06-03 20:47:09.245 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui-standalone-preset.js - null null
+2025-06-03 20:47:09.247 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.js - null null
+2025-06-03 20:47:09.279 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-03 20:47:09.323 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2025-06-03 20:47:09.348 +03:00 [INF] Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2025-06-03 20:47:09.342 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.js - 200 null application/javascript;charset=utf-8 96.0591ms
+2025-06-03 20:47:09.350 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.css - 200 202 text/css 167.56ms
+2025-06-03 20:47:09.368 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 13780 application/javascript; charset=utf-8 89.2683ms
+2025-06-03 20:47:09.371 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-06-03 20:47:09.371 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-06-03 20:47:09.378 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui-standalone-preset.js - 200 229223 text/javascript 194.6389ms
+2025-06-03 20:47:09.378 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui.css - 200 154949 text/css 195.9786ms
+2025-06-03 20:47:09.381 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-06-03 20:47:09.392 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui-bundle.js - 200 1466908 text/javascript 209.6875ms
+2025-06-03 20:47:09.407 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 118.0104ms
+2025-06-03 20:47:09.601 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - null null
+2025-06-03 20:47:09.626 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 24.6258ms
+2025-06-03 20:47:28.387 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/Lecture/1962A6DF-CF3F-4C1E-9F80-F5FA2B1E5A5B - null null
+2025-06-03 20:47:30.024 +03:00 [INF] Executing endpoint 'StudentBackEnd.Controllers.LectureController.GetLecture (StudentBackEnd)'
+2025-06-03 20:47:30.062 +03:00 [INF] Route matched with {action = "GetLecture", controller = "Lecture"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetLecture(System.Guid) on controller StudentBackEnd.Controllers.LectureController (StudentBackEnd).
+2025-06-03 20:47:30.458 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[EndTime], [l].[QrCodeImgPath], [l].[ScheduleLectureId], [l].[StartTime]
+FROM [Lectures] AS [l]
+WHERE [l].[Id] = @__p_0
+2025-06-03 20:47:30.507 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2025-06-03 20:47:30.517 +03:00 [INF] Executed action StudentBackEnd.Controllers.LectureController.GetLecture (StudentBackEnd) in 447.3335ms
+2025-06-03 20:47:30.521 +03:00 [INF] Executed endpoint 'StudentBackEnd.Controllers.LectureController.GetLecture (StudentBackEnd)'
+2025-06-03 20:47:30.531 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/Lecture/1962A6DF-CF3F-4C1E-9F80-F5FA2B1E5A5B - 200 null text/plain; charset=utf-8 2144.403ms

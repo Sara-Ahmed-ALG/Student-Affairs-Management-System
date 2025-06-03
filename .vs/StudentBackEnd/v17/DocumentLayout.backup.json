@@ -1,0 +1,1281 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1B3DAEE1-67F5-43D7-AA70-957181C5408F}|StudentBackEnd\\StudentBackEnd.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\studentbackend\\controllers\\lecturecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B3DAEE1-67F5-43D7-AA70-957181C5408F}|StudentBackEnd\\StudentBackEnd.csproj|solutionrelative:studentbackend\\controllers\\lecturecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B3DAEE1-67F5-43D7-AA70-957181C5408F}|StudentBackEnd\\StudentBackEnd.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\studentbackend\\controllers\\attendancecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B3DAEE1-67F5-43D7-AA70-957181C5408F}|StudentBackEnd\\StudentBackEnd.csproj|solutionrelative:studentbackend\\controllers\\attendancecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{948935CA-64FA-4325-82C6-881FE2519546}|Application\\Application.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\application\\contract\\ilectureservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{948935CA-64FA-4325-82C6-881FE2519546}|Application\\Application.csproj|solutionrelative:application\\contract\\ilectureservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{948935CA-64FA-4325-82C6-881FE2519546}|Application\\Application.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\application\\services\\lectureservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{948935CA-64FA-4325-82C6-881FE2519546}|Application\\Application.csproj|solutionrelative:application\\services\\lectureservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D764A386-606C-4788-8E68-76194911B1E1}|BackEnd.EF\\BackEnd.EF.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\backend.ef\\repositories\\uniteofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D764A386-606C-4788-8E68-76194911B1E1}|BackEnd.EF\\BackEnd.EF.csproj|solutionrelative:backend.ef\\repositories\\uniteofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{948935CA-64FA-4325-82C6-881FE2519546}|Application\\Application.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\application\\services\\attendanceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{948935CA-64FA-4325-82C6-881FE2519546}|Application\\Application.csproj|solutionrelative:application\\services\\attendanceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{260EB28B-7D43-48D9-B329-B3E367AFF3FB}|BackEnd.Core\\BackEnd.Core.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\backend.core\\dtos\\attendance\\markattendancedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{260EB28B-7D43-48D9-B329-B3E367AFF3FB}|BackEnd.Core\\BackEnd.Core.csproj|solutionrelative:backend.core\\dtos\\attendance\\markattendancedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{260EB28B-7D43-48D9-B329-B3E367AFF3FB}|BackEnd.Core\\BackEnd.Core.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\backend.core\\domain\\attendance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{260EB28B-7D43-48D9-B329-B3E367AFF3FB}|BackEnd.Core\\BackEnd.Core.csproj|solutionrelative:backend.core\\domain\\attendance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{948935CA-64FA-4325-82C6-881FE2519546}|Application\\Application.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\application\\servicesextention.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{948935CA-64FA-4325-82C6-881FE2519546}|Application\\Application.csproj|solutionrelative:application\\servicesextention.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{260EB28B-7D43-48D9-B329-B3E367AFF3FB}|BackEnd.Core\\BackEnd.Core.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\backend.core\\domain\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{260EB28B-7D43-48D9-B329-B3E367AFF3FB}|BackEnd.Core\\BackEnd.Core.csproj|solutionrelative:backend.core\\domain\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B3DAEE1-67F5-43D7-AA70-957181C5408F}|StudentBackEnd\\StudentBackEnd.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\studentbackend\\controllers\\coursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B3DAEE1-67F5-43D7-AA70-957181C5408F}|StudentBackEnd\\StudentBackEnd.csproj|solutionrelative:studentbackend\\controllers\\coursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B3DAEE1-67F5-43D7-AA70-957181C5408F}|StudentBackEnd\\StudentBackEnd.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\studentbackend\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B3DAEE1-67F5-43D7-AA70-957181C5408F}|StudentBackEnd\\StudentBackEnd.csproj|solutionrelative:studentbackend\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{948935CA-64FA-4325-82C6-881FE2519546}|Application\\Application.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\application\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{948935CA-64FA-4325-82C6-881FE2519546}|Application\\Application.csproj|solutionrelative:application\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{260EB28B-7D43-48D9-B329-B3E367AFF3FB}|BackEnd.Core\\BackEnd.Core.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\backend.core\\interfaces\\ilecturerepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{260EB28B-7D43-48D9-B329-B3E367AFF3FB}|BackEnd.Core\\BackEnd.Core.csproj|solutionrelative:backend.core\\interfaces\\ilecturerepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{948935CA-64FA-4325-82C6-881FE2519546}|Application\\Application.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\application\\contract\\iattendanceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{948935CA-64FA-4325-82C6-881FE2519546}|Application\\Application.csproj|solutionrelative:application\\contract\\iattendanceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{260EB28B-7D43-48D9-B329-B3E367AFF3FB}|BackEnd.Core\\BackEnd.Core.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\backend.core\\interfaces\\iattendancerepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{260EB28B-7D43-48D9-B329-B3E367AFF3FB}|BackEnd.Core\\BackEnd.Core.csproj|solutionrelative:backend.core\\interfaces\\iattendancerepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D764A386-606C-4788-8E68-76194911B1E1}|BackEnd.EF\\BackEnd.EF.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\backend.ef\\repositories\\genericrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D764A386-606C-4788-8E68-76194911B1E1}|BackEnd.EF\\BackEnd.EF.csproj|solutionrelative:backend.ef\\repositories\\genericrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{260EB28B-7D43-48D9-B329-B3E367AFF3FB}|BackEnd.Core\\BackEnd.Core.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\backend.core\\interfaces\\igenericrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{260EB28B-7D43-48D9-B329-B3E367AFF3FB}|BackEnd.Core\\BackEnd.Core.csproj|solutionrelative:backend.core\\interfaces\\igenericrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D764A386-606C-4788-8E68-76194911B1E1}|BackEnd.EF\\BackEnd.EF.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\backend.ef\\repositories\\attendancerepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D764A386-606C-4788-8E68-76194911B1E1}|BackEnd.EF\\BackEnd.EF.csproj|solutionrelative:backend.ef\\repositories\\attendancerepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{260EB28B-7D43-48D9-B329-B3E367AFF3FB}|BackEnd.Core\\BackEnd.Core.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\backend.core\\interfaces\\iuniteofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{260EB28B-7D43-48D9-B329-B3E367AFF3FB}|BackEnd.Core\\BackEnd.Core.csproj|solutionrelative:backend.core\\interfaces\\iuniteofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{260EB28B-7D43-48D9-B329-B3E367AFF3FB}|BackEnd.Core\\BackEnd.Core.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\backend.core\\interfaces\\istudentrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{260EB28B-7D43-48D9-B329-B3E367AFF3FB}|BackEnd.Core\\BackEnd.Core.csproj|solutionrelative:backend.core\\interfaces\\istudentrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.EF\\Migrations\\20250603114247_attandacechange.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BackEnd.EF\\Migrations\\20250603114247_attandacechange.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D764A386-606C-4788-8E68-76194911B1E1}|BackEnd.EF\\BackEnd.EF.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\backend.ef\\studentdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D764A386-606C-4788-8E68-76194911B1E1}|BackEnd.EF\\BackEnd.EF.csproj|solutionrelative:backend.ef\\studentdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{260EB28B-7D43-48D9-B329-B3E367AFF3FB}|BackEnd.Core\\BackEnd.Core.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\backend.core\\domain\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{260EB28B-7D43-48D9-B329-B3E367AFF3FB}|BackEnd.Core\\BackEnd.Core.csproj|solutionrelative:backend.core\\domain\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{260EB28B-7D43-48D9-B329-B3E367AFF3FB}|BackEnd.Core\\BackEnd.Core.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\backend.core\\domain\\professor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{260EB28B-7D43-48D9-B329-B3E367AFF3FB}|BackEnd.Core\\BackEnd.Core.csproj|solutionrelative:backend.core\\domain\\professor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{260EB28B-7D43-48D9-B329-B3E367AFF3FB}|BackEnd.Core\\BackEnd.Core.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\backend.core\\domain\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{260EB28B-7D43-48D9-B329-B3E367AFF3FB}|BackEnd.Core\\BackEnd.Core.csproj|solutionrelative:backend.core\\domain\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{260EB28B-7D43-48D9-B329-B3E367AFF3FB}|BackEnd.Core\\BackEnd.Core.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\backend.core\\dtos\\lecture\\createlecture.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{260EB28B-7D43-48D9-B329-B3E367AFF3FB}|BackEnd.Core\\BackEnd.Core.csproj|solutionrelative:backend.core\\dtos\\lecture\\createlecture.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{260EB28B-7D43-48D9-B329-B3E367AFF3FB}|BackEnd.Core\\BackEnd.Core.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\backend.core\\helpers\\automapperhelp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{260EB28B-7D43-48D9-B329-B3E367AFF3FB}|BackEnd.Core\\BackEnd.Core.csproj|solutionrelative:backend.core\\helpers\\automapperhelp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{948935CA-64FA-4325-82C6-881FE2519546}|Application\\Application.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\application\\services\\scheduleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{948935CA-64FA-4325-82C6-881FE2519546}|Application\\Application.csproj|solutionrelative:application\\services\\scheduleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{260EB28B-7D43-48D9-B329-B3E367AFF3FB}|BackEnd.Core\\BackEnd.Core.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\backend.core\\dtos\\lecturescheduledto\\createscheduledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{260EB28B-7D43-48D9-B329-B3E367AFF3FB}|BackEnd.Core\\BackEnd.Core.csproj|solutionrelative:backend.core\\dtos\\lecturescheduledto\\createscheduledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{260EB28B-7D43-48D9-B329-B3E367AFF3FB}|BackEnd.Core\\BackEnd.Core.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\backend.core\\domain\\lectureschedule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{260EB28B-7D43-48D9-B329-B3E367AFF3FB}|BackEnd.Core\\BackEnd.Core.csproj|solutionrelative:backend.core\\domain\\lectureschedule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{948935CA-64FA-4325-82C6-881FE2519546}|Application\\Application.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\application\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{948935CA-64FA-4325-82C6-881FE2519546}|Application\\Application.csproj|solutionrelative:application\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D764A386-606C-4788-8E68-76194911B1E1}|BackEnd.EF\\BackEnd.EF.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\backend.ef\\seed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D764A386-606C-4788-8E68-76194911B1E1}|BackEnd.EF\\BackEnd.EF.csproj|solutionrelative:backend.ef\\seed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{260EB28B-7D43-48D9-B329-B3E367AFF3FB}|BackEnd.Core\\BackEnd.Core.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\backend.core\\dtos\\lecturescheduledto\\updatescheduledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{260EB28B-7D43-48D9-B329-B3E367AFF3FB}|BackEnd.Core\\BackEnd.Core.csproj|solutionrelative:backend.core\\dtos\\lecturescheduledto\\updatescheduledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{260EB28B-7D43-48D9-B329-B3E367AFF3FB}|BackEnd.Core\\BackEnd.Core.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\backend.core\\dtos\\lecturescheduledto\\getschedule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{260EB28B-7D43-48D9-B329-B3E367AFF3FB}|BackEnd.Core\\BackEnd.Core.csproj|solutionrelative:backend.core\\dtos\\lecturescheduledto\\getschedule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{260EB28B-7D43-48D9-B329-B3E367AFF3FB}|BackEnd.Core\\BackEnd.Core.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\backend.core\\dtos\\course\\getcourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{260EB28B-7D43-48D9-B329-B3E367AFF3FB}|BackEnd.Core\\BackEnd.Core.csproj|solutionrelative:backend.core\\dtos\\course\\getcourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{260EB28B-7D43-48D9-B329-B3E367AFF3FB}|BackEnd.Core\\BackEnd.Core.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\backend.core\\dtos\\course\\createcourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{260EB28B-7D43-48D9-B329-B3E367AFF3FB}|BackEnd.Core\\BackEnd.Core.csproj|solutionrelative:backend.core\\dtos\\course\\createcourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D764A386-606C-4788-8E68-76194911B1E1}|BackEnd.EF\\BackEnd.EF.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\backend.ef\\repositories\\lecturerepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D764A386-606C-4788-8E68-76194911B1E1}|BackEnd.EF\\BackEnd.EF.csproj|solutionrelative:backend.ef\\repositories\\lecturerepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{260EB28B-7D43-48D9-B329-B3E367AFF3FB}|BackEnd.Core\\BackEnd.Core.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\backend.core\\interfaces\\iprofessorrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{260EB28B-7D43-48D9-B329-B3E367AFF3FB}|BackEnd.Core\\BackEnd.Core.csproj|solutionrelative:backend.core\\interfaces\\iprofessorrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{260EB28B-7D43-48D9-B329-B3E367AFF3FB}|BackEnd.Core\\BackEnd.Core.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\backend.core\\jwthelpers\\jwthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{260EB28B-7D43-48D9-B329-B3E367AFF3FB}|BackEnd.Core\\BackEnd.Core.csproj|solutionrelative:backend.core\\jwthelpers\\jwthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{948935CA-64FA-4325-82C6-881FE2519546}|Application\\Application.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\application\\services\\materialservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{948935CA-64FA-4325-82C6-881FE2519546}|Application\\Application.csproj|solutionrelative:application\\services\\materialservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B3DAEE1-67F5-43D7-AA70-957181C5408F}|StudentBackEnd\\StudentBackEnd.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\studentbackend\\extensions\\addjwttokenservicesextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B3DAEE1-67F5-43D7-AA70-957181C5408F}|StudentBackEnd\\StudentBackEnd.csproj|solutionrelative:studentbackend\\extensions\\addjwttokenservicesextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{260EB28B-7D43-48D9-B329-B3E367AFF3FB}|BackEnd.Core\\BackEnd.Core.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\backend.core\\domain\\coursematerial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{260EB28B-7D43-48D9-B329-B3E367AFF3FB}|BackEnd.Core\\BackEnd.Core.csproj|solutionrelative:backend.core\\domain\\coursematerial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B3DAEE1-67F5-43D7-AA70-957181C5408F}|StudentBackEnd\\StudentBackEnd.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\studentbackend\\controllers\\lectureschedulecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B3DAEE1-67F5-43D7-AA70-957181C5408F}|StudentBackEnd\\StudentBackEnd.csproj|solutionrelative:studentbackend\\controllers\\lectureschedulecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{948935CA-64FA-4325-82C6-881FE2519546}|Application\\Application.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\application\\contract\\ischeduleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{948935CA-64FA-4325-82C6-881FE2519546}|Application\\Application.csproj|solutionrelative:application\\contract\\ischeduleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{948935CA-64FA-4325-82C6-881FE2519546}|Application\\Application.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\application\\services\\courseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{948935CA-64FA-4325-82C6-881FE2519546}|Application\\Application.csproj|solutionrelative:application\\services\\courseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.EF\\Migrations\\20250601200909_fixduplicatidstudent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BackEnd.EF\\Migrations\\20250601200909_fixduplicatidstudent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D764A386-606C-4788-8E68-76194911B1E1}|BackEnd.EF\\BackEnd.EF.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\backend.ef\\repositories\\lectureschedulerepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D764A386-606C-4788-8E68-76194911B1E1}|BackEnd.EF\\BackEnd.EF.csproj|solutionrelative:backend.ef\\repositories\\lectureschedulerepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{260EB28B-7D43-48D9-B329-B3E367AFF3FB}|BackEnd.Core\\BackEnd.Core.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\backend.core\\interfaces\\ilectureschedulerepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{260EB28B-7D43-48D9-B329-B3E367AFF3FB}|BackEnd.Core\\BackEnd.Core.csproj|solutionrelative:backend.core\\interfaces\\ilectureschedulerepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{260EB28B-7D43-48D9-B329-B3E367AFF3FB}|BackEnd.Core\\BackEnd.Core.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\backend.core\\interfaces\\imaterialrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{260EB28B-7D43-48D9-B329-B3E367AFF3FB}|BackEnd.Core\\BackEnd.Core.csproj|solutionrelative:backend.core\\interfaces\\imaterialrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D764A386-606C-4788-8E68-76194911B1E1}|BackEnd.EF\\BackEnd.EF.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\backend.ef\\repositories\\courserepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D764A386-606C-4788-8E68-76194911B1E1}|BackEnd.EF\\BackEnd.EF.csproj|solutionrelative:backend.ef\\repositories\\courserepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{948935CA-64FA-4325-82C6-881FE2519546}|Application\\Application.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\application\\contract\\imaterialservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{948935CA-64FA-4325-82C6-881FE2519546}|Application\\Application.csproj|solutionrelative:application\\contract\\imaterialservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B3DAEE1-67F5-43D7-AA70-957181C5408F}|StudentBackEnd\\StudentBackEnd.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\studentbackend\\controllers\\materialscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B3DAEE1-67F5-43D7-AA70-957181C5408F}|StudentBackEnd\\StudentBackEnd.csproj|solutionrelative:studentbackend\\controllers\\materialscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B3DAEE1-67F5-43D7-AA70-957181C5408F}|StudentBackEnd\\StudentBackEnd.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\studentbackend\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B3DAEE1-67F5-43D7-AA70-957181C5408F}|StudentBackEnd\\StudentBackEnd.csproj|solutionrelative:studentbackend\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{260EB28B-7D43-48D9-B329-B3E367AFF3FB}|BackEnd.Core\\BackEnd.Core.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\backend.core\\dtos\\material\\materialuploaddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{260EB28B-7D43-48D9-B329-B3E367AFF3FB}|BackEnd.Core\\BackEnd.Core.csproj|solutionrelative:backend.core\\dtos\\material\\materialuploaddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D764A386-606C-4788-8E68-76194911B1E1}|BackEnd.EF\\BackEnd.EF.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\backend.ef\\repositories\\professorrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D764A386-606C-4788-8E68-76194911B1E1}|BackEnd.EF\\BackEnd.EF.csproj|solutionrelative:backend.ef\\repositories\\professorrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{260EB28B-7D43-48D9-B329-B3E367AFF3FB}|BackEnd.Core\\BackEnd.Core.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\backend.core\\domain\\studentcourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{260EB28B-7D43-48D9-B329-B3E367AFF3FB}|BackEnd.Core\\BackEnd.Core.csproj|solutionrelative:backend.core\\domain\\studentcourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{948935CA-64FA-4325-82C6-881FE2519546}|Application\\Application.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\application\\services\\studentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{948935CA-64FA-4325-82C6-881FE2519546}|Application\\Application.csproj|solutionrelative:application\\services\\studentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{948935CA-64FA-4325-82C6-881FE2519546}|Application\\Application.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\application\\contract\\icourseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{948935CA-64FA-4325-82C6-881FE2519546}|Application\\Application.csproj|solutionrelative:application\\contract\\icourseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{260EB28B-7D43-48D9-B329-B3E367AFF3FB}|BackEnd.Core\\BackEnd.Core.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\backend.core\\models\\jwtsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{260EB28B-7D43-48D9-B329-B3E367AFF3FB}|BackEnd.Core\\BackEnd.Core.csproj|solutionrelative:backend.core\\models\\jwtsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{260EB28B-7D43-48D9-B329-B3E367AFF3FB}|BackEnd.Core\\BackEnd.Core.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\backend.core\\models\\usertokens.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{260EB28B-7D43-48D9-B329-B3E367AFF3FB}|BackEnd.Core\\BackEnd.Core.csproj|solutionrelative:backend.core\\models\\usertokens.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{260EB28B-7D43-48D9-B329-B3E367AFF3FB}|BackEnd.Core\\BackEnd.Core.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\backend.core\\interfaces\\iuserrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{260EB28B-7D43-48D9-B329-B3E367AFF3FB}|BackEnd.Core\\BackEnd.Core.csproj|solutionrelative:backend.core\\interfaces\\iuserrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D764A386-606C-4788-8E68-76194911B1E1}|BackEnd.EF\\BackEnd.EF.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\backend.ef\\repositories\\materialrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D764A386-606C-4788-8E68-76194911B1E1}|BackEnd.EF\\BackEnd.EF.csproj|solutionrelative:backend.ef\\repositories\\materialrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D764A386-606C-4788-8E68-76194911B1E1}|BackEnd.EF\\BackEnd.EF.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\backend.ef\\repositories\\studentrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D764A386-606C-4788-8E68-76194911B1E1}|BackEnd.EF\\BackEnd.EF.csproj|solutionrelative:backend.ef\\repositories\\studentrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B3DAEE1-67F5-43D7-AA70-957181C5408F}|StudentBackEnd\\StudentBackEnd.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\studentbackend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B3DAEE1-67F5-43D7-AA70-957181C5408F}|StudentBackEnd\\StudentBackEnd.csproj|solutionrelative:studentbackend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{948935CA-64FA-4325-82C6-881FE2519546}|Application\\Application.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\application\\responseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{948935CA-64FA-4325-82C6-881FE2519546}|Application\\Application.csproj|solutionrelative:application\\responseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{948935CA-64FA-4325-82C6-881FE2519546}|Application\\Application.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\application\\contract\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{948935CA-64FA-4325-82C6-881FE2519546}|Application\\Application.csproj|solutionrelative:application\\contract\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{948935CA-64FA-4325-82C6-881FE2519546}|Application\\Application.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\application\\contract\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{948935CA-64FA-4325-82C6-881FE2519546}|Application\\Application.csproj|solutionrelative:application\\contract\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{948935CA-64FA-4325-82C6-881FE2519546}|Application\\Application.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\application\\contract\\istudentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{948935CA-64FA-4325-82C6-881FE2519546}|Application\\Application.csproj|solutionrelative:application\\contract\\istudentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D764A386-606C-4788-8E68-76194911B1E1}|BackEnd.EF\\BackEnd.EF.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\backend.ef\\migrations\\20250530204922_materialsfiles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D764A386-606C-4788-8E68-76194911B1E1}|BackEnd.EF\\BackEnd.EF.csproj|solutionrelative:backend.ef\\migrations\\20250530204922_materialsfiles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D764A386-606C-4788-8E68-76194911B1E1}|BackEnd.EF\\BackEnd.EF.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\backend.ef\\migrations\\20250529203850_adjustrelationsships.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D764A386-606C-4788-8E68-76194911B1E1}|BackEnd.EF\\BackEnd.EF.csproj|solutionrelative:backend.ef\\migrations\\20250529203850_adjustrelationsships.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D764A386-606C-4788-8E68-76194911B1E1}|BackEnd.EF\\BackEnd.EF.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\backend.ef\\migrations\\20250601220209_fixnavigationpropfcourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D764A386-606C-4788-8E68-76194911B1E1}|BackEnd.EF\\BackEnd.EF.csproj|solutionrelative:backend.ef\\migrations\\20250601220209_fixnavigationpropfcourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D764A386-606C-4788-8E68-76194911B1E1}|BackEnd.EF\\BackEnd.EF.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\backend.ef\\migrations\\20250601213132_fixdidstudent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D764A386-606C-4788-8E68-76194911B1E1}|BackEnd.EF\\BackEnd.EF.csproj|solutionrelative:backend.ef\\migrations\\20250601213132_fixdidstudent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D764A386-606C-4788-8E68-76194911B1E1}|BackEnd.EF\\BackEnd.EF.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\backend.ef\\migrations\\20250601200528_tablelecturescheulee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D764A386-606C-4788-8E68-76194911B1E1}|BackEnd.EF\\BackEnd.EF.csproj|solutionrelative:backend.ef\\migrations\\20250601200528_tablelecturescheulee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D764A386-606C-4788-8E68-76194911B1E1}|BackEnd.EF\\BackEnd.EF.csproj|d:\\appsmypractice\\studentaffaire\\studentbackend\\backend.ef\\migrations\\20250602194438_fixprobid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D764A386-606C-4788-8E68-76194911B1E1}|BackEnd.EF\\BackEnd.EF.csproj|solutionrelative:backend.ef\\migrations\\20250602194438_fixprobid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 37,
+          "SelectedChildIndex": 8,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{f6c90d9a-1aa8-32e5-baac-467b7262213c}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AttendanceController.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\StudentBackEnd\\Controllers\\AttendanceController.cs",
+              "RelativeDocumentMoniker": "StudentBackEnd\\Controllers\\AttendanceController.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\StudentBackEnd\\Controllers\\AttendanceController.cs",
+              "RelativeToolTip": "StudentBackEnd\\Controllers\\AttendanceController.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAAABgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T12:21:32.651Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LectureService.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\Application\\Services\\LectureService.cs",
+              "RelativeDocumentMoniker": "Application\\Services\\LectureService.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\Application\\Services\\LectureService.cs",
+              "RelativeToolTip": "Application\\Services\\LectureService.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAAAEAAAABRAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T15:03:43.247Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UniteOfWork.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.EF\\Repositories\\UniteOfWork.cs",
+              "RelativeDocumentMoniker": "BackEnd.EF\\Repositories\\UniteOfWork.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.EF\\Repositories\\UniteOfWork.cs",
+              "RelativeToolTip": "BackEnd.EF\\Repositories\\UniteOfWork.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAIAwwCwAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T10:16:09.28Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AttendanceService.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\Application\\Services\\AttendanceService.cs",
+              "RelativeDocumentMoniker": "Application\\Services\\AttendanceService.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\Application\\Services\\AttendanceService.cs",
+              "RelativeToolTip": "Application\\Services\\AttendanceService.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAEwB0AAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T11:57:00.364Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ILectureService.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\Application\\contract\\ILectureService.cs",
+              "RelativeDocumentMoniker": "Application\\contract\\ILectureService.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\Application\\contract\\ILectureService.cs",
+              "RelativeToolTip": "Application\\contract\\ILectureService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwA0AAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T14:37:09.377Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LectureController.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\StudentBackEnd\\Controllers\\LectureController.cs",
+              "RelativeDocumentMoniker": "StudentBackEnd\\Controllers\\LectureController.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\StudentBackEnd\\Controllers\\LectureController.cs",
+              "RelativeToolTip": "StudentBackEnd\\Controllers\\LectureController.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAAACIAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T19:36:14.187Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MarkAttendanceDto.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.Core\\DTOs\\Attendance\\MarkAttendanceDto.cs",
+              "RelativeDocumentMoniker": "BackEnd.Core\\DTOs\\Attendance\\MarkAttendanceDto.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.Core\\DTOs\\Attendance\\MarkAttendanceDto.cs",
+              "RelativeToolTip": "BackEnd.Core\\DTOs\\Attendance\\MarkAttendanceDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T12:25:21.765Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Attendance.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.Core\\Domain\\Attendance.cs",
+              "RelativeDocumentMoniker": "BackEnd.Core\\Domain\\Attendance.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.Core\\Domain\\Attendance.cs",
+              "RelativeToolTip": "BackEnd.Core\\Domain\\Attendance.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T11:02:55.727Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ServicesExtention.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\Application\\ServicesExtention.cs",
+              "RelativeDocumentMoniker": "Application\\ServicesExtention.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\Application\\ServicesExtention.cs",
+              "RelativeToolTip": "Application\\ServicesExtention.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAAACQAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T13:58:00.941Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Student.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.Core\\Domain\\Student.cs",
+              "RelativeDocumentMoniker": "BackEnd.Core\\Domain\\Student.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.Core\\Domain\\Student.cs",
+              "RelativeToolTip": "BackEnd.Core\\Domain\\Student.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAAABIAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T17:47:53.847Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\StudentBackEnd\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "StudentBackEnd\\Controllers\\UserController.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\StudentBackEnd\\Controllers\\UserController.cs",
+              "RelativeToolTip": "StudentBackEnd\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAAAFsAAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T17:14:04.829Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ILectureRepo.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.Core\\Interfaces\\ILectureRepo.cs",
+              "RelativeDocumentMoniker": "BackEnd.Core\\Interfaces\\ILectureRepo.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.Core\\Interfaces\\ILectureRepo.cs",
+              "RelativeToolTip": "BackEnd.Core\\Interfaces\\ILectureRepo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T14:30:30.311Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CourseController.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\StudentBackEnd\\Controllers\\CourseController.cs",
+              "RelativeDocumentMoniker": "StudentBackEnd\\Controllers\\CourseController.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\StudentBackEnd\\Controllers\\CourseController.cs",
+              "RelativeToolTip": "StudentBackEnd\\Controllers\\CourseController.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAuwBwAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T20:48:51.258Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "IAttendanceService.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\Application\\contract\\IAttendanceService.cs",
+              "RelativeDocumentMoniker": "Application\\contract\\IAttendanceService.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\Application\\contract\\IAttendanceService.cs",
+              "RelativeToolTip": "Application\\contract\\IAttendanceService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T11:47:43.404Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "GenericRepo.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.EF\\Repositories\\GenericRepo.cs",
+              "RelativeDocumentMoniker": "BackEnd.EF\\Repositories\\GenericRepo.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.EF\\Repositories\\GenericRepo.cs",
+              "RelativeToolTip": "BackEnd.EF\\Repositories\\GenericRepo.cs",
+              "ViewState": "AgIAAKsAAAAAAAAAAAAAANkAAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T12:05:07.165Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\Application\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "Application\\Services\\UserService.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\Application\\Services\\UserService.cs",
+              "RelativeToolTip": "Application\\Services\\UserService.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAABUAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T21:57:57.894Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "IGenericRepo.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.Core\\Interfaces\\IGenericRepo.cs",
+              "RelativeDocumentMoniker": "BackEnd.Core\\Interfaces\\IGenericRepo.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.Core\\Interfaces\\IGenericRepo.cs",
+              "RelativeToolTip": "BackEnd.Core\\Interfaces\\IGenericRepo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T21:41:33.119Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "AttendanceRepo.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.EF\\Repositories\\AttendanceRepo.cs",
+              "RelativeDocumentMoniker": "BackEnd.EF\\Repositories\\AttendanceRepo.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.EF\\Repositories\\AttendanceRepo.cs",
+              "RelativeToolTip": "BackEnd.EF\\Repositories\\AttendanceRepo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T11:45:31.965Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "IAttendanceRepo.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.Core\\Interfaces\\IAttendanceRepo.cs",
+              "RelativeDocumentMoniker": "BackEnd.Core\\Interfaces\\IAttendanceRepo.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.Core\\Interfaces\\IAttendanceRepo.cs",
+              "RelativeToolTip": "BackEnd.Core\\Interfaces\\IAttendanceRepo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T11:43:40.699Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "IUniteOfWork.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.Core\\Interfaces\\IUniteOfWork.cs",
+              "RelativeDocumentMoniker": "BackEnd.Core\\Interfaces\\IUniteOfWork.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.Core\\Interfaces\\IUniteOfWork.cs",
+              "RelativeToolTip": "BackEnd.Core\\Interfaces\\IUniteOfWork.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAAABEAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T10:15:51.617Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "20250603114247_attandacechange.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.EF\\Migrations\\20250603114247_attandacechange.cs",
+              "RelativeDocumentMoniker": "BackEnd.EF\\Migrations\\20250603114247_attandacechange.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.EF\\Migrations\\20250603114247_attandacechange.cs",
+              "RelativeToolTip": "BackEnd.EF\\Migrations\\20250603114247_attandacechange.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T11:42:47.28Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "IStudentRepo.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.Core\\Interfaces\\IStudentRepo.cs",
+              "RelativeDocumentMoniker": "BackEnd.Core\\Interfaces\\IStudentRepo.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.Core\\Interfaces\\IStudentRepo.cs",
+              "RelativeToolTip": "BackEnd.Core\\Interfaces\\IStudentRepo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T13:00:46.269Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "StudentDbContext.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.EF\\StudentDbContext.cs",
+              "RelativeDocumentMoniker": "BackEnd.EF\\StudentDbContext.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.EF\\StudentDbContext.cs",
+              "RelativeToolTip": "BackEnd.EF\\StudentDbContext.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAADsAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T13:37:53.52Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "AppUser.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.Core\\Domain\\AppUser.cs",
+              "RelativeDocumentMoniker": "BackEnd.Core\\Domain\\AppUser.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.Core\\Domain\\AppUser.cs",
+              "RelativeToolTip": "BackEnd.Core\\Domain\\AppUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T18:05:07.651Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Professor.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.Core\\Domain\\Professor.cs",
+              "RelativeDocumentMoniker": "BackEnd.Core\\Domain\\Professor.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.Core\\Domain\\Professor.cs",
+              "RelativeToolTip": "BackEnd.Core\\Domain\\Professor.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAAAA4AAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T17:47:34.973Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Course.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.Core\\Domain\\Course.cs",
+              "RelativeDocumentMoniker": "BackEnd.Core\\Domain\\Course.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.Core\\Domain\\Course.cs",
+              "RelativeToolTip": "BackEnd.Core\\Domain\\Course.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAoAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T18:12:42.037Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "CreateLecture.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.Core\\DTOs\\Lecture\\CreateLecture.cs",
+              "RelativeDocumentMoniker": "BackEnd.Core\\DTOs\\Lecture\\CreateLecture.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.Core\\DTOs\\Lecture\\CreateLecture.cs",
+              "RelativeToolTip": "BackEnd.Core\\DTOs\\Lecture\\CreateLecture.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T14:43:30.246Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "AutoMapperHelp.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.Core\\Helpers\\AutoMapperHelp.cs",
+              "RelativeDocumentMoniker": "BackEnd.Core\\Helpers\\AutoMapperHelp.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.Core\\Helpers\\AutoMapperHelp.cs",
+              "RelativeToolTip": "BackEnd.Core\\Helpers\\AutoMapperHelp.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAADMAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T16:27:21.696Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "ScheduleService.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\Application\\Services\\ScheduleService.cs",
+              "RelativeDocumentMoniker": "Application\\Services\\ScheduleService.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\Application\\Services\\ScheduleService.cs",
+              "RelativeToolTip": "Application\\Services\\ScheduleService.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAD4vx4AAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-01T19:17:30.881Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 74,
+              "Title": "20250602194438_fixprobid.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.EF\\Migrations\\20250602194438_fixprobid.cs",
+              "RelativeDocumentMoniker": "BackEnd.EF\\Migrations\\20250602194438_fixprobid.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.EF\\Migrations\\20250602194438_fixprobid.cs",
+              "RelativeToolTip": "BackEnd.EF\\Migrations\\20250602194438_fixprobid.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T19:44:38.217Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "LectureSchedule.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.Core\\Domain\\LectureSchedule.cs",
+              "RelativeDocumentMoniker": "BackEnd.Core\\Domain\\LectureSchedule.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.Core\\Domain\\LectureSchedule.cs",
+              "RelativeToolTip": "BackEnd.Core\\Domain\\LectureSchedule.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAAAgAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-01T18:35:21.254Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "CreateScheduleDto.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.Core\\DTOs\\LectureScheduleDto\\CreateScheduleDto.cs",
+              "RelativeDocumentMoniker": "BackEnd.Core\\DTOs\\LectureScheduleDto\\CreateScheduleDto.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.Core\\DTOs\\LectureScheduleDto\\CreateScheduleDto.cs",
+              "RelativeToolTip": "BackEnd.Core\\DTOs\\LectureScheduleDto\\CreateScheduleDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-01T18:42:07.164Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "Seed.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.EF\\Seed.cs",
+              "RelativeDocumentMoniker": "BackEnd.EF\\Seed.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.EF\\Seed.cs",
+              "RelativeToolTip": "BackEnd.EF\\Seed.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAD4vxUAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T14:45:37.77Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\Application\\Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "Application\\Services\\AuthService.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\Application\\Services\\AuthService.cs",
+              "RelativeToolTip": "Application\\Services\\AuthService.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAADkAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T15:21:52.386Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "UpdateScheduleDto.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.Core\\DTOs\\LectureScheduleDto\\UpdateScheduleDto.cs",
+              "RelativeDocumentMoniker": "BackEnd.Core\\DTOs\\LectureScheduleDto\\UpdateScheduleDto.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.Core\\DTOs\\LectureScheduleDto\\UpdateScheduleDto.cs",
+              "RelativeToolTip": "BackEnd.Core\\DTOs\\LectureScheduleDto\\UpdateScheduleDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAoAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-01T18:49:07.209Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "GetSchedule.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.Core\\DTOs\\LectureScheduleDto\\GetSchedule.cs",
+              "RelativeDocumentMoniker": "BackEnd.Core\\DTOs\\LectureScheduleDto\\GetSchedule.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.Core\\DTOs\\LectureScheduleDto\\GetSchedule.cs",
+              "RelativeToolTip": "BackEnd.Core\\DTOs\\LectureScheduleDto\\GetSchedule.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwA4AAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-01T19:29:19.273Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "GetCourse.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.Core\\DTOs\\Course\\GetCourse.cs",
+              "RelativeDocumentMoniker": "BackEnd.Core\\DTOs\\Course\\GetCourse.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.Core\\DTOs\\Course\\GetCourse.cs",
+              "RelativeToolTip": "BackEnd.Core\\DTOs\\Course\\GetCourse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T14:48:58.413Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "LectureRepo.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.EF\\Repositories\\LectureRepo.cs",
+              "RelativeDocumentMoniker": "BackEnd.EF\\Repositories\\LectureRepo.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.EF\\Repositories\\LectureRepo.cs",
+              "RelativeToolTip": "BackEnd.EF\\Repositories\\LectureRepo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T14:33:03.978Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "CreateCourse.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.Core\\DTOs\\Course\\CreateCourse.cs",
+              "RelativeDocumentMoniker": "BackEnd.Core\\DTOs\\Course\\CreateCourse.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.Core\\DTOs\\Course\\CreateCourse.cs",
+              "RelativeToolTip": "BackEnd.Core\\DTOs\\Course\\CreateCourse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T21:39:34.799Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "IProfessorRepo.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.Core\\Interfaces\\IProfessorRepo.cs",
+              "RelativeDocumentMoniker": "BackEnd.Core\\Interfaces\\IProfessorRepo.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.Core\\Interfaces\\IProfessorRepo.cs",
+              "RelativeToolTip": "BackEnd.Core\\Interfaces\\IProfessorRepo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T13:00:51.463Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "MaterialService.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\Application\\Services\\MaterialService.cs",
+              "RelativeDocumentMoniker": "Application\\Services\\MaterialService.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\Application\\Services\\MaterialService.cs",
+              "RelativeToolTip": "Application\\Services\\MaterialService.cs",
+              "ViewState": "AgIAACYAAAAAAAAAACBjwB4AAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T21:58:05.688Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "AddJWTTokenServicesExtensions.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\StudentBackEnd\\Extensions\\AddJWTTokenServicesExtensions.cs",
+              "RelativeDocumentMoniker": "StudentBackEnd\\Extensions\\AddJWTTokenServicesExtensions.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\StudentBackEnd\\Extensions\\AddJWTTokenServicesExtensions.cs",
+              "RelativeToolTip": "StudentBackEnd\\Extensions\\AddJWTTokenServicesExtensions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T09:46:00.914Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "JwtHelper.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.Core\\JwtHelpers\\JwtHelper.cs",
+              "RelativeDocumentMoniker": "BackEnd.Core\\JwtHelpers\\JwtHelper.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.Core\\JwtHelpers\\JwtHelper.cs",
+              "RelativeToolTip": "BackEnd.Core\\JwtHelpers\\JwtHelper.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAACBjwBgAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T13:09:51.508Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "CourseMaterial.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.Core\\Domain\\CourseMaterial.cs",
+              "RelativeDocumentMoniker": "BackEnd.Core\\Domain\\CourseMaterial.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.Core\\Domain\\CourseMaterial.cs",
+              "RelativeToolTip": "BackEnd.Core\\Domain\\CourseMaterial.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAACBjwBQAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T19:50:07.312Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "IScheduleService.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\Application\\contract\\IScheduleService.cs",
+              "RelativeDocumentMoniker": "Application\\contract\\IScheduleService.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\Application\\contract\\IScheduleService.cs",
+              "RelativeToolTip": "Application\\contract\\IScheduleService.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAApwA4AAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-01T19:12:48.398Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "LectureScheduleController.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\StudentBackEnd\\Controllers\\LectureScheduleController.cs",
+              "RelativeDocumentMoniker": "StudentBackEnd\\Controllers\\LectureScheduleController.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\StudentBackEnd\\Controllers\\LectureScheduleController.cs",
+              "RelativeToolTip": "StudentBackEnd\\Controllers\\LectureScheduleController.cs",
+              "ViewState": "AgIAABoAAAAAAAAAACBjwDkAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-01T19:47:17.748Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 71,
+              "Title": "20250601220209_FixnavigationpropfCourse.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.EF\\Migrations\\20250601220209_FixnavigationpropfCourse.cs",
+              "RelativeDocumentMoniker": "BackEnd.EF\\Migrations\\20250601220209_FixnavigationpropfCourse.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.EF\\Migrations\\20250601220209_FixnavigationpropfCourse.cs",
+              "RelativeToolTip": "BackEnd.EF\\Migrations\\20250601220209_FixnavigationpropfCourse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-01T22:02:09.264Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 72,
+              "Title": "20250601213132_FixdIdStudent.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.EF\\Migrations\\20250601213132_FixdIdStudent.cs",
+              "RelativeDocumentMoniker": "BackEnd.EF\\Migrations\\20250601213132_FixdIdStudent.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.EF\\Migrations\\20250601213132_FixdIdStudent.cs",
+              "RelativeToolTip": "BackEnd.EF\\Migrations\\20250601213132_FixdIdStudent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-01T21:31:32.906Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "CourseService.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\Application\\Services\\CourseService.cs",
+              "RelativeDocumentMoniker": "Application\\Services\\CourseService.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\Application\\Services\\CourseService.cs",
+              "RelativeToolTip": "Application\\Services\\CourseService.cs",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAuwFQAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T16:21:49.881Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "20250601200909_fixduplicatidstudent.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.EF\\Migrations\\20250601200909_fixduplicatidstudent.cs",
+              "RelativeDocumentMoniker": "BackEnd.EF\\Migrations\\20250601200909_fixduplicatidstudent.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.EF\\Migrations\\20250601200909_fixduplicatidstudent.cs",
+              "RelativeToolTip": "BackEnd.EF\\Migrations\\20250601200909_fixduplicatidstudent.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-01T20:09:09.949Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 73,
+              "Title": "20250601200528_tablelecturescheulee.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.EF\\Migrations\\20250601200528_tablelecturescheulee.cs",
+              "RelativeDocumentMoniker": "BackEnd.EF\\Migrations\\20250601200528_tablelecturescheulee.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.EF\\Migrations\\20250601200528_tablelecturescheulee.cs",
+              "RelativeToolTip": "BackEnd.EF\\Migrations\\20250601200528_tablelecturescheulee.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-01T20:05:28.284Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "LectureScheduleRepo.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.EF\\Repositories\\LectureScheduleRepo.cs",
+              "RelativeDocumentMoniker": "BackEnd.EF\\Repositories\\LectureScheduleRepo.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.EF\\Repositories\\LectureScheduleRepo.cs",
+              "RelativeToolTip": "BackEnd.EF\\Repositories\\LectureScheduleRepo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-01T19:05:33.055Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "ILectureScheduleRepo.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.Core\\Interfaces\\ILectureScheduleRepo.cs",
+              "RelativeDocumentMoniker": "BackEnd.Core\\Interfaces\\ILectureScheduleRepo.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.Core\\Interfaces\\ILectureScheduleRepo.cs",
+              "RelativeToolTip": "BackEnd.Core\\Interfaces\\ILectureScheduleRepo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAkAAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-01T19:02:44.296Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "IMaterialRepo.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.Core\\Interfaces\\IMaterialRepo.cs",
+              "RelativeDocumentMoniker": "BackEnd.Core\\Interfaces\\IMaterialRepo.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.Core\\Interfaces\\IMaterialRepo.cs",
+              "RelativeToolTip": "BackEnd.Core\\Interfaces\\IMaterialRepo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAsAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T09:50:15.684Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "CourseRepo.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.EF\\Repositories\\CourseRepo.cs",
+              "RelativeDocumentMoniker": "BackEnd.EF\\Repositories\\CourseRepo.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.EF\\Repositories\\CourseRepo.cs",
+              "RelativeToolTip": "BackEnd.EF\\Repositories\\CourseRepo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T21:34:15.721Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "MaterialsController.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\StudentBackEnd\\Controllers\\MaterialsController.cs",
+              "RelativeDocumentMoniker": "StudentBackEnd\\Controllers\\MaterialsController.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\StudentBackEnd\\Controllers\\MaterialsController.cs",
+              "RelativeToolTip": "StudentBackEnd\\Controllers\\MaterialsController.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAQwBgAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T20:27:23.138Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "IMaterialService.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\Application\\contract\\IMaterialService.cs",
+              "RelativeDocumentMoniker": "Application\\contract\\IMaterialService.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\Application\\contract\\IMaterialService.cs",
+              "RelativeToolTip": "Application\\contract\\IMaterialService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwA0AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T20:17:24.759Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\StudentBackEnd\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "StudentBackEnd\\Controllers\\AccountController.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\StudentBackEnd\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "StudentBackEnd\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAewDMAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T17:14:15.72Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "MaterialUploadDto.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.Core\\DTOs\\Material\\MaterialUploadDto.cs",
+              "RelativeDocumentMoniker": "BackEnd.Core\\DTOs\\Material\\MaterialUploadDto.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.Core\\DTOs\\Material\\MaterialUploadDto.cs",
+              "RelativeToolTip": "BackEnd.Core\\DTOs\\Material\\MaterialUploadDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T12:25:58.243Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "ProfessorRepo.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.EF\\Repositories\\ProfessorRepo.cs",
+              "RelativeDocumentMoniker": "BackEnd.EF\\Repositories\\ProfessorRepo.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.EF\\Repositories\\ProfessorRepo.cs",
+              "RelativeToolTip": "BackEnd.EF\\Repositories\\ProfessorRepo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAsAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T10:17:23.432Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "StudentCourse.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.Core\\Domain\\StudentCourse.cs",
+              "RelativeDocumentMoniker": "BackEnd.Core\\Domain\\StudentCourse.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.Core\\Domain\\StudentCourse.cs",
+              "RelativeToolTip": "BackEnd.Core\\Domain\\StudentCourse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T18:36:46.553Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "StudentService.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\Application\\Services\\StudentService.cs",
+              "RelativeDocumentMoniker": "Application\\Services\\StudentService.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\Application\\Services\\StudentService.cs",
+              "RelativeToolTip": "Application\\Services\\StudentService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T17:02:10.153Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "ICourseService.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\Application\\contract\\ICourseService.cs",
+              "RelativeDocumentMoniker": "Application\\contract\\ICourseService.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\Application\\contract\\ICourseService.cs",
+              "RelativeToolTip": "Application\\contract\\ICourseService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAwAAABTAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T17:29:25.396Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 61,
+              "Title": "IUserRepo.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.Core\\Interfaces\\IUserRepo.cs",
+              "RelativeDocumentMoniker": "BackEnd.Core\\Interfaces\\IUserRepo.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.Core\\Interfaces\\IUserRepo.cs",
+              "RelativeToolTip": "BackEnd.Core\\Interfaces\\IUserRepo.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAD4vxAAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T13:01:01.982Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 60,
+              "Title": "UserTokens.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.Core\\Models\\UserTokens.cs",
+              "RelativeDocumentMoniker": "BackEnd.Core\\Models\\UserTokens.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.Core\\Models\\UserTokens.cs",
+              "RelativeToolTip": "BackEnd.Core\\Models\\UserTokens.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwA4AAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T15:59:51.599Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 59,
+              "Title": "JwtSettings.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.Core\\Models\\JwtSettings.cs",
+              "RelativeDocumentMoniker": "BackEnd.Core\\Models\\JwtSettings.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.Core\\Models\\JwtSettings.cs",
+              "RelativeToolTip": "BackEnd.Core\\Models\\JwtSettings.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAIBJwA8AAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T15:59:29.475Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 62,
+              "Title": "MaterialRepo.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.EF\\Repositories\\MaterialRepo.cs",
+              "RelativeDocumentMoniker": "BackEnd.EF\\Repositories\\MaterialRepo.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.EF\\Repositories\\MaterialRepo.cs",
+              "RelativeToolTip": "BackEnd.EF\\Repositories\\MaterialRepo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T10:11:50.751Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 63,
+              "Title": "StudentRepo.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.EF\\Repositories\\StudentRepo.cs",
+              "RelativeDocumentMoniker": "BackEnd.EF\\Repositories\\StudentRepo.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.EF\\Repositories\\StudentRepo.cs",
+              "RelativeToolTip": "BackEnd.EF\\Repositories\\StudentRepo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T13:04:08.365Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 64,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\StudentBackEnd\\Program.cs",
+              "RelativeDocumentMoniker": "StudentBackEnd\\Program.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\StudentBackEnd\\Program.cs",
+              "RelativeToolTip": "StudentBackEnd\\Program.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAIBpwB0AAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T13:59:49.71Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 65,
+              "Title": "ResponseService.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\Application\\ResponseService.cs",
+              "RelativeDocumentMoniker": "Application\\ResponseService.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\Application\\ResponseService.cs",
+              "RelativeToolTip": "Application\\ResponseService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T10:50:29.885Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 69,
+              "Title": "20250530204922_materialsfiles.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.EF\\Migrations\\20250530204922_materialsfiles.cs",
+              "RelativeDocumentMoniker": "BackEnd.EF\\Migrations\\20250530204922_materialsfiles.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.EF\\Migrations\\20250530204922_materialsfiles.cs",
+              "RelativeToolTip": "BackEnd.EF\\Migrations\\20250530204922_materialsfiles.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T20:49:22.585Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 66,
+              "Title": "IAuthService.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\Application\\contract\\IAuthService.cs",
+              "RelativeDocumentMoniker": "Application\\contract\\IAuthService.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\Application\\contract\\IAuthService.cs",
+              "RelativeToolTip": "Application\\contract\\IAuthService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T15:22:02.992Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 67,
+              "Title": "IUserService.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\Application\\contract\\IUserService.cs",
+              "RelativeDocumentMoniker": "Application\\contract\\IUserService.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\Application\\contract\\IUserService.cs",
+              "RelativeToolTip": "Application\\contract\\IUserService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T17:31:53.647Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 68,
+              "Title": "IStudentService.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\Application\\contract\\IStudentService.cs",
+              "RelativeDocumentMoniker": "Application\\contract\\IStudentService.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\Application\\contract\\IStudentService.cs",
+              "RelativeToolTip": "Application\\contract\\IStudentService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T21:33:10.705Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 70,
+              "Title": "20250529203850_AdjustRelationsships.cs",
+              "DocumentMoniker": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.EF\\Migrations\\20250529203850_AdjustRelationsships.cs",
+              "RelativeDocumentMoniker": "BackEnd.EF\\Migrations\\20250529203850_AdjustRelationsships.cs",
+              "ToolTip": "D:\\AppsMypractice\\StudentAffaire\\StudentBackEnd\\BackEnd.EF\\Migrations\\20250529203850_AdjustRelationsships.cs",
+              "RelativeToolTip": "BackEnd.EF\\Migrations\\20250529203850_AdjustRelationsships.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T20:38:50.551Z"
+            }
+          ]
+        },
+        {
+          "DockedHeight": 37,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

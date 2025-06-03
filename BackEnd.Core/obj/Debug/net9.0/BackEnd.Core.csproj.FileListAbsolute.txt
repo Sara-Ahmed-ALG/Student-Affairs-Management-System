@@ -1,0 +1,14 @@
+D:\AppsMypractice\StudentAffaire\StudentBackEnd\BackEnd.Core\bin\Debug\net9.0\BackEnd.Core.deps.json
+D:\AppsMypractice\StudentAffaire\StudentBackEnd\BackEnd.Core\bin\Debug\net9.0\BackEnd.Core.runtimeconfig.json
+D:\AppsMypractice\StudentAffaire\StudentBackEnd\BackEnd.Core\bin\Debug\net9.0\BackEnd.Core.dll
+D:\AppsMypractice\StudentAffaire\StudentBackEnd\BackEnd.Core\bin\Debug\net9.0\BackEnd.Core.pdb
+D:\AppsMypractice\StudentAffaire\StudentBackEnd\BackEnd.Core\obj\Debug\net9.0\BackEnd.Core.csproj.AssemblyReference.cache
+D:\AppsMypractice\StudentAffaire\StudentBackEnd\BackEnd.Core\obj\Debug\net9.0\BackEnd.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\AppsMypractice\StudentAffaire\StudentBackEnd\BackEnd.Core\obj\Debug\net9.0\BackEnd.Core.AssemblyInfoInputs.cache
+D:\AppsMypractice\StudentAffaire\StudentBackEnd\BackEnd.Core\obj\Debug\net9.0\BackEnd.Core.AssemblyInfo.cs
+D:\AppsMypractice\StudentAffaire\StudentBackEnd\BackEnd.Core\obj\Debug\net9.0\BackEnd.Core.csproj.CoreCompileInputs.cache
+D:\AppsMypractice\StudentAffaire\StudentBackEnd\BackEnd.Core\obj\Debug\net9.0\BackEnd.Core.dll
+D:\AppsMypractice\StudentAffaire\StudentBackEnd\BackEnd.Core\obj\Debug\net9.0\refint\BackEnd.Core.dll
+D:\AppsMypractice\StudentAffaire\StudentBackEnd\BackEnd.Core\obj\Debug\net9.0\BackEnd.Core.pdb
+D:\AppsMypractice\StudentAffaire\StudentBackEnd\BackEnd.Core\obj\Debug\net9.0\BackEnd.Core.genruntimeconfig.cache
+D:\AppsMypractice\StudentAffaire\StudentBackEnd\BackEnd.Core\obj\Debug\net9.0\ref\BackEnd.Core.dll

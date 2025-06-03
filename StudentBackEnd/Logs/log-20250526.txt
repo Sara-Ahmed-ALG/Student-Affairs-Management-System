@@ -1,0 +1,578 @@
+2025-05-26 22:45:20.892 +03:00 [INF] User profile is available. Using 'C:\Users\Target\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-05-26 22:45:21.557 +03:00 [WRN] The foreign key property 'Student.AppUserId1' was created in shadow state because a conflicting property with the simple name 'AppUserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-05-26 22:45:22.359 +03:00 [INF] Executed DbCommand (37ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-05-26 22:45:22.424 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-05-26 22:45:22.427 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-05-26 22:45:22.443 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-05-26 22:45:22.779 +03:00 [WRN] The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert
+2025-05-26 22:45:22.840 +03:00 [INF] Now listening on: https://localhost:5001
+2025-05-26 22:45:22.841 +03:00 [INF] Now listening on: http://localhost:5000
+2025-05-26 22:45:22.925 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-05-26 22:45:22.926 +03:00 [INF] Hosting environment: Development
+2025-05-26 22:45:22.927 +03:00 [INF] Content root path: D:\AppsMypractice\StudentAffaire\StudentBackEnd\StudentBackEnd
+2025-05-26 22:45:23.412 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger - null null
+2025-05-26 22:45:23.643 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger - 301 0 null 258.4707ms
+2025-05-26 22:45:23.660 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.html - null null
+2025-05-26 22:45:23.716 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.html - 200 null text/html;charset=utf-8 56.734ms
+2025-05-26 22:45:23.723 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.css - null null
+2025-05-26 22:45:23.723 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui.css - null null
+2025-05-26 22:45:23.723 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.js - null null
+2025-05-26 22:45:23.723 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui-standalone-preset.js - null null
+2025-05-26 22:45:23.750 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-26 22:45:23.797 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.js - 200 null application/javascript;charset=utf-8 74.2312ms
+2025-05-26 22:45:23.723 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui-bundle.js - null null
+2025-05-26 22:45:23.790 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2025-05-26 22:45:23.895 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 13780 application/javascript; charset=utf-8 171.0854ms
+2025-05-26 22:45:23.897 +03:00 [INF] Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2025-05-26 22:45:23.961 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.css - 200 202 text/css 238.2385ms
+2025-05-26 22:45:23.969 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-05-26 22:45:23.969 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-05-26 22:45:23.975 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui-standalone-preset.js - 200 229223 text/javascript 251.5693ms
+2025-05-26 22:45:23.975 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui.css - 200 154949 text/css 252.2779ms
+2025-05-26 22:45:23.999 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 209.7773ms
+2025-05-26 22:45:24.014 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-05-26 22:45:24.016 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui-bundle.js - 200 1466908 text/javascript 292.9834ms
+2025-05-26 22:45:24.200 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - null null
+2025-05-26 22:45:24.215 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 14.6656ms
+2025-05-26 22:47:05.391 +03:00 [INF] Request starting HTTP/2 POST https://localhost:5001/api/Account/login - application/json 59
+2025-05-26 22:47:05.421 +03:00 [INF] Executing endpoint 'StudentBackEnd.Controllers.AccountController.Login (StudentBackEnd)'
+2025-05-26 22:47:05.491 +03:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(BackEnd.Core.DTOs.UserDTO.LoginDto) on controller StudentBackEnd.Controllers.AccountController (StudentBackEnd).
+2025-05-26 22:47:05.762 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@__ToUpper_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]
+        WHERE UPPER([a].[Email]) = @__ToUpper_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-05-26 22:47:05.789 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__ToUpper_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE UPPER([a].[Email]) = @__ToUpper_0
+2025-05-26 22:47:05.856 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[BackEnd.Core.Models.UserTokens, BackEnd.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-26 22:47:05.910 +03:00 [INF] Executed action StudentBackEnd.Controllers.AccountController.Login (StudentBackEnd) in 407.5466ms
+2025-05-26 22:47:05.912 +03:00 [INF] Executed endpoint 'StudentBackEnd.Controllers.AccountController.Login (StudentBackEnd)'
+2025-05-26 22:47:05.920 +03:00 [INF] Request finished HTTP/2 POST https://localhost:5001/api/Account/login - 200 null application/json; charset=utf-8 529.7879ms
+2025-05-26 22:49:45.973 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.html - null null
+2025-05-26 22:49:45.993 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.html - 200 null text/html;charset=utf-8 20.6745ms
+2025-05-26 22:49:46.013 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-26 22:49:46.013 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2025-05-26 22:49:46.017 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 13780 application/javascript; charset=utf-8 4.8042ms
+2025-05-26 22:49:46.050 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 36.9819ms
+2025-05-26 22:49:46.313 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - null null
+2025-05-26 22:49:46.330 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/favicon-32x32.png - null null
+2025-05-26 22:49:46.329 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 16.4806ms
+2025-05-26 22:49:46.336 +03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2025-05-26 22:49:46.342 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/favicon-32x32.png - 200 628 image/png 13.2124ms
+2025-05-26 22:50:31.811 +03:00 [INF] User profile is available. Using 'C:\Users\Target\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-05-26 22:50:32.520 +03:00 [WRN] The foreign key property 'Student.AppUserId1' was created in shadow state because a conflicting property with the simple name 'AppUserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-05-26 22:50:33.428 +03:00 [INF] Executed DbCommand (49ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-05-26 22:50:33.591 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-05-26 22:50:33.595 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-05-26 22:50:33.616 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-05-26 22:50:34.032 +03:00 [WRN] The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert
+2025-05-26 22:50:34.112 +03:00 [INF] Now listening on: https://localhost:5001
+2025-05-26 22:50:34.114 +03:00 [INF] Now listening on: http://localhost:5000
+2025-05-26 22:50:34.248 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-05-26 22:50:34.250 +03:00 [INF] Hosting environment: Development
+2025-05-26 22:50:34.251 +03:00 [INF] Content root path: D:\AppsMypractice\StudentAffaire\StudentBackEnd\StudentBackEnd
+2025-05-26 22:50:34.776 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger - null null
+2025-05-26 22:50:35.007 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger - 301 0 null 245.7229ms
+2025-05-26 22:50:35.014 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.html - null null
+2025-05-26 22:50:35.102 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.html - 200 null text/html;charset=utf-8 88.118ms
+2025-05-26 22:50:35.112 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui-bundle.js - null null
+2025-05-26 22:50:35.111 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui.css - null null
+2025-05-26 22:50:35.112 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.css - null null
+2025-05-26 22:50:35.173 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-26 22:50:35.145 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui-standalone-preset.js - null null
+2025-05-26 22:50:35.173 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.js - null null
+2025-05-26 22:50:35.235 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2025-05-26 22:50:35.286 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.js - 200 null application/javascript;charset=utf-8 112.7257ms
+2025-05-26 22:50:35.292 +03:00 [INF] Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2025-05-26 22:50:35.299 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.css - 200 202 text/css 187.0013ms
+2025-05-26 22:50:35.303 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 13780 application/javascript; charset=utf-8 130.3596ms
+2025-05-26 22:50:35.314 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-05-26 22:50:35.314 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-05-26 22:50:35.326 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-05-26 22:50:35.336 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui.css - 200 154949 text/css 224.2479ms
+2025-05-26 22:50:35.336 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui-standalone-preset.js - 200 229223 text/javascript 191.1814ms
+2025-05-26 22:50:35.338 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui-bundle.js - 200 1466908 text/javascript 225.8598ms
+2025-05-26 22:50:35.356 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 150.7899ms
+2025-05-26 22:50:35.569 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - null null
+2025-05-26 22:50:35.587 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 17.9939ms
+2025-05-26 22:51:11.106 +03:00 [INF] User profile is available. Using 'C:\Users\Target\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-05-26 22:51:11.877 +03:00 [WRN] The foreign key property 'Student.AppUserId1' was created in shadow state because a conflicting property with the simple name 'AppUserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-05-26 22:51:12.860 +03:00 [INF] Executed DbCommand (50ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-05-26 22:51:12.962 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-05-26 22:51:12.967 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-05-26 22:51:12.989 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-05-26 22:51:13.357 +03:00 [WRN] The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert
+2025-05-26 22:51:13.443 +03:00 [INF] Now listening on: https://localhost:5001
+2025-05-26 22:51:13.445 +03:00 [INF] Now listening on: http://localhost:5000
+2025-05-26 22:51:13.567 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-05-26 22:51:13.569 +03:00 [INF] Hosting environment: Development
+2025-05-26 22:51:13.571 +03:00 [INF] Content root path: D:\AppsMypractice\StudentAffaire\StudentBackEnd\StudentBackEnd
+2025-05-26 22:51:14.451 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger - null null
+2025-05-26 22:51:14.672 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger - 301 0 null 229.6705ms
+2025-05-26 22:51:14.681 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.html - null null
+2025-05-26 22:51:14.751 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.html - 200 null text/html;charset=utf-8 70.753ms
+2025-05-26 22:51:14.758 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.css - null null
+2025-05-26 22:51:14.758 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui-standalone-preset.js - null null
+2025-05-26 22:51:14.758 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui-bundle.js - null null
+2025-05-26 22:51:14.758 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui.css - null null
+2025-05-26 22:51:14.758 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-26 22:51:14.759 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.js - null null
+2025-05-26 22:51:14.802 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.js - 200 null application/javascript;charset=utf-8 42.64ms
+2025-05-26 22:51:14.812 +03:00 [INF] Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2025-05-26 22:51:14.815 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.css - 200 202 text/css 57.0098ms
+2025-05-26 22:51:14.827 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 13780 application/javascript; charset=utf-8 68.6922ms
+2025-05-26 22:51:14.831 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-05-26 22:51:14.831 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-05-26 22:51:14.839 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui.css - 200 154949 text/css 80.2687ms
+2025-05-26 22:51:14.839 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui-standalone-preset.js - 200 229223 text/javascript 80.0686ms
+2025-05-26 22:51:14.842 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-05-26 22:51:14.843 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2025-05-26 22:51:14.849 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui-bundle.js - 200 1466908 text/javascript 90.7364ms
+2025-05-26 22:51:14.886 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 42.9622ms
+2025-05-26 22:51:15.060 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - null null
+2025-05-26 22:51:15.074 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 13.6737ms
+2025-05-26 22:53:22.267 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/User - null null
+2025-05-26 22:53:22.293 +03:00 [INF] Executing endpoint 'StudentBackEnd.Controllers.UserController.GetAllUsers (StudentBackEnd)'
+2025-05-26 22:53:22.326 +03:00 [INF] Route matched with {action = "GetAllUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllUsers() on controller StudentBackEnd.Controllers.UserController (StudentBackEnd).
+2025-05-26 22:53:22.341 +03:00 [INF] Executed action StudentBackEnd.Controllers.UserController.GetAllUsers (StudentBackEnd) in 6.5967ms
+2025-05-26 22:53:22.346 +03:00 [INF] Executed endpoint 'StudentBackEnd.Controllers.UserController.GetAllUsers (StudentBackEnd)'
+2025-05-26 22:53:22.351 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'Application.contract.IUserService' while attempting to activate 'StudentBackEnd.Controllers.UserController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method191(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-05-26 22:53:22.376 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/User - 500 null text/plain; charset=utf-8 109.3539ms
+2025-05-26 22:54:07.771 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/User/3484196f-d5e1-4628-97b3-ca8a8907c65f - null null
+2025-05-26 22:54:07.809 +03:00 [INF] Executing endpoint 'StudentBackEnd.Controllers.UserController.GetUserById (StudentBackEnd)'
+2025-05-26 22:54:07.824 +03:00 [INF] Route matched with {action = "GetUserById", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserById(System.String) on controller StudentBackEnd.Controllers.UserController (StudentBackEnd).
+2025-05-26 22:54:07.828 +03:00 [INF] Executed action StudentBackEnd.Controllers.UserController.GetUserById (StudentBackEnd) in 0.9031ms
+2025-05-26 22:54:07.831 +03:00 [INF] Executed endpoint 'StudentBackEnd.Controllers.UserController.GetUserById (StudentBackEnd)'
+2025-05-26 22:54:07.834 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'Application.contract.IUserService' while attempting to activate 'StudentBackEnd.Controllers.UserController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method199(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-05-26 22:54:07.850 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/User/3484196f-d5e1-4628-97b3-ca8a8907c65f - 500 null text/plain; charset=utf-8 78.3933ms
+2025-05-26 22:59:42.758 +03:00 [INF] User profile is available. Using 'C:\Users\Target\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-05-26 22:59:43.444 +03:00 [WRN] The foreign key property 'Student.AppUserId1' was created in shadow state because a conflicting property with the simple name 'AppUserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-05-26 22:59:44.509 +03:00 [INF] Executed DbCommand (79ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-05-26 22:59:44.611 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-05-26 22:59:44.615 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-05-26 22:59:44.637 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-05-26 22:59:45.068 +03:00 [WRN] The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert
+2025-05-26 22:59:45.219 +03:00 [INF] Now listening on: https://localhost:5001
+2025-05-26 22:59:45.221 +03:00 [INF] Now listening on: http://localhost:5000
+2025-05-26 22:59:45.353 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-05-26 22:59:45.355 +03:00 [INF] Hosting environment: Development
+2025-05-26 22:59:45.357 +03:00 [INF] Content root path: D:\AppsMypractice\StudentAffaire\StudentBackEnd\StudentBackEnd
+2025-05-26 22:59:45.835 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger - null null
+2025-05-26 22:59:46.110 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger - 301 0 null 301.558ms
+2025-05-26 22:59:46.118 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.html - null null
+2025-05-26 22:59:46.214 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.html - 200 null text/html;charset=utf-8 96.5915ms
+2025-05-26 22:59:46.226 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui.css - null null
+2025-05-26 22:59:46.227 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.css - null null
+2025-05-26 22:59:46.227 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui-bundle.js - null null
+2025-05-26 22:59:46.281 +03:00 [INF] Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2025-05-26 22:59:46.323 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.css - 200 202 text/css 96.101ms
+2025-05-26 22:59:46.407 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui-standalone-preset.js - null null
+2025-05-26 22:59:46.414 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-05-26 22:59:46.414 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-05-26 22:59:46.421 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui-standalone-preset.js - 200 229223 text/javascript 13.9001ms
+2025-05-26 22:59:46.421 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui.css - 200 154949 text/css 194.6899ms
+2025-05-26 22:59:46.425 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-05-26 22:59:46.426 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.js - null null
+2025-05-26 22:59:46.435 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui-bundle.js - 200 1466908 text/javascript 208.3793ms
+2025-05-26 22:59:46.440 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.js - 200 null application/javascript;charset=utf-8 13.7249ms
+2025-05-26 22:59:46.445 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-26 22:59:46.445 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2025-05-26 22:59:46.454 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 13780 application/javascript; charset=utf-8 9.0152ms
+2025-05-26 22:59:46.489 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 43.945ms
+2025-05-26 22:59:46.663 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - null null
+2025-05-26 22:59:46.676 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 13.0953ms
+2025-05-26 23:00:20.717 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/User - null null
+2025-05-26 23:00:20.740 +03:00 [INF] Executing endpoint 'StudentBackEnd.Controllers.UserController.GetAllUsers (StudentBackEnd)'
+2025-05-26 23:00:20.773 +03:00 [INF] Route matched with {action = "GetAllUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllUsers() on controller StudentBackEnd.Controllers.UserController (StudentBackEnd).
+2025-05-26 23:00:21.177 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[AppUserId], [s].[AppUserId1], [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [Students] AS [s]
+INNER JOIN [AspNetUsers] AS [a] ON [s].[AppUserId] = [a].[Id]
+2025-05-26 23:00:21.278 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BackEnd.Core.DTOs.ProfessorDTO.GetUser, BackEnd.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-26 23:00:21.296 +03:00 [INF] Executed action StudentBackEnd.Controllers.UserController.GetAllUsers (StudentBackEnd) in 512.3979ms
+2025-05-26 23:00:21.298 +03:00 [INF] Executed endpoint 'StudentBackEnd.Controllers.UserController.GetAllUsers (StudentBackEnd)'
+2025-05-26 23:00:21.305 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/User - 200 null application/json; charset=utf-8 588.4308ms
+2025-05-26 23:01:09.896 +03:00 [INF] User profile is available. Using 'C:\Users\Target\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-05-26 23:01:10.599 +03:00 [WRN] The foreign key property 'Student.AppUserId1' was created in shadow state because a conflicting property with the simple name 'AppUserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-05-26 23:01:11.519 +03:00 [INF] Executed DbCommand (47ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-05-26 23:01:11.615 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-05-26 23:01:11.619 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-05-26 23:01:11.642 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-05-26 23:01:12.044 +03:00 [WRN] The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert
+2025-05-26 23:01:12.117 +03:00 [INF] Now listening on: https://localhost:5001
+2025-05-26 23:01:12.119 +03:00 [INF] Now listening on: http://localhost:5000
+2025-05-26 23:01:12.261 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-05-26 23:01:12.263 +03:00 [INF] Hosting environment: Development
+2025-05-26 23:01:12.264 +03:00 [INF] Content root path: D:\AppsMypractice\StudentAffaire\StudentBackEnd\StudentBackEnd
+2025-05-26 23:01:12.632 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger - null null
+2025-05-26 23:01:12.870 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger - 301 0 null 249.7186ms
+2025-05-26 23:01:12.878 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.html - null null
+2025-05-26 23:01:12.969 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.html - 200 null text/html;charset=utf-8 90.9154ms
+2025-05-26 23:01:12.976 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui.css - null null
+2025-05-26 23:01:12.979 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-26 23:01:12.976 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.css - null null
+2025-05-26 23:01:12.976 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui-standalone-preset.js - null null
+2025-05-26 23:01:12.976 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.js - null null
+2025-05-26 23:01:12.976 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui-bundle.js - null null
+2025-05-26 23:01:13.007 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.js - 200 null application/javascript;charset=utf-8 31.2077ms
+2025-05-26 23:01:13.017 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 13780 application/javascript; charset=utf-8 40.7505ms
+2025-05-26 23:01:13.024 +03:00 [INF] Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2025-05-26 23:01:13.030 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.css - 200 202 text/css 54.2834ms
+2025-05-26 23:01:13.034 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-05-26 23:01:13.034 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-05-26 23:01:13.040 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui.css - 200 154949 text/css 64.663ms
+2025-05-26 23:01:13.040 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui-standalone-preset.js - 200 229223 text/javascript 64.4541ms
+2025-05-26 23:01:13.042 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-05-26 23:01:13.043 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2025-05-26 23:01:13.050 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui-bundle.js - 200 1466908 text/javascript 73.5797ms
+2025-05-26 23:01:13.095 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 51.2469ms
+2025-05-26 23:01:13.261 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - null null
+2025-05-26 23:01:13.274 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 12.5896ms
+2025-05-26 23:01:21.157 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/User - null null
+2025-05-26 23:01:21.184 +03:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2025-05-26 23:01:21.194 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-05-26 23:01:21.196 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/User - 401 0 null 39.5184ms
+2025-05-26 23:01:55.769 +03:00 [INF] Request starting HTTP/2 POST https://localhost:5001/api/Account/login - application/json 59
+2025-05-26 23:01:55.806 +03:00 [INF] Executing endpoint 'StudentBackEnd.Controllers.AccountController.Login (StudentBackEnd)'
+2025-05-26 23:01:55.853 +03:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(BackEnd.Core.DTOs.UserDTO.LoginDto) on controller StudentBackEnd.Controllers.AccountController (StudentBackEnd).
+2025-05-26 23:01:56.101 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@__ToUpper_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]
+        WHERE UPPER([a].[Email]) = @__ToUpper_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-05-26 23:01:56.125 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__ToUpper_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE UPPER([a].[Email]) = @__ToUpper_0
+2025-05-26 23:01:56.185 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[BackEnd.Core.Models.UserTokens, BackEnd.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-26 23:01:56.218 +03:00 [INF] Executed action StudentBackEnd.Controllers.AccountController.Login (StudentBackEnd) in 355.7841ms
+2025-05-26 23:01:56.221 +03:00 [INF] Executed endpoint 'StudentBackEnd.Controllers.AccountController.Login (StudentBackEnd)'
+2025-05-26 23:01:56.229 +03:00 [INF] Request finished HTTP/2 POST https://localhost:5001/api/Account/login - 200 null application/json; charset=utf-8 459.7194ms
+2025-05-26 23:02:28.774 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/User - null null
+2025-05-26 23:02:28.898 +03:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2025-05-26 23:02:28.904 +03:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2025-05-26 23:02:28.906 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/User - 403 0 null 131.7322ms
+2025-05-26 23:04:13.841 +03:00 [INF] Request starting HTTP/2 POST https://localhost:5001/api/Account/login - application/json 59
+2025-05-26 23:04:13.857 +03:00 [INF] Executing endpoint 'StudentBackEnd.Controllers.AccountController.Login (StudentBackEnd)'
+2025-05-26 23:04:13.861 +03:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(BackEnd.Core.DTOs.UserDTO.LoginDto) on controller StudentBackEnd.Controllers.AccountController (StudentBackEnd).
+2025-05-26 23:04:13.893 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@__ToUpper_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]
+        WHERE UPPER([a].[Email]) = @__ToUpper_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-05-26 23:04:13.900 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__ToUpper_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE UPPER([a].[Email]) = @__ToUpper_0
+2025-05-26 23:04:13.907 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[BackEnd.Core.Models.UserTokens, BackEnd.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-26 23:04:13.911 +03:00 [INF] Executed action StudentBackEnd.Controllers.AccountController.Login (StudentBackEnd) in 46.608ms
+2025-05-26 23:04:13.913 +03:00 [INF] Executed endpoint 'StudentBackEnd.Controllers.AccountController.Login (StudentBackEnd)'
+2025-05-26 23:04:13.914 +03:00 [INF] Request finished HTTP/2 POST https://localhost:5001/api/Account/login - 200 null application/json; charset=utf-8 73.4435ms
+2025-05-26 23:07:34.258 +03:00 [INF] User profile is available. Using 'C:\Users\Target\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-05-26 23:07:35.042 +03:00 [WRN] The foreign key property 'Student.AppUserId1' was created in shadow state because a conflicting property with the simple name 'AppUserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-05-26 23:07:36.104 +03:00 [INF] Executed DbCommand (93ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-05-26 23:07:40.062 +03:00 [INF] Executed DbCommand (3,836ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-05-26 23:07:40.068 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-05-26 23:07:40.096 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-05-26 23:07:40.556 +03:00 [WRN] The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert
+2025-05-26 23:07:40.666 +03:00 [INF] Now listening on: https://localhost:5001
+2025-05-26 23:07:40.668 +03:00 [INF] Now listening on: http://localhost:5000
+2025-05-26 23:07:40.805 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-05-26 23:07:40.806 +03:00 [INF] Hosting environment: Development
+2025-05-26 23:07:40.808 +03:00 [INF] Content root path: D:\AppsMypractice\StudentAffaire\StudentBackEnd\StudentBackEnd
+2025-05-26 23:07:41.943 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger - null null
+2025-05-26 23:07:42.305 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger - 301 0 null 373.255ms
+2025-05-26 23:07:42.319 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.html - null null
+2025-05-26 23:07:42.481 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.html - 200 null text/html;charset=utf-8 162.3674ms
+2025-05-26 23:07:42.497 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui.css - null null
+2025-05-26 23:07:42.497 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.css - null null
+2025-05-26 23:07:42.498 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui-bundle.js - null null
+2025-05-26 23:07:42.499 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui-standalone-preset.js - null null
+2025-05-26 23:07:42.497 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.js - null null
+2025-05-26 23:07:42.538 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-26 23:07:42.566 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.js - 200 null application/javascript;charset=utf-8 68.5838ms
+2025-05-26 23:07:42.548 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2025-05-26 23:07:42.650 +03:00 [INF] Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2025-05-26 23:07:42.652 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.css - 200 202 text/css 155.0217ms
+2025-05-26 23:07:42.670 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 13780 application/javascript; charset=utf-8 131.6926ms
+2025-05-26 23:07:42.674 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-05-26 23:07:42.674 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-05-26 23:07:42.681 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui.css - 200 154949 text/css 184.5824ms
+2025-05-26 23:07:42.682 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui-standalone-preset.js - 200 229223 text/javascript 182.7838ms
+2025-05-26 23:07:42.685 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-05-26 23:07:42.694 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui-bundle.js - 200 1466908 text/javascript 195.9938ms
+2025-05-26 23:07:42.713 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 164.4745ms
+2025-05-26 23:07:42.926 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - null null
+2025-05-26 23:07:42.943 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 17.2767ms
+2025-05-26 23:07:55.395 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/User/265d1d7e-7297-4848-98ad-77e85091981c - null null
+2025-05-26 23:07:55.414 +03:00 [INF] Executing endpoint 'StudentBackEnd.Controllers.UserController.GetUserById (StudentBackEnd)'
+2025-05-26 23:07:55.454 +03:00 [INF] Route matched with {action = "GetUserById", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserById(System.String) on controller StudentBackEnd.Controllers.UserController (StudentBackEnd).
+2025-05-26 23:07:55.835 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@__id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[AppUserId], [s].[AppUserId1], [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [Students] AS [s]
+INNER JOIN [AspNetUsers] AS [a] ON [s].[AppUserId] = [a].[Id]
+WHERE [s].[AppUserId] = @__id_0
+2025-05-26 23:07:55.853 +03:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2025-05-26 23:07:55.898 +03:00 [INF] Executed action StudentBackEnd.Controllers.UserController.GetUserById (StudentBackEnd) in 435.1982ms
+2025-05-26 23:07:55.901 +03:00 [INF] Executed endpoint 'StudentBackEnd.Controllers.UserController.GetUserById (StudentBackEnd)'
+2025-05-26 23:07:55.911 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/User/265d1d7e-7297-4848-98ad-77e85091981c - 404 null application/problem+json; charset=utf-8 516.3486ms
+2025-05-26 23:08:31.613 +03:00 [INF] User profile is available. Using 'C:\Users\Target\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-05-26 23:08:32.367 +03:00 [WRN] The foreign key property 'Student.AppUserId1' was created in shadow state because a conflicting property with the simple name 'AppUserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-05-26 23:08:33.396 +03:00 [INF] Executed DbCommand (50ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-05-26 23:08:33.504 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-05-26 23:08:33.508 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-05-26 23:08:33.528 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-05-26 23:08:33.935 +03:00 [WRN] The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert
+2025-05-26 23:08:34.008 +03:00 [INF] Now listening on: https://localhost:5001
+2025-05-26 23:08:34.009 +03:00 [INF] Now listening on: http://localhost:5000
+2025-05-26 23:08:34.146 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-05-26 23:08:34.148 +03:00 [INF] Hosting environment: Development
+2025-05-26 23:08:34.149 +03:00 [INF] Content root path: D:\AppsMypractice\StudentAffaire\StudentBackEnd\StudentBackEnd
+2025-05-26 23:08:34.649 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger - null null
+2025-05-26 23:08:34.894 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger - 301 0 null 258.095ms
+2025-05-26 23:08:34.904 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.html - null null
+2025-05-26 23:08:34.993 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.html - 200 null text/html;charset=utf-8 88.9708ms
+2025-05-26 23:08:35.002 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.css - null null
+2025-05-26 23:08:35.002 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui.css - null null
+2025-05-26 23:08:35.002 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui-standalone-preset.js - null null
+2025-05-26 23:08:35.002 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui-bundle.js - null null
+2025-05-26 23:08:35.003 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.js - null null
+2025-05-26 23:08:35.002 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-26 23:08:35.025 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.js - 200 null application/javascript;charset=utf-8 22.0683ms
+2025-05-26 23:08:35.008 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2025-05-26 23:08:35.076 +03:00 [INF] Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2025-05-26 23:08:35.113 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.css - 200 202 text/css 110.5992ms
+2025-05-26 23:08:35.114 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 13780 application/javascript; charset=utf-8 111.8526ms
+2025-05-26 23:08:35.182 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-05-26 23:08:35.182 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-05-26 23:08:35.190 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui.css - 200 154949 text/css 187.8381ms
+2025-05-26 23:08:35.190 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui-standalone-preset.js - 200 229223 text/javascript 187.6661ms
+2025-05-26 23:08:35.194 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-05-26 23:08:35.205 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui-bundle.js - 200 1466908 text/javascript 202.7149ms
+2025-05-26 23:08:35.224 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 215.8421ms
+2025-05-26 23:08:35.456 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - null null
+2025-05-26 23:08:35.478 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 21.8954ms
+2025-05-26 23:08:42.815 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/User/265d1d7e-7297-4848-98ad-77e85091981c - null null
+2025-05-26 23:08:42.845 +03:00 [INF] Executing endpoint 'StudentBackEnd.Controllers.UserController.GetUserById (StudentBackEnd)'
+2025-05-26 23:08:42.888 +03:00 [INF] Route matched with {action = "GetUserById", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserById(System.String) on controller StudentBackEnd.Controllers.UserController (StudentBackEnd).
+2025-05-26 23:08:43.852 +03:00 [INF] Executed DbCommand (627ms) [Parameters=[@__id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[AppUserId], [s].[AppUserId1], [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [Students] AS [s]
+INNER JOIN [AspNetUsers] AS [a] ON [s].[AppUserId] = [a].[Id]
+WHERE [s].[AppUserId] = @__id_0
+2025-05-26 23:08:43.872 +03:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2025-05-26 23:08:43.919 +03:00 [INF] Executed action StudentBackEnd.Controllers.UserController.GetUserById (StudentBackEnd) in 1020.6272ms
+2025-05-26 23:08:43.922 +03:00 [INF] Executed endpoint 'StudentBackEnd.Controllers.UserController.GetUserById (StudentBackEnd)'
+2025-05-26 23:08:43.932 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/User/265d1d7e-7297-4848-98ad-77e85091981c - 404 null application/problem+json; charset=utf-8 1117.2878ms
+2025-05-26 23:10:39.084 +03:00 [INF] User profile is available. Using 'C:\Users\Target\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-05-26 23:10:39.970 +03:00 [WRN] The foreign key property 'Student.AppUserId1' was created in shadow state because a conflicting property with the simple name 'AppUserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-05-26 23:10:41.171 +03:00 [INF] Executed DbCommand (74ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-05-26 23:10:41.250 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-05-26 23:10:41.252 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-05-26 23:10:41.268 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-05-26 23:10:41.544 +03:00 [WRN] The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert
+2025-05-26 23:10:41.598 +03:00 [INF] Now listening on: https://localhost:5001
+2025-05-26 23:10:41.599 +03:00 [INF] Now listening on: http://localhost:5000
+2025-05-26 23:10:41.715 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-05-26 23:10:41.717 +03:00 [INF] Hosting environment: Development
+2025-05-26 23:10:41.718 +03:00 [INF] Content root path: D:\AppsMypractice\StudentAffaire\StudentBackEnd\StudentBackEnd
+2025-05-26 23:10:42.034 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger - null null
+2025-05-26 23:10:43.106 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger - 301 0 null 1083.7042ms
+2025-05-26 23:10:43.113 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.html - null null
+2025-05-26 23:10:43.174 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.html - 200 null text/html;charset=utf-8 60.5497ms
+2025-05-26 23:10:43.180 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.css - null null
+2025-05-26 23:10:43.180 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui.css - null null
+2025-05-26 23:10:43.180 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui-bundle.js - null null
+2025-05-26 23:10:43.180 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui-standalone-preset.js - null null
+2025-05-26 23:10:43.187 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-26 23:10:43.187 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.js - null null
+2025-05-26 23:10:43.215 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - null null
+2025-05-26 23:10:43.304 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.js - 200 null application/javascript;charset=utf-8 117.0538ms
+2025-05-26 23:10:43.308 +03:00 [INF] Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2025-05-26 23:10:43.331 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-05-26 23:10:43.398 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.css - 200 202 text/css 218.1459ms
+2025-05-26 23:10:43.328 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-05-26 23:10:43.325 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - 200 13780 application/javascript; charset=utf-8 138.4489ms
+2025-05-26 23:10:43.351 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-05-26 23:10:43.405 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui-standalone-preset.js - 200 229223 text/javascript 224.6831ms
+2025-05-26 23:10:43.407 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui.css - 200 154949 text/css 227.0558ms
+2025-05-26 23:10:43.413 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui-bundle.js - 200 1466908 text/javascript 232.2246ms
+2025-05-26 23:10:43.429 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - 200 null text/javascript; charset=UTF-8 214.7587ms
+2025-05-26 23:10:43.543 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - null null
+2025-05-26 23:10:43.560 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 17.017ms
+2025-05-26 23:11:34.187 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/User - null null
+2025-05-26 23:11:34.369 +03:00 [INF] Executing endpoint 'StudentBackEnd.Controllers.UserController.GetAllUsers (StudentBackEnd)'
+2025-05-26 23:11:34.397 +03:00 [INF] Route matched with {action = "GetAllUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllUsers() on controller StudentBackEnd.Controllers.UserController (StudentBackEnd).
+2025-05-26 23:11:34.777 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[AppUserId], [s].[AppUserId1], [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [Students] AS [s]
+INNER JOIN [AspNetUsers] AS [a] ON [s].[AppUserId] = [a].[Id]
+2025-05-26 23:11:34.857 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BackEnd.Core.DTOs.ProfessorDTO.GetUser, BackEnd.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-26 23:11:34.880 +03:00 [INF] Executed action StudentBackEnd.Controllers.UserController.GetAllUsers (StudentBackEnd) in 473.379ms
+2025-05-26 23:11:34.882 +03:00 [INF] Executed endpoint 'StudentBackEnd.Controllers.UserController.GetAllUsers (StudentBackEnd)'
+2025-05-26 23:11:34.893 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/User - 200 null application/json; charset=utf-8 706.3089ms
+2025-05-26 23:12:04.203 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/User/265d1d7e-7297-4848-98ad-77e85091981c - null null
+2025-05-26 23:12:04.220 +03:00 [INF] Executing endpoint 'StudentBackEnd.Controllers.UserController.GetUserById (StudentBackEnd)'
+2025-05-26 23:12:04.235 +03:00 [INF] Route matched with {action = "GetUserById", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserById(System.String) on controller StudentBackEnd.Controllers.UserController (StudentBackEnd).
+2025-05-26 23:12:04.313 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[AppUserId], [s].[AppUserId1], [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [Students] AS [s]
+INNER JOIN [AspNetUsers] AS [a] ON [s].[AppUserId] = [a].[Id]
+WHERE [s].[AppUserId] = @__id_0
+2025-05-26 23:12:04.324 +03:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2025-05-26 23:12:04.355 +03:00 [INF] Executed action StudentBackEnd.Controllers.UserController.GetUserById (StudentBackEnd) in 117.6146ms
+2025-05-26 23:12:04.359 +03:00 [INF] Executed endpoint 'StudentBackEnd.Controllers.UserController.GetUserById (StudentBackEnd)'
+2025-05-26 23:12:04.362 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/User/265d1d7e-7297-4848-98ad-77e85091981c - 404 null application/problem+json; charset=utf-8 158.9503ms
+2025-05-26 23:12:49.729 +03:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/User/96331fcd-99b9-4439-bbc7-2a1826132d33 - null null
+2025-05-26 23:12:49.745 +03:00 [INF] Executing endpoint 'StudentBackEnd.Controllers.UserController.GetUserById (StudentBackEnd)'
+2025-05-26 23:12:49.747 +03:00 [INF] Route matched with {action = "GetUserById", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserById(System.String) on controller StudentBackEnd.Controllers.UserController (StudentBackEnd).
+2025-05-26 23:12:49.765 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[AppUserId], [s].[AppUserId1], [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [Students] AS [s]
+INNER JOIN [AspNetUsers] AS [a] ON [s].[AppUserId] = [a].[Id]
+WHERE [s].[AppUserId] = @__id_0
+2025-05-26 23:12:49.773 +03:00 [INF] Executing OkObjectResult, writing value of type 'BackEnd.Core.DTOs.ProfessorDTO.GetUser'.
+2025-05-26 23:12:49.777 +03:00 [INF] Executed action StudentBackEnd.Controllers.UserController.GetUserById (StudentBackEnd) in 27.5318ms
+2025-05-26 23:12:49.779 +03:00 [INF] Executed endpoint 'StudentBackEnd.Controllers.UserController.GetUserById (StudentBackEnd)'
+2025-05-26 23:12:49.780 +03:00 [INF] Request finished HTTP/2 GET https://localhost:5001/api/User/96331fcd-99b9-4439-bbc7-2a1826132d33 - 200 null application/json; charset=utf-8 51.8201ms
